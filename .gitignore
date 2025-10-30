@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Vite cache
+dist/
+.vite/
+
+# Local env files
+.env*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output (except docs for GitHub Pages)
+dist/
+
+# Ignore everything in docs except for GitHub Pages output!
+!docs/
+!docs/**
+
+# Ignore editor folders
+.vscode/
+.idea/
+
+# Ignore coverage and test output
+coverage/
+
+# Ignore Mac system files
+*.DS_Store
+
+data/
+ai
+
+# TypeScript incremental build info
+*.tsbuildinfo
+tsconfig*.tsbuildinfo

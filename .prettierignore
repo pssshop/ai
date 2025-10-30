@@ -1,0 +1,6 @@
+# Ignore artifacts:
+dist
+docs
+*.md
+package.json
+package-lock.json
