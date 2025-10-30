@@ -2,8 +2,10 @@ import { type ChangeEvent, useEffect, useMemo, useState } from "react";
 import { ListView } from "@/components/ListView";
 import { Workspace } from "@/components/Workspace";
 import type { Entity, RawEntity } from "@/types";
-import { normalizeEntities, samples } from "@/utils";
-import { readJsonFile, classifyEntitiesFromArray, combineStatus } from "@/utils";
+import { normalizeEntities, combineStatus, samples } from "@/utils";
+import { useImportFiles } from "@/hooks/useImportFiles";
+import { useSamples } from "@/hooks/useSamples";
+import { useWorkspace } from "@/hooks/useWorkspace";
 
 export default function App() {
   const [crewRaw, setCrewRaw] = useState<RawEntity[] | null>(null);
@@ -22,75 +24,30 @@ export default function App() {
 
   const isEntity = (entity: Entity | undefined): entity is Entity => Boolean(entity);
 
-  const workspaceEntities = useMemo(
-    () => workspaceIds.map((id: string) => entityMap.get(id)).filter(isEntity),
-    [workspaceIds, entityMap]
-  );
+  // keep a local ids state for compatibility; primary workspace state is inside the hook
 
-  useEffect(() => {
-    setWorkspaceIds((ids: string[]) => ids.filter(id => entityMap.has(id)));
-  }, [entityMap]);
-
-  const handleImportFiles = async (files: FileList | null) => {
-    if (!files || files.length === 0) return;
-    // Accumulate new crew/room entries and merge with existing sets
-    const newCrew: RawEntity[] = [];
-    const newRooms: RawEntity[] = [];
-
-    for (const file of Array.from(files)) {
-      const data = await readJsonFile<RawEntity[]>(file);
-      if (!Array.isArray(data)) {
-        setErrorMessage(`${file.name}: invalid JSON root (expected array)`);
-        return;
-      }
-
-      const { crew, rooms } = classifyEntitiesFromArray(data);
-      newCrew.push(...crew);
-      newRooms.push(...rooms);
-    }
-
-    setErrorMessage(null);
+  // wire the import and sample hooks
+  const { handleFiles, error: importError } = useImportFiles((newCrew, newRooms) => {
     setCrewRaw(prev => (prev ? [...prev, ...newCrew] : newCrew));
     setRoomRaw(prev => (prev ? [...prev, ...newRooms] : newRooms));
-  };
+  });
 
-  const handleSampleSelect = async (event: ChangeEvent<HTMLSelectElement>) => {
-    const sampleId = event.target.value;
-    if (!sampleId) return;
-    const sample = samples.find(option => option.id === sampleId);
-    if (!sample) return;
-    try {
-      const data = await sample.load();
-      if (!Array.isArray(data)) {
-        setErrorMessage("Sample: invalid JSON root (expected array)");
-      } else {
-        const { crew: newCrew, rooms: newRooms } = classifyEntitiesFromArray(data);
-
-        setErrorMessage(null);
-        setCrewRaw(newCrew.length ? structuredClone(newCrew) : null);
-        setRoomRaw(newRooms.length ? structuredClone(newRooms) : null);
-      }
-    } catch (error) {
-      console.error("Failed to load data", error);
-      setErrorMessage("Failed to load data");
-    } finally {
-      event.target.value = "";
-    }
-  };
+  const { handleSampleSelect, error: sampleError } = useSamples((newCrew, newRooms) => {
+    setCrewRaw(newCrew.length ? structuredClone(newCrew) : null);
+    setRoomRaw(newRooms.length ? structuredClone(newRooms) : null);
+  });
 
   useEffect(() => {
     setLoadStatus(combineStatus(crewEntities.length, roomEntities.length));
   }, [crewEntities.length, roomEntities.length]);
 
-  const addToWorkspace = (entity: Entity) => {
-    setWorkspaceIds((ids: string[]) => (ids.includes(entity.id) ? ids : [...ids, entity.id]));
-  };
+  // workspace hook manages the selected ids and provides add/remove
+  const { workspaceEntities, add, remove } = useWorkspace(allEntities);
 
-  const removeFromWorkspace = (id: string) => {
-    setWorkspaceIds((ids: string[]) => ids.filter(existing => existing !== id));
-  };
-
-
+  // keep the legacy local ids in sync (if other code reads workspaceIds)
+  useEffect(() => {
+    setWorkspaceIds(workspaceEntities.map(e => e.id));
+  }, [workspaceEntities]);
 
   return (
     <>
@@ -109,7 +66,7 @@ export default function App() {
             type="file"
             accept="application/json"
             multiple
-            onChange={(event: ChangeEvent<HTMLInputElement>) => handleImportFiles(event.target.files ?? null)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => handleFiles(event.target.files ?? null)}
           />
 
           {import.meta.env.DEV && samples.length ? (
@@ -126,13 +83,15 @@ export default function App() {
           ) : null}
 
           <div id="loadStatus">{loadStatus}</div>
-          {errorMessage ? <div className="unreachableNote errorMessage">{errorMessage}</div> : null}
+          {importError || sampleError || errorMessage ? (
+            <div className="unreachableNote errorMessage">{importError ?? sampleError ?? errorMessage}</div>
+          ) : null}
         </div>
 
-  <ListView entities={allEntities} filter={filter} onFilterChange={setFilter} onSelect={addToWorkspace} />
+        <ListView entities={allEntities} filter={filter} onFilterChange={setFilter} onSelect={add} />
       </aside>
 
-      <Workspace entities={workspaceEntities} onRemove={removeFromWorkspace} />
+      <Workspace entities={workspaceEntities} onRemove={remove} />
     </>
   );
 }
