@@ -19,6 +19,8 @@ export interface RawEntity {
 
 export interface Entity {
   id: string;
+  /** base identifier for the logical entity across files, e.g. "crew|123" */
+  baseId?: string;
   name: string;
   type: EntityType;
   flatRules: Rule[];

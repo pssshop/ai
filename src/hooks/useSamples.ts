@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import type { RawEntity } from "@/types";
 import { samples, classifyEntitiesFromArray } from "@/utils";
 
-export function useSamples(onUpdate: (crew: RawEntity[], rooms: RawEntity[]) => void) {
+export function useSamples(onUpdate: (source: { id: string; name: string; crew: RawEntity[]; rooms: RawEntity[] }) => void) {
   const [error, setError] = useState<string | null>(null);
 
   const handleSampleSelect = useCallback(
@@ -17,9 +17,21 @@ export function useSamples(onUpdate: (crew: RawEntity[], rooms: RawEntity[]) => 
         if (!Array.isArray(data)) {
           setError("Sample: invalid JSON root (expected array)");
         } else {
-          const { crew: newCrew, rooms: newRooms } = classifyEntitiesFromArray(data);
-          setError(null);
-          onUpdate(newCrew, newRooms);
+            // tag each sample item with provenance (sample id/label) so they behave like file imports
+            for (const item of data) {
+              if (item && typeof item === "object") {
+                try {
+                  (item as any).__sourceFile = { fileId: sample.id, fileName: sample.label };
+                } catch (err) {
+                  // ignore
+                }
+              }
+            }
+
+            const { crew: newCrew, rooms: newRooms } = classifyEntitiesFromArray(data);
+            // report sample as its own source
+            onUpdate({ id: sample.id, name: sample.label, crew: newCrew, rooms: newRooms });
+            setError(null);
         }
       } catch (err) {
         console.error(err);

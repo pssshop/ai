@@ -1,6 +1,5 @@
 import { type ChangeEvent, type KeyboardEvent, useMemo } from "react";
 import type { Entity } from "@/types";
-import { humanizeSpecial, getAssetForName } from "@/utils";
 
 interface ListViewProps {
   entities: Entity[];
@@ -38,49 +37,70 @@ export function ListView({ entities, filter, onFilterChange, onSelect }: ListVie
     return (
       <div key={label}>
         <div className="entitySectionLabel">{label}</div>
-        {list.map(entity => {
-          // support both crew `profile_sprite_id` and room `image_sprite_id`
-          const rawSource = entity.source as any;
-          const spriteId = rawSource?.profile_sprite_id ?? rawSource?.image_sprite_id;
-          const profileUrl = spriteId
-            ? `https://api.pixelstarships.com/FileService/DownloadSprite?spriteId=${spriteId}`
-            : null;
+        {(() => {
+          // group versions by baseId (fallback to id)
+          const groups = new Map<string, Entity[]>();
+          for (const entity of list) {
+            const key = entity.baseId ?? entity.id;
+            const arr = groups.get(key) ?? [];
+            arr.push(entity);
+            groups.set(key, arr);
+          }
 
-          return (
-            <div
-              key={entity.id}
-              className="entityRow"
-              role="button"
-              tabIndex={0}
-              onClick={() => onSelect(entity)}
-              onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => handleRowKeyDown(event, entity)}
-            >
-              <div className="entityRowInner">
-                {/* left column: avatar and meta stacked */}
-                <div className="entityLeftCol">
-                  {profileUrl ? (
-                    <img src={profileUrl} alt={`${entity.name} sprite`} className="entityAvatar" />
-                  ) : null}
-                  <div className="entityMeta">{entity.type}</div>
-                </div>
+          return Array.from(groups.values()).map(group => {
+            const primary = group[0];
+            // support both crew `profile_sprite_id` and room `image_sprite_id`
+            const rawSource = primary.source as any;
+            const spriteId = rawSource?.profile_sprite_id ?? rawSource?.image_sprite_id;
+            const profileUrl = spriteId
+              ? `https://api.pixelstarships.com/FileService/DownloadSprite?spriteId=${spriteId}`
+              : null;
 
-                {/* right column: name and optional small special icon */}
-                <div className="entityRightCol">
-                  <div className="entityName">{entity.name}</div>
-                  {entity.type === "crew" && entity.source && (entity.source as any).special ? (
-                    (() => {
-                      const human = humanizeSpecial(String((entity.source as any).special));
-                      const url = getAssetForName(human ?? "");
-                      return url ? (
-                        <img src={url} alt={human ?? "special"} className="specialIconSmall" />
-                      ) : null;
-                    })()
-                  ) : null}
+            return (
+              <div
+                key={primary.baseId ?? primary.id}
+                className="entityRow"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => handleRowKeyDown(event, primary)}
+              >
+                <div className="entityRowInner">
+                  {/* left column: avatar and meta stacked */}
+                  <div className="entityLeftCol">
+                    {profileUrl ? (
+                      <img src={profileUrl} alt={`${primary.name} sprite`} className="entityAvatar" />
+                    ) : null}
+                    <div className="entityMeta">{primary.type}</div>
+                  </div>
+
+                  {/* right column: name and available versions */}
+                  <div className="entityRightCol">
+                    <div className="entityName">{primary.name}</div>
+                    <div className="entityVersions">
+                      {group.map(version => {
+                        const fileName = (version.source as any)?.__sourceFile?.fileName ?? String((version.source as any)?.__sourceFile?.fileId ?? "unknown");
+                        return (
+                          <button
+                            key={version.id}
+                            type="button"
+                            className="versionBtn"
+                            onClick={e => {
+                              e.stopPropagation();
+                              onSelect(version);
+                            }}
+                            title={`Add ${primary.name} — ${fileName}`}
+                          >
+                            {fileName}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          });
+        })()}
       </div>
     );
   };

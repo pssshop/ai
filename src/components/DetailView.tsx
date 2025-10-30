@@ -104,6 +104,7 @@ export function DetailView({ entity, onRemove }: DetailViewProps) {
   const specialKey = rawSource?.special ?? null;
   const specialHuman = humanizeSpecial(specialKey) ?? specialKey;
   const specialIconUrl = specialHuman ? getAssetForName(specialHuman) : undefined;
+  const sourceFileName = (rawSource as any)?.__sourceFile?.fileName as string | undefined;
 
   return (
     <div className="entityColumn" ref={containerRef}>
@@ -114,13 +115,16 @@ export function DetailView({ entity, onRemove }: DetailViewProps) {
               <img src={headerSpriteUrl} alt={`${entity.name} sprite`} className="entityHeaderAvatar" />
             ) : null}
             <div className="entityHeaderName" title={entity.name}>
-              <span className="entityHeaderTitleText">{entity.name}</span>
-              {specialHuman ? (
-                <span className="entitySpecialBadge" title={String(specialHuman)}>
-                  {specialIconUrl ? <img src={specialIconUrl} alt={String(specialHuman)} className="specialIconHeader" /> : null}
-                  <span className="entitySpecialName">{specialHuman}</span>
-                </span>
-              ) : null}
+              <div className="entityHeaderTitleRow">
+                <span className="entityHeaderTitleText">{entity.name}</span>
+                {specialHuman ? (
+                  <span className="entitySpecialBadge" title={String(specialHuman)}>
+                    {specialIconUrl ? <img src={specialIconUrl} alt={String(specialHuman)} className="specialIconHeader" /> : null}
+                    <span className="entitySpecialName">{specialHuman}</span>
+                  </span>
+                ) : null}
+              </div>
+              {sourceFileName ? <div className="entitySourceSubtitle">{sourceFileName}</div> : null}
             </div>
             <div className="entityHeaderType">{entity.type}</div>
           </div>

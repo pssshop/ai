@@ -8,17 +8,20 @@ import { useSamples } from "@/hooks/useSamples";
 import { useWorkspace } from "@/hooks/useWorkspace";
 
 export default function App() {
-  const [crewRaw, setCrewRaw] = useState<RawEntity[] | null>(null);
-  const [roomRaw, setRoomRaw] = useState<RawEntity[] | null>(null);
+  const [sources, setSources] = useState<Array<{ id: string; name: string; crew: RawEntity[]; rooms: RawEntity[] }>>([]);
   const [filter, setFilter] = useState("");
   const [workspaceIds, setWorkspaceIds] = useState<string[]>([]);
   const [loadStatus, setLoadStatus] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const crewEntities = useMemo(() => normalizeEntities(crewRaw, "crew"), [crewRaw]);
-  const roomEntities = useMemo(() => normalizeEntities(roomRaw, "room"), [roomRaw]);
-
-  const allEntities = useMemo<Entity[]>(() => [...crewEntities, ...roomEntities], [crewEntities, roomEntities]);
+  const allEntities = useMemo<Entity[]>(() => {
+    const out: Entity[] = [];
+    for (const src of sources) {
+      out.push(...normalizeEntities(src.crew, "crew"));
+      out.push(...normalizeEntities(src.rooms, "room"));
+    }
+    return out;
+  }, [sources]);
 
   const entityMap = useMemo(() => new Map(allEntities.map((entity: Entity) => [entity.id, entity] as const)), [allEntities]);
 
@@ -26,20 +29,20 @@ export default function App() {
 
   // keep a local ids state for compatibility; primary workspace state is inside the hook
 
-  // wire the import and sample hooks
-  const { handleFiles, error: importError } = useImportFiles((newCrew, newRooms) => {
-    setCrewRaw(prev => (prev ? [...prev, ...newCrew] : newCrew));
-    setRoomRaw(prev => (prev ? [...prev, ...newRooms] : newRooms));
+  // wire the import and sample hooks — append sources instead of replacing
+  const { handleFiles, error: importError } = useImportFiles((source) => {
+    setSources(prev => [...prev, source]);
   });
 
-  const { handleSampleSelect, error: sampleError } = useSamples((newCrew, newRooms) => {
-    setCrewRaw(newCrew.length ? structuredClone(newCrew) : null);
-    setRoomRaw(newRooms.length ? structuredClone(newRooms) : null);
+  const { handleSampleSelect, error: sampleError } = useSamples((source) => {
+    setSources(prev => [...prev, source]);
   });
 
   useEffect(() => {
-    setLoadStatus(combineStatus(crewEntities.length, roomEntities.length));
-  }, [crewEntities.length, roomEntities.length]);
+    const crewCount = allEntities.filter(e => e.type === "crew").length;
+    const roomCount = allEntities.filter(e => e.type === "room").length;
+    setLoadStatus(combineStatus(crewCount, roomCount));
+  }, [allEntities]);
 
   // workspace hook manages the selected ids and provides add/remove
   const { workspaceEntities, add, remove } = useWorkspace(allEntities);
@@ -48,6 +51,10 @@ export default function App() {
   useEffect(() => {
     setWorkspaceIds(workspaceEntities.map(e => e.id));
   }, [workspaceEntities]);
+
+  const removeSource = (id: string) => {
+    setSources(prev => prev.filter(s => s.id !== id));
+  };
 
   return (
     <>
@@ -85,6 +92,18 @@ export default function App() {
           <div id="loadStatus">{loadStatus}</div>
           {importError || sampleError || errorMessage ? (
             <div className="unreachableNote errorMessage">{importError ?? sampleError ?? errorMessage}</div>
+          ) : null}
+
+          {sources.length ? (
+            <div id="sourcesList">
+              {sources.map(s => (
+                <div key={s.id} className="sourceRow">
+                  <span className="sourceName">{s.name}</span>
+                  <span className="sourceCounts">{s.crew.length} crew / {s.rooms.length} rooms</span>
+                  <button type="button" onClick={() => removeSource(s.id)} className="sourceRemoveBtn">Remove</button>
+                </div>
+              ))}
+            </div>
           ) : null}
         </div>
 

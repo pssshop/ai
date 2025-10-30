@@ -45,9 +45,33 @@ export function normalizeEntities(list: RawEntity[] | null | undefined, fallback
     const identifier =
       raw.uid ?? raw.id ?? (raw as { characterId?: string | number }).characterId ?? (raw as { roomId?: string | number }).roomId ?? idx;
 
-    let id = `${fallbackType}|${identifier}`;
+    // prefer using a stable design id when available (crew: character_design_id, room: room_design_id)
+    const designId = (raw as any).character_design_id ?? (raw as any).characterDesignId ?? (raw as any).room_design_id ?? (raw as any).roomDesignId ?? null;
+
+    // normalize a short slug of the name to help disambiguate across exports that
+    // might lack numeric ids but have the same visible name. Keep it short.
+    const slugify = (s: string) =>
+      String(s)
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9\-]/g, "")
+        .replace(/-+/g, "-")
+        .slice(0, 40);
+
+    const nameSlug = slugify(baseName || String(identifier));
+
+    const baseId = designId ? `${fallbackType}|${String(designId)}|${nameSlug}` : `${fallbackType}|${identifier}`;
+
+    // prefer a stable file-based suffix when present so different files with the
+    // same logical id become separate versions. The importer tags raw objects
+    // with __sourceFile { fileId, fileName } when available.
+    const sourceFile = (raw as any).__sourceFile as { fileId?: string | number } | undefined;
+    const fileSuffix = sourceFile?.fileId ?? idx;
+
+    let id = `${baseId}|${fileSuffix}`;
     if (seenIds.has(id)) {
-      id = `${fallbackType}|${identifier}|${idx}`;
+      id = `${baseId}|${fileSuffix}|${idx}`;
     }
     seenIds.add(id);
 
@@ -55,6 +79,7 @@ export function normalizeEntities(list: RawEntity[] | null | undefined, fallback
 
     return {
       id,
+      baseId,
       name: baseName,
       type,
       flatRules: rules,
