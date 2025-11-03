@@ -13,11 +13,16 @@ export function ListView({ entities, filter, onFilterChange, onSelect, onDeleteD
   const { crews, rooms, count } = useMemo(() => {
     const lower = filter.trim().toLowerCase();
     const matches = (entity: Entity) => (!lower ? true : entity.name.toLowerCase().includes(lower));
+    // Hide unsaved drafts from the browser list
+    const isUnsavedDraft = (e: Entity) => {
+      const meta = (e.source as any)?.__builderMeta;
+      return Boolean(meta?.isDraft) && !Boolean(meta?.saved);
+    };
     const crews = entities
-      .filter(entity => entity.type === "crew" && matches(entity))
+      .filter(entity => entity.type === "crew" && matches(entity) && !isUnsavedDraft(entity))
       .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" }));
     const rooms = entities
-      .filter(entity => entity.type === "room" && matches(entity))
+      .filter(entity => entity.type === "room" && matches(entity) && !isUnsavedDraft(entity))
       .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" }));
     return { crews, rooms, count: crews.length + rooms.length };
   }, [entities, filter]);

@@ -95,7 +95,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
       setShowAddRule(false);
       setNameManuallyEdited(false); // Reset for new drafts so name can be auto-filled
     }
-  }, [entity.id, entity.flatRules, entity.name, entity.type, entity.source]);
+  }, [entity.id]);
 
   useEffect(() => {
     setSelectedCondition(prev => {
@@ -264,6 +264,9 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
                 if (!showAddRule) {
                   setShowAddRule(true);
                   setShowEntitySettings(false);
+                  // Reset composer fields to placeholders on each open
+                  setSelectedCondition("");
+                  setSelectedAction("");
                   window.scrollTo({ top: 0, behavior: "auto" });
                 } else {
                   setShowAddRule(false);
@@ -303,6 +306,9 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
                       setShowAddRule(true);
                       setShowEntitySettings(false);
                       setShowActionsMenu(false);
+                      // Reset composer fields to placeholders on each open
+                      setSelectedCondition("");
+                      setSelectedAction("");
                       window.scrollTo({ top: 0, behavior: "auto" });
                     }}
                   >
@@ -471,9 +477,13 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
                 if (!showAddRule) {
                   setShowAddRule(true);
                   setShowEntitySettings(false);
+                  // Reset composer fields to placeholders on each open
+                  setSelectedCondition("");
+                  setSelectedAction("");
                   window.scrollTo({ top: 0, behavior: "auto" });
                 } else {
-                  setShowAddRule(false);
+                  // If composer is visible, clicking the link should act like the Add rule button
+                  addRule();
                 }
               }}
               title="Add rule"

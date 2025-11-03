@@ -392,6 +392,8 @@
         background-color: var(--panel-alt);
         border-bottom: 1px solid var(--border);
         padding: 5px 10px;
+        /* Ensure consistent header height whether sprite is present or not */
+        min-height: 64px;
         user-select: text;
     }
 

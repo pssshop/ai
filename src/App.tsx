@@ -1,4 +1,4 @@
-import { type ChangeEvent, useEffect, useMemo, useState } from "react";
+import { type ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import { ListView } from "@/components/ListView";
 import { Workspace } from "@/components/Workspace";
 import { SearchSelect } from "@/components/SearchSelect";
@@ -50,8 +50,12 @@ export default function App() {
   useEffect(() => {
     const allDrafts: RawEntity[] = [];
     for (const src of sources) {
-      allDrafts.push(...src.crew.filter(raw => (raw.__builderMeta as any)?.isDraft));
-      allDrafts.push(...src.rooms.filter(raw => (raw.__builderMeta as any)?.isDraft));
+      allDrafts.push(
+        ...src.crew.filter(raw => (raw.__builderMeta as any)?.isDraft && (raw.__builderMeta as any)?.saved)
+      );
+      allDrafts.push(
+        ...src.rooms.filter(raw => (raw.__builderMeta as any)?.isDraft && (raw.__builderMeta as any)?.saved)
+      );
     }
     localStorage.setItem("pssai:drafts", JSON.stringify(allDrafts));
   }, [sources]);
@@ -85,6 +89,23 @@ export default function App() {
   // workspace hook manages the selected ids and provides add/remove
   const { workspaceEntities, add, remove, setIds } = useWorkspace(allEntities);
 
+  // Track a draft RawEntity we want to open once it's present in allEntities
+  const pendingDraftRef = useRef<RawEntity | null>(null);
+
+  // When allEntities updates, if we have a pending draft, open it in the workspace
+  useEffect(() => {
+    if (pendingDraftRef.current) {
+      const pending = pendingDraftRef.current;
+      const found = allEntities.find(e => e.source === pending);
+      if (found) {
+        add(found);
+        pendingDraftRef.current = null;
+        // Let columns recalc widths after mount
+        setTimeout(() => window.dispatchEvent(new Event("pss:columns-changed")), 0);
+      }
+    }
+  }, [allEntities, add]);
+
   // keep the legacy local ids in sync (if other code reads workspaceIds)
   useEffect(() => {
     setWorkspaceIds(workspaceEntities.map(e => e.id));
@@ -92,6 +113,31 @@ export default function App() {
 
   const removeSource = (id: string) => {
     setSources(prev => prev.filter(s => s.id !== id));
+  };
+
+  // Close an entity; if it's an unsaved draft, remove it entirely from the Drafts source
+  const handleCloseEntity = (entityId: string) => {
+    const entity = allEntities.find(e => e.id === entityId);
+    if (entity) {
+      const meta = (entity.source as any)?.__builderMeta;
+      const isDraft = Boolean(meta?.isDraft);
+      const saved = Boolean(meta?.saved);
+      if (isDraft && !saved) {
+        setSources(prev =>
+          prev
+            .map(src => {
+              if (src.name !== "Drafts") return src;
+              const crew = src.crew.filter(raw => raw !== entity.source);
+              const rooms = src.rooms.filter(raw => raw !== entity.source);
+              return { ...src, crew, rooms };
+            })
+            // If Drafts is now empty, drop it entirely
+            .filter(src => (src.name === "Drafts" ? src.crew.length + src.rooms.length > 0 : true))
+        );
+      }
+    }
+    remove(entityId);
+    setTimeout(() => window.dispatchEvent(new Event("pss:columns-changed")), 0);
   };
 
   const handleDeleteDraft = (entityId: string) => {
@@ -110,11 +156,15 @@ export default function App() {
         rooms: source.rooms.filter(raw => raw !== entity.source),
       })).filter(source => source.crew.length > 0 || source.rooms.length > 0);
 
-      // Immediately update localStorage
+      // Immediately update localStorage (persist only saved drafts)
       const allDrafts: RawEntity[] = [];
       for (const src of updated) {
-        allDrafts.push(...src.crew.filter(raw => (raw.__builderMeta as any)?.isDraft));
-        allDrafts.push(...src.rooms.filter(raw => (raw.__builderMeta as any)?.isDraft));
+        allDrafts.push(
+          ...src.crew.filter(raw => (raw.__builderMeta as any)?.isDraft && (raw.__builderMeta as any)?.saved)
+        );
+        allDrafts.push(
+          ...src.rooms.filter(raw => (raw.__builderMeta as any)?.isDraft && (raw.__builderMeta as any)?.saved)
+        );
       }
       localStorage.setItem("pssai:drafts", JSON.stringify(allDrafts));
 
@@ -131,27 +181,42 @@ export default function App() {
       __builderMeta: {
         createdAt: new Date().toISOString(),
         isDraft: true,
+        // Not saved yet – only saved drafts are listed/persisted
+        saved: false,
       },
       __sourceFile: {
         fileName: "Draft",
+        // Provide a stable fileId so normalized IDs don't depend on array index
+        fileId: undefined as any, // placeholder, set just after object creation
       },
     };
+    // After creation, set fileId to stable unique id (use draft id)
+    (draftRaw as any).__sourceFile.fileId = draftRaw.id;
 
-    const draftSource = {
-      id: randomId("source"),
-      name: "Draft",
-      crew: [draftRaw],
-      rooms: [] as RawEntity[],
-    };
+    // Insert into a single shared "Drafts" source in-memory (hidden until saved)
+    setSources(prev => {
+      // Find existing Drafts source (by name)
+      const idx = prev.findIndex(s => s.name === "Drafts");
+      if (idx >= 0) {
+        const next = [...prev];
+        const src = next[idx];
+        src.crew = [...src.crew, draftRaw];
+        // Mark to open after state updates
+        pendingDraftRef.current = draftRaw;
+        return next;
+      }
+      // Create a new Drafts source (hidden until any draft is saved)
+      const newDraftsSource = {
+        id: randomId("source"),
+        name: "Drafts",
+        crew: [draftRaw],
+        rooms: [] as RawEntity[],
+      };
+      pendingDraftRef.current = draftRaw;
+      return [newDraftsSource, ...prev];
+    });
 
-    setSources(prev => [...prev, draftSource]);
-
-    const draftEntity = normalizeEntities(draftSource.crew, "crew")[0];
-    if (draftEntity) {
-      add(draftEntity);
-    }
-
-    setTimeout(() => window.dispatchEvent(new Event("pss:columns-changed")), 0);
+    // Opening will be handled in the effect when allEntities includes this draft
   };
 
   const handleUpdateEntity = (entity: Entity, payload: EntityEditPayload) => {
@@ -171,6 +236,7 @@ export default function App() {
         return source;
       }
 
+      const wasDraft = Boolean((entity.source as any)?.__builderMeta?.isDraft);
       const updatedRaw: RawEntity = {
         ...(entity.source as RawEntity),
         name: safeName,
@@ -179,6 +245,8 @@ export default function App() {
         __builderMeta: {
           ...((entity.source as any).__builderMeta ?? {}),
           updatedAt: new Date().toISOString(),
+          // Mark draft as saved when the user explicitly saves
+          ...(wasDraft ? { saved: true } : {}),
         },
       };
 
@@ -303,21 +371,43 @@ export default function App() {
 
           {sources.length ? (
             <div id="sourcesList">
-              {sources.map(s => (
-                <div key={s.id} className="sourceRow">
-                  <span className="sourceName">{s.name}</span>
-                  <span className="sourceCounts">{s.crew.length} crew / {s.rooms.length} rooms</span>
-                  <button
-                    type="button"
-                    onClick={() => removeSource(s.id)}
-                    className="sourceRemoveBtn"
-                    aria-label={`Remove ${s.name}`}
-                    title="Remove source"
-                  >
-                    ✕
-                  </button>
-                </div>
-              ))}
+              {sources.map(s => {
+                if (s.name === "Drafts") {
+                  const crewSaved = s.crew.filter(raw => (raw as any)?.__builderMeta?.saved).length;
+                  const roomSaved = s.rooms.filter(raw => (raw as any)?.__builderMeta?.saved).length;
+                  if (crewSaved + roomSaved === 0) return null; // hide Drafts when nothing saved
+                  return (
+                    <div key={s.id} className="sourceRow">
+                      <span className="sourceName">{s.name}</span>
+                      <span className="sourceCounts">{crewSaved} crew / {roomSaved} rooms</span>
+                      <button
+                        type="button"
+                        onClick={() => removeSource(s.id)}
+                        className="sourceRemoveBtn"
+                        aria-label={`Remove ${s.name}`}
+                        title="Remove source"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  );
+                }
+                return (
+                  <div key={s.id} className="sourceRow">
+                    <span className="sourceName">{s.name}</span>
+                    <span className="sourceCounts">{s.crew.length} crew / {s.rooms.length} rooms</span>
+                    <button
+                      type="button"
+                      onClick={() => removeSource(s.id)}
+                      className="sourceRemoveBtn"
+                      aria-label={`Remove ${s.name}`}
+                      title="Remove source"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           ) : null}
         </div>
@@ -327,7 +417,7 @@ export default function App() {
 
       <Workspace
         entities={workspaceEntities}
-        onRemove={remove}
+        onRemove={handleCloseEntity}
         onUpdate={handleUpdateEntity}
         showSummaries={showSummaries}
       />
