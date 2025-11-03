@@ -15,13 +15,13 @@ export function useEntitySprites() {
         const charOptions = chars.map(c => ({
           value: String(c.profile_sprite_id),
           label: `${c.character_design_name} (Character)`,
-          meta: { type: "crew" as const },
+          meta: { type: "crew" as const, specialKey: c.special_ability_type ?? null },
         }));
 
         const roomOptions = rooms.map(r => ({
           value: String(r.image_sprite_id),
           label: `${r.room_name} (Room)`,
-          meta: { type: "room" as const },
+          meta: { type: "room" as const, specialKey: null },
         }));
 
         setSpriteOptions([...charOptions, ...roomOptions]);

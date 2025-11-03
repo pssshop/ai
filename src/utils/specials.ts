@@ -2,15 +2,20 @@
 // Add entries here as needed; user will add more.
 
 export const SPECIAL_NAMES: Record<string, string> = {
-  // starter entry requested by user
-  ProtectRoom: "Stasis Shield",
-  HealRoomHp: "Urgent Repair",
-  Freeze: "Cryo Blast",
-  DamageToSameRoomCharacters: "Poison Gas",
+  SetFire: "Arson",
+  // Bloodlust already maps
   DamageToCurrentEnemy: "Critical Attack",
+  Freeze: "Cryo Blast",
+  //Firewalk already maps
+  HealSelfHp: "First Aid",
   HealSameRoomCharacters: "Healing Rain",
+  Invulnerability: "Phase Shift",
+  DamageToSameRoomCharacters: "Poison Gas",
   AddReload: "Rush Command",
-  HealSelfHp: "First Aid"
+  ProtectRoom: "Stasis Shield",
+  DeductReload: "System Hack",
+  DamageToRoom: "Ultra Dismantle",
+  HealRoomHp: "Urgent Repair",
 };
 
 export function humanizeSpecial(key?: string | null): string | null {

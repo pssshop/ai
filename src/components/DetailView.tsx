@@ -227,7 +227,10 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
   };
 
   const { headerSpriteUrl, specialKey, sourceFileName } = extractEntityMetadata(entity.source);
-  const specialHuman = humanizeSpecial(specialKey) ?? specialKey;
+  // If a sprite is selected in draft mode, prefer its special (for crew) over the source's
+  const selectedSpriteMeta = useMemo(() => spriteOptions.find(opt => opt.value === selectedSpriteId)?.meta ?? {}, [spriteOptions, selectedSpriteId]);
+  const effectiveSpecialKey: string | null = (selectedSpriteMeta?.specialKey as string | null) ?? specialKey;
+  const specialHuman = humanizeSpecial(effectiveSpecialKey) ?? effectiveSpecialKey;
   const specialIconUrl = specialHuman ? getAssetForName(specialHuman) : undefined;
 
   // Use selected sprite ID if available, otherwise fall back to source
