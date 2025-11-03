@@ -42,6 +42,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
   const [showActionsMenu, setShowActionsMenu] = useState(false);
   const actionsMenuRef = useRef<HTMLDivElement | null>(null);
   const addRuleFormRef = useRef<HTMLDivElement | null>(null);
+  const rulesAddLinkRef = useRef<HTMLButtonElement | null>(null);
   const [selectedSpriteId, setSelectedSpriteId] = useState<string>("");
   const [nameManuallyEdited, setNameManuallyEdited] = useState(false);
 
@@ -168,12 +169,13 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
     ]);
     // Close the form after adding
     setShowAddRule(false);
-    // Wait for React to render the new rule, then scroll column to bottom
+    // Wait for React to render the new rule, then focus the Add Rule link so user can immediately add another
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (containerRef.current) {
           containerRef.current.scrollIntoView({ behavior: "auto", block: "end" });
         }
+        rulesAddLinkRef.current?.focus();
       });
     });
   };
@@ -491,6 +493,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
           <h2 className="rulesSectionTitle">
             Rules ({draftRules.length})
             <button
+              ref={rulesAddLinkRef}
               type="button"
               className="rulesAddLink"
               onClick={() => {
