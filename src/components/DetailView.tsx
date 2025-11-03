@@ -462,7 +462,26 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
         ) : null}
 
         <div className="rulesSection">
-          <h2 className="rulesSectionTitle">Rules ({draftRules.length})</h2>
+          <h2 className="rulesSectionTitle">
+            Rules ({draftRules.length})
+            <button
+              type="button"
+              className="rulesAddLink"
+              onClick={() => {
+                if (!showAddRule) {
+                  setShowAddRule(true);
+                  setShowEntitySettings(false);
+                  window.scrollTo({ top: 0, behavior: "auto" });
+                } else {
+                  setShowAddRule(false);
+                }
+              }}
+              title="Add rule"
+              aria-label="Add rule"
+            >
+              Add Rule
+            </button>
+          </h2>
           {draftRules.length ? (
             <div className="ruleList">
               {draggingRuleId ? (

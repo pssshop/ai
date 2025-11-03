@@ -887,6 +887,22 @@
         color: var(--text);
     }
 
+    .rulesAddLink {
+        margin-left: 8px;
+        background: transparent;
+        border: none;
+        color: #3b82f6; /* blue-500 */
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .rulesAddLink:hover {
+        text-decoration: underline;
+        color: #60a5fa; /* blue-400 */
+    }
+
     .builderField {
         display: flex;
         flex-direction: column;
