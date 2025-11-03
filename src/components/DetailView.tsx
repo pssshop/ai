@@ -235,159 +235,172 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
     ? `https://api.pixelstarships.com/FileService/DownloadSprite?spriteId=${selectedSpriteId}`
     : headerSpriteUrl;
 
+  // Placeholder avatar (question mark) when no sprite is selected yet
+  const placeholderSvg = `
+    <svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'>
+      <defs>
+        <linearGradient id='g' x1='0' y1='0' x2='0' y2='1'>
+          <stop offset='0%' stop-color='#313a47'/>
+          <stop offset='100%' stop-color='#0f172a'/>
+        </linearGradient>
+      </defs>
+      <rect width='48' height='48' rx='4' fill='url(#g)'/>
+      <text x='50%' y='55%' text-anchor='middle' dominant-baseline='middle' alignment-baseline='middle'
+            font-size='28' fill='#94a3b8'
+            font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'>?</text>
+    </svg>
+  `;
+  const placeholderSpriteUrl = 'data:image/svg+xml;utf8,' + encodeURIComponent(placeholderSvg);
+  const headerImageUrl = displaySpriteUrl || placeholderSpriteUrl;
+
   return (
     <div className="entityColumn" ref={containerRef}>
       <div className={`entityColumnHeader${isFixed ? " fixed" : ""}`} ref={headerRef}>
-        <div className="entityHeaderTopRow">
-          <div className="entityHeaderMain">
-            {displaySpriteUrl ? (
-              <img src={displaySpriteUrl} alt={`${displayName} sprite`} className="entityHeaderAvatar" />
+        <div className="entityHeaderMain">
+          <img src={headerImageUrl} alt={`${displayName} sprite`} className="entityHeaderAvatar" />
+          <div className="entityHeaderName" title={displayName}>
+            <div className="entityHeaderTitleRow">
+              <span className="entityHeaderTitleText">{displayName}</span>
+            </div>
+            {specialHuman ? (
+              <span className="entitySpecialBadge" title={String(specialHuman)}>
+                {specialIconUrl ? <img src={specialIconUrl} alt={String(specialHuman)} className="specialIconHeader" /> : null}
+                <span className="entitySpecialName">{specialHuman}</span>
+              </span>
             ) : null}
-            <div className="entityHeaderName" title={displayName}>
-              <div className="entityHeaderTitleRow">
-                <span className="entityHeaderTitleText">{displayName}</span>
-              </div>
-              {specialHuman ? (
-                <span className="entitySpecialBadge" title={String(specialHuman)}>
-                  {specialIconUrl ? <img src={specialIconUrl} alt={String(specialHuman)} className="specialIconHeader" /> : null}
-                  <span className="entitySpecialName">{specialHuman}</span>
-                </span>
-              ) : null}
-              {sourceFileName ? <div className="entitySourceSubtitle">{sourceFileName}</div> : null}
-            </div>
+            {sourceFileName ? <div className="entitySourceSubtitle">{sourceFileName}</div> : null}
           </div>
-          <div className="entityHeaderActions">
+        </div>
+        <div className="entityHeaderActions">
+          <button
+            type="button"
+            className={`iconBtn addRule${showAddRule ? " active" : ""}`}
+            onClick={() => {
+              if (!showAddRule) {
+                setShowAddRule(true);
+                setShowEntitySettings(false);
+                // Reset composer fields to placeholders on each open
+                setSelectedCondition("");
+                setSelectedAction("");
+                window.scrollTo({ top: 0, behavior: "auto" });
+              } else {
+                setShowAddRule(false);
+              }
+            }}
+            title="Add rule"
+            aria-label="Toggle add rule form"
+          >
+            +
+          </button>
+          <button
+            type="button"
+            className="iconBtn saveBtn"
+            onClick={handleSave}
+            disabled={!isDirty}
+            title="Save changes"
+            aria-label="Save changes"
+          >
+            💾
+          </button>
+          <div className="actionsMenuWrapper" ref={actionsMenuRef}>
             <button
               type="button"
-              className={`iconBtn addRule${showAddRule ? " active" : ""}`}
-              onClick={() => {
-                if (!showAddRule) {
-                  setShowAddRule(true);
-                  setShowEntitySettings(false);
-                  // Reset composer fields to placeholders on each open
-                  setSelectedCondition("");
-                  setSelectedAction("");
-                  window.scrollTo({ top: 0, behavior: "auto" });
-                } else {
-                  setShowAddRule(false);
-                }
-              }}
-              title="Add rule"
-              aria-label="Toggle add rule form"
+              className={`iconBtn${showActionsMenu ? " active" : ""}`}
+              onClick={() => setShowActionsMenu(prev => !prev)}
+              title="More actions"
+              aria-label="More actions"
             >
-              +
+              ☰
             </button>
-            <button
-              type="button"
-              className="iconBtn saveBtn"
-              onClick={handleSave}
-              disabled={!isDirty}
-              title="Save changes"
-              aria-label="Save changes"
-            >
-              💾
-            </button>
-            <div className="actionsMenuWrapper" ref={actionsMenuRef}>
-              <button
-                type="button"
-                className={`iconBtn${showActionsMenu ? " active" : ""}`}
-                onClick={() => setShowActionsMenu(prev => !prev)}
-                title="More actions"
-                aria-label="More actions"
-              >
-                ☰
-              </button>
-              {showActionsMenu && (
-                <div className="actionsMenu">
-                  <button
-                    type="button"
-                    className="actionsMenuItem"
-                    onClick={() => {
-                      setShowAddRule(true);
-                      setShowEntitySettings(false);
-                      setShowActionsMenu(false);
-                      // Reset composer fields to placeholders on each open
-                      setSelectedCondition("");
-                      setSelectedAction("");
-                      window.scrollTo({ top: 0, behavior: "auto" });
-                    }}
-                  >
-                    <span className="actionsMenuIcon">+</span>
-                    <span>Add rule</span>
-                  </button>
-                  <button
-                    type="button"
-                    className="actionsMenuItem"
-                    onClick={() => {
-                      setShowEntitySettings(prev => !prev);
-                      setShowAddRule(false);
-                      setShowActionsMenu(false);
-                    }}
-                  >
-                    <span className="actionsMenuIcon">⚙</span>
-                    <span>Entity settings</span>
-                  </button>
-                  <button
-                    type="button"
-                    className="actionsMenuItem"
-                    onClick={() => {
-                      handleSave();
-                      setShowActionsMenu(false);
-                    }}
-                    disabled={!isDirty}
-                  >
-                    <span className="actionsMenuIcon">💾</span>
-                    <span>Save changes</span>
-                  </button>
-                  <button
-                    type="button"
-                    className="actionsMenuItem"
-                    onClick={() => {
-                      resetDraft();
-                      setShowActionsMenu(false);
-                    }}
-                    disabled={!isDirty}
-                  >
-                    <span className="actionsMenuIcon">↺</span>
-                    <span>Revert to source</span>
-                  </button>
-                  <button
-                    type="button"
-                    className="actionsMenuItem"
-                    onClick={() => {
-                      handleDownload();
-                      setShowActionsMenu(false);
-                    }}
-                  >
-                    <span className="actionsMenuIcon">⬇</span>
-                    <span>Download JSON</span>
-                  </button>
-                </div>
-              )}
-            </div>
-            <div
-              className="closeBtn"
-              onClick={() => {
+            {showActionsMenu && (
+              <div className="actionsMenu">
+                <button
+                  type="button"
+                  className="actionsMenuItem"
+                  onClick={() => {
+                    setShowAddRule(true);
+                    setShowEntitySettings(false);
+                    setShowActionsMenu(false);
+                    // Reset composer fields to placeholders on each open
+                    setSelectedCondition("");
+                    setSelectedAction("");
+                    window.scrollTo({ top: 0, behavior: "auto" });
+                  }}
+                >
+                  <span className="actionsMenuIcon">+</span>
+                  <span>Add rule</span>
+                </button>
+                <button
+                  type="button"
+                  className="actionsMenuItem"
+                  onClick={() => {
+                    setShowEntitySettings(prev => !prev);
+                    setShowAddRule(false);
+                    setShowActionsMenu(false);
+                  }}
+                >
+                  <span className="actionsMenuIcon">⚙</span>
+                  <span>Entity settings</span>
+                </button>
+                <button
+                  type="button"
+                  className="actionsMenuItem"
+                  onClick={() => {
+                    handleSave();
+                    setShowActionsMenu(false);
+                  }}
+                  disabled={!isDirty}
+                >
+                  <span className="actionsMenuIcon">💾</span>
+                  <span>Save changes</span>
+                </button>
+                <button
+                  type="button"
+                  className="actionsMenuItem"
+                  onClick={() => {
+                    resetDraft();
+                    setShowActionsMenu(false);
+                  }}
+                  disabled={!isDirty}
+                >
+                  <span className="actionsMenuIcon">↺</span>
+                  <span>Revert to source</span>
+                </button>
+                <button
+                  type="button"
+                  className="actionsMenuItem"
+                  onClick={() => {
+                    handleDownload();
+                    setShowActionsMenu(false);
+                  }}
+                >
+                  <span className="actionsMenuIcon">⬇</span>
+                  <span>Download JSON</span>
+                </button>
+              </div>
+            )}
+          </div>
+          <div
+            className="closeBtn"
+            role="button"
+            tabIndex={0}
+            onClick={() => {
+              onRemove();
+              setTimeout(() => window.dispatchEvent(new Event("pss:columns-changed")), 0);
+            }}
+            onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
                 onRemove();
                 setTimeout(() => window.dispatchEvent(new Event("pss:columns-changed")), 0);
-              }}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  onRemove();
-                  setTimeout(() => window.dispatchEvent(new Event("pss:columns-changed")), 0);
-                }
-              }}
-            >
-              ✕
-            </div>
+              }
+            }}
+          >
+            ✕
           </div>
         </div>
       </div>
-
-      {isFixed && <div aria-hidden style={{ height: headerHeight }} />}
+  {isFixed && <div aria-hidden style={{ height: headerHeight }} />}
 
       <div className="entityBody">
         {showEntitySettings ? (

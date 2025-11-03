@@ -391,10 +391,15 @@
     .entityColumnHeader {
         background-color: var(--panel-alt);
         border-bottom: 1px solid var(--border);
-        padding: 5px 10px;
+        padding: 5px 10px 0;
         /* Ensure consistent header height whether sprite is present or not */
         min-height: 64px;
         user-select: text;
+        display: flex;
+        align-items: center; /* center avatar, name, actions vertically */
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: nowrap;
     }
 
     /* Make the column header stick to the top of the viewport when scrolling
@@ -424,12 +429,7 @@
         width: calc(100% + 2px); /* Account for border */
     }
 
-    .entityHeaderTopRow {
-        display: flex;
-        align-items: center; /* center avatar, name, type and close button vertically */
-        justify-content: space-between;
-        margin-bottom: 4px;
-    }
+    /* .entityHeaderTopRow removed; header layout handled by .entityColumnHeader flex */
 
     .entityHeaderName {
         color: var(--text);
