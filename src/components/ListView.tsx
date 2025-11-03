@@ -6,9 +6,10 @@ interface ListViewProps {
   filter: string;
   onFilterChange: (value: string) => void;
   onSelect: (entity: Entity) => void;
+  onDeleteDraft?: (entityId: string) => void;
 }
 
-export function ListView({ entities, filter, onFilterChange, onSelect }: ListViewProps) {
+export function ListView({ entities, filter, onFilterChange, onSelect, onDeleteDraft }: ListViewProps) {
   const { crews, rooms, count } = useMemo(() => {
     const lower = filter.trim().toLowerCase();
     const matches = (entity: Entity) => (!lower ? true : entity.name.toLowerCase().includes(lower));
@@ -60,7 +61,6 @@ export function ListView({ entities, filter, onFilterChange, onSelect }: ListVie
               <div
                 key={primary.baseId ?? primary.id}
                 className="entityRow"
-                role="button"
                 tabIndex={0}
                 onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => handleRowKeyDown(event, primary)}
               >
@@ -76,12 +76,16 @@ export function ListView({ entities, filter, onFilterChange, onSelect }: ListVie
                   {/* right column: name and available versions */}
                   <div className="entityRightCol">
                     <div className="entityName">{primary.name}</div>
-                    <div className="entityVersions">
-                      {group.map(version => {
-                        const fileName = (version.source as any)?.__sourceFile?.fileName ?? String((version.source as any)?.__sourceFile?.fileId ?? "unknown");
-                        return (
+                  </div>
+                </div>
+                <div className="entityRowFooter">
+                  <div className="entityVersions">
+                    {group.map(version => {
+                      const fileName = (version.source as any)?.__sourceFile?.fileName ?? String((version.source as any)?.__sourceFile?.fileId ?? "unknown");
+                      const isDraft = (version.source as any)?.__builderMeta?.isDraft;
+                      return (
+                        <div key={version.id} className="versionBtnWrapper">
                           <button
-                            key={version.id}
                             type="button"
                             className="versionBtn"
                             onClick={e => {
@@ -92,9 +96,24 @@ export function ListView({ entities, filter, onFilterChange, onSelect }: ListVie
                           >
                             {fileName}
                           </button>
-                        );
-                      })}
-                    </div>
+                          {isDraft && onDeleteDraft && (
+                            <button
+                              type="button"
+                              className="deleteDraftBtn"
+                              onClick={e => {
+                                e.stopPropagation();
+                                if (confirm(`Delete draft "${primary.name}"?`)) {
+                                  onDeleteDraft(version.id);
+                                }
+                              }}
+                              title={`Delete draft ${primary.name}`}
+                            >
+                              ✕
+                            </button>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

@@ -1,0 +1,4986 @@
+[
+    {
+        "room_design_id": 1,
+        "room_name": "Bridge Lv1",
+        "room_short_name": "BRD:1",
+        "room_type": "Bridge",
+        "image_sprite_id": 44
+    },
+    {
+        "room_design_id": 2,
+        "room_name": "Bedroom Lv1",
+        "room_short_name": "BED:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 43
+    },
+    {
+        "room_design_id": 3,
+        "room_name": "Lift Lv1",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 15
+    },
+    {
+        "room_design_id": 4,
+        "room_name": "Engine Lv1",
+        "room_short_name": "ENG:1",
+        "room_type": "Engine",
+        "image_sprite_id": 45
+    },
+    {
+        "room_design_id": 5,
+        "room_name": "Small Reactor Lv1",
+        "room_short_name": "REA:1",
+        "room_type": "Reactor",
+        "image_sprite_id": 977
+    },
+    {
+        "room_design_id": 6,
+        "room_name": "Mineral Mining Laser Lv1",
+        "room_short_name": "MLZ:1",
+        "room_type": "Laser",
+        "image_sprite_id": 49
+    },
+    {
+        "room_design_id": 7,
+        "room_name": "Warehouse Lv1",
+        "room_short_name": "WH:1",
+        "room_type": "Storage",
+        "image_sprite_id": 48
+    },
+    {
+        "room_design_id": 8,
+        "room_name": "Shield Generator Lv1",
+        "room_short_name": "SHL:1",
+        "room_type": "Shield",
+        "image_sprite_id": 37
+    },
+    {
+        "room_design_id": 9,
+        "room_name": "Missile Launcher Lv1",
+        "room_short_name": "MSL:1",
+        "room_type": "Missile",
+        "image_sprite_id": 46
+    },
+    {
+        "room_design_id": 10,
+        "room_name": "Bedroom Lv2",
+        "room_short_name": "BED:2",
+        "room_type": "Bedroom",
+        "image_sprite_id": 50
+    },
+    {
+        "room_design_id": 11,
+        "room_name": "Bridge Lv2",
+        "room_short_name": "BRD:2",
+        "room_type": "Bridge",
+        "image_sprite_id": 90
+    },
+    {
+        "room_design_id": 12,
+        "room_name": "Engine Lv2",
+        "room_short_name": "ENG:2",
+        "room_type": "Engine",
+        "image_sprite_id": 844
+    },
+    {
+        "room_design_id": 13,
+        "room_name": "Small Reactor Lv2",
+        "room_short_name": "REA:2",
+        "room_type": "Reactor",
+        "image_sprite_id": 980
+    },
+    {
+        "room_design_id": 14,
+        "room_name": "Mineral Mining Laser Lv2",
+        "room_short_name": "MLZ:2",
+        "room_type": "Laser",
+        "image_sprite_id": 92
+    },
+    {
+        "room_design_id": 15,
+        "room_name": "Warehouse Lv2",
+        "room_short_name": "WH:2",
+        "room_type": "Storage",
+        "image_sprite_id": 96
+    },
+    {
+        "room_design_id": 16,
+        "room_name": "Shield Generator Lv2",
+        "room_short_name": "SHL:2",
+        "room_type": "Shield",
+        "image_sprite_id": 95
+    },
+    {
+        "room_design_id": 17,
+        "room_name": "Missile Launcher Lv2",
+        "room_short_name": "MSL:2",
+        "room_type": "Missile",
+        "image_sprite_id": 93
+    },
+    {
+        "room_design_id": 18,
+        "room_name": "Teleport Lv1",
+        "room_short_name": "TLP:1",
+        "room_type": "Teleport",
+        "image_sprite_id": 236
+    },
+    {
+        "room_design_id": 19,
+        "room_name": "Teleport Lv2",
+        "room_short_name": "TLP:2",
+        "room_type": "Teleport",
+        "image_sprite_id": 623
+    },
+    {
+        "room_design_id": 20,
+        "room_name": "Bedroom Lv3",
+        "room_short_name": "BED:3",
+        "room_type": "Bedroom",
+        "image_sprite_id": 551
+    },
+    {
+        "room_design_id": 21,
+        "room_name": "Bedroom Lv4",
+        "room_short_name": "BED:4",
+        "room_type": "Bedroom",
+        "image_sprite_id": 552
+    },
+    {
+        "room_design_id": 22,
+        "room_name": "Engine Lv3",
+        "room_short_name": "ENG:3",
+        "room_type": "Engine",
+        "image_sprite_id": 855
+    },
+    {
+        "room_design_id": 23,
+        "room_name": "Engine Lv4",
+        "room_short_name": "ENG:4",
+        "room_type": "Engine",
+        "image_sprite_id": 858
+    },
+    {
+        "room_design_id": 24,
+        "room_name": "Engine Lv5",
+        "room_short_name": "ENG:5",
+        "room_type": "Engine",
+        "image_sprite_id": 987
+    },
+    {
+        "room_design_id": 25,
+        "room_name": "Engine Lv6",
+        "room_short_name": "ENG:6",
+        "room_type": "Engine",
+        "image_sprite_id": 991
+    },
+    {
+        "room_design_id": 26,
+        "room_name": "Mineral Miner Lv1",
+        "room_short_name": "MIN:1",
+        "room_type": "Mineral",
+        "image_sprite_id": 1009
+    },
+    {
+        "room_design_id": 27,
+        "room_name": "Mineral Miner Lv2",
+        "room_short_name": "MIN:2",
+        "room_type": "Mineral",
+        "image_sprite_id": 1012
+    },
+    {
+        "room_design_id": 28,
+        "room_name": "Mineral Miner Lv3",
+        "room_short_name": "MIN:3",
+        "room_type": "Mineral",
+        "image_sprite_id": 1015
+    },
+    {
+        "room_design_id": 29,
+        "room_name": "Mineral Miner Lv4",
+        "room_short_name": "MIN:4",
+        "room_type": "Mineral",
+        "image_sprite_id": 1018
+    },
+    {
+        "room_design_id": 30,
+        "room_name": "Mineral Miner Lv5",
+        "room_short_name": "MIN:5",
+        "room_type": "Mineral",
+        "image_sprite_id": 1021
+    },
+    {
+        "room_design_id": 31,
+        "room_name": "Mineral Miner Lv6",
+        "room_short_name": "MIN:6",
+        "room_type": "Mineral",
+        "image_sprite_id": 1024
+    },
+    {
+        "room_design_id": 32,
+        "room_name": "Mainframe Lv1",
+        "room_short_name": "COM:1",
+        "room_type": "Command",
+        "image_sprite_id": 553
+    },
+    {
+        "room_design_id": 33,
+        "room_name": "Mainframe Lv2",
+        "room_short_name": "COM:2",
+        "room_type": "Command",
+        "image_sprite_id": 554
+    },
+    {
+        "room_design_id": 34,
+        "room_name": "Mainframe Lv3",
+        "room_short_name": "COM:3",
+        "room_type": "Command",
+        "image_sprite_id": 555
+    },
+    {
+        "room_design_id": 35,
+        "room_name": "Mainframe Lv4",
+        "room_short_name": "COM:4",
+        "room_type": "Command",
+        "image_sprite_id": 556
+    },
+    {
+        "room_design_id": 36,
+        "room_name": "Mainframe Lv5",
+        "room_short_name": "COM:5",
+        "room_type": "Command",
+        "image_sprite_id": 557
+    },
+    {
+        "room_design_id": 37,
+        "room_name": "Mainframe Lv6",
+        "room_short_name": "COM:6",
+        "room_type": "Command",
+        "image_sprite_id": 558
+    },
+    {
+        "room_design_id": 38,
+        "room_name": "Small Reactor Lv3",
+        "room_short_name": "REA:3",
+        "room_type": "Reactor",
+        "image_sprite_id": 983
+    },
+    {
+        "room_design_id": 39,
+        "room_name": "Small Reactor Lv4",
+        "room_short_name": "REA:4",
+        "room_type": "Reactor",
+        "image_sprite_id": 995
+    },
+    {
+        "room_design_id": 40,
+        "room_name": "Small Reactor Lv5",
+        "room_short_name": "REA:5",
+        "room_type": "Reactor",
+        "image_sprite_id": 999
+    },
+    {
+        "room_design_id": 41,
+        "room_name": "Small Reactor Lv6",
+        "room_short_name": "REA:6",
+        "room_type": "Reactor",
+        "image_sprite_id": 1004
+    },
+    {
+        "room_design_id": 42,
+        "room_name": "Gas Collector Lv1",
+        "room_short_name": "Gas:1",
+        "room_type": "Gas",
+        "image_sprite_id": 1188
+    },
+    {
+        "room_design_id": 43,
+        "room_name": "Gas Collector Lv2",
+        "room_short_name": "Gas:2",
+        "room_type": "Gas",
+        "image_sprite_id": 1212
+    },
+    {
+        "room_design_id": 44,
+        "room_name": "Gas Collector Lv3",
+        "room_short_name": "Gas:3",
+        "room_type": "Gas",
+        "image_sprite_id": 1197
+    },
+    {
+        "room_design_id": 45,
+        "room_name": "Gas Collector Lv4",
+        "room_short_name": "Gas:4",
+        "room_type": "Gas",
+        "image_sprite_id": 1202
+    },
+    {
+        "room_design_id": 46,
+        "room_name": "Gas Collector Lv5",
+        "room_short_name": "Gas:5",
+        "room_type": "Gas",
+        "image_sprite_id": 1207
+    },
+    {
+        "room_design_id": 47,
+        "room_name": "Gas Collector Lv6",
+        "room_short_name": "Gas:6",
+        "room_type": "Gas",
+        "image_sprite_id": 1099
+    },
+    {
+        "room_design_id": 48,
+        "room_name": "Bridge Lv3",
+        "room_short_name": "BRD:3",
+        "room_type": "Bridge",
+        "image_sprite_id": 581
+    },
+    {
+        "room_design_id": 49,
+        "room_name": "Bridge Lv4",
+        "room_short_name": "BRD:4",
+        "room_type": "Bridge",
+        "image_sprite_id": 582
+    },
+    {
+        "room_design_id": 50,
+        "room_name": "Bridge Lv5",
+        "room_short_name": "BRD:5",
+        "room_type": "Bridge",
+        "image_sprite_id": 583
+    },
+    {
+        "room_design_id": 51,
+        "room_name": "Bridge Lv6",
+        "room_short_name": "BRD:6",
+        "room_type": "Bridge",
+        "image_sprite_id": 584
+    },
+    {
+        "room_design_id": 52,
+        "room_name": "Teleport Lv3",
+        "room_short_name": "TLP:3",
+        "room_type": "Teleport",
+        "image_sprite_id": 624
+    },
+    {
+        "room_design_id": 53,
+        "room_name": "Teleport Lv4",
+        "room_short_name": "TLP:4",
+        "room_type": "Teleport",
+        "image_sprite_id": 625
+    },
+    {
+        "room_design_id": 54,
+        "room_name": "Teleport Lv5",
+        "room_short_name": "TLP:5",
+        "room_type": "Teleport",
+        "image_sprite_id": 626
+    },
+    {
+        "room_design_id": 55,
+        "room_name": "Teleport Lv6",
+        "room_short_name": "TLP:6",
+        "room_type": "Teleport",
+        "image_sprite_id": 627
+    },
+    {
+        "room_design_id": 56,
+        "room_name": "Mineral Mining Laser Lv3",
+        "room_short_name": "MLZ:3",
+        "room_type": "Laser",
+        "image_sprite_id": 633
+    },
+    {
+        "room_design_id": 57,
+        "room_name": "Mineral Mining Laser Lv4",
+        "room_short_name": "MLZ:4",
+        "room_type": "Laser",
+        "image_sprite_id": 634
+    },
+    {
+        "room_design_id": 58,
+        "room_name": "Mineral Mining Laser Lv5",
+        "room_short_name": "MLZ:5",
+        "room_type": "Laser",
+        "image_sprite_id": 635
+    },
+    {
+        "room_design_id": 59,
+        "room_name": "Mineral Mining Laser Lv6",
+        "room_short_name": "MLZ:6",
+        "room_type": "Laser",
+        "image_sprite_id": 636
+    },
+    {
+        "room_design_id": 60,
+        "room_name": "Mineral Storage Lv1",
+        "room_short_name": "MST:1",
+        "room_type": "Storage",
+        "image_sprite_id": 711
+    },
+    {
+        "room_design_id": 61,
+        "room_name": "Mineral Storage Lv2",
+        "room_short_name": "MST:2",
+        "room_type": "Storage",
+        "image_sprite_id": 716
+    },
+    {
+        "room_design_id": 62,
+        "room_name": "Gas Storage Lv1",
+        "room_short_name": "GST:1",
+        "room_type": "Storage",
+        "image_sprite_id": 728
+    },
+    {
+        "room_design_id": 63,
+        "room_name": "Gas Storage Lv2",
+        "room_short_name": "GST:2",
+        "room_type": "Storage",
+        "image_sprite_id": 733
+    },
+    {
+        "room_design_id": 64,
+        "room_name": "Gas Storage Lv3",
+        "room_short_name": "GST:3",
+        "room_type": "Storage",
+        "image_sprite_id": 765
+    },
+    {
+        "room_design_id": 65,
+        "room_name": "Gas Storage Lv4",
+        "room_short_name": "GST:4",
+        "room_type": "Storage",
+        "image_sprite_id": 770
+    },
+    {
+        "room_design_id": 66,
+        "room_name": "Mineral Storage Lv3",
+        "room_short_name": "MST:3",
+        "room_type": "Storage",
+        "image_sprite_id": 755
+    },
+    {
+        "room_design_id": 67,
+        "room_name": "Mineral Storage Lv4",
+        "room_short_name": "MST:4",
+        "room_type": "Storage",
+        "image_sprite_id": 760
+    },
+    {
+        "room_design_id": 68,
+        "room_name": "Mineral Storage Lv5",
+        "room_short_name": "MST:5",
+        "room_type": "Storage",
+        "image_sprite_id": 775
+    },
+    {
+        "room_design_id": 69,
+        "room_name": "Mineral Storage Lv6",
+        "room_short_name": "MST:6",
+        "room_type": "Storage",
+        "image_sprite_id": 782
+    },
+    {
+        "room_design_id": 70,
+        "room_name": "Gas Storage Lv5",
+        "room_short_name": "GST:5",
+        "room_type": "Storage",
+        "image_sprite_id": 787
+    },
+    {
+        "room_design_id": 71,
+        "room_name": "Gas Storage Lv6",
+        "room_short_name": "GST:6",
+        "room_type": "Storage",
+        "image_sprite_id": 792
+    },
+    {
+        "room_design_id": 72,
+        "room_name": "Mineral Storage Lv7",
+        "room_short_name": "MST:7",
+        "room_type": "Storage",
+        "image_sprite_id": 1063
+    },
+    {
+        "room_design_id": 73,
+        "room_name": "Mineral Storage Lv8",
+        "room_short_name": "MST:8",
+        "room_type": "Storage",
+        "image_sprite_id": 1094
+    },
+    {
+        "room_design_id": 74,
+        "room_name": "Mineral Storage Lv9",
+        "room_short_name": "MST:9",
+        "room_type": "Storage",
+        "image_sprite_id": 1146
+    },
+    {
+        "room_design_id": 75,
+        "room_name": "Gas Storage Lv7",
+        "room_short_name": "GST:7",
+        "room_type": "Storage",
+        "image_sprite_id": 1084
+    },
+    {
+        "room_design_id": 76,
+        "room_name": "Gas Storage Lv8",
+        "room_short_name": "GST:8",
+        "room_type": "Storage",
+        "image_sprite_id": 1089
+    },
+    {
+        "room_design_id": 77,
+        "room_name": "Gas Storage Lv9",
+        "room_short_name": "GST:9",
+        "room_type": "Storage",
+        "image_sprite_id": 1119
+    },
+    {
+        "room_design_id": 78,
+        "room_name": "Rock Lv1",
+        "room_short_name": "Rock:1",
+        "room_type": "Reactor",
+        "image_sprite_id": 829
+    },
+    {
+        "room_design_id": 79,
+        "room_name": "Laboratory Lv1",
+        "room_short_name": "LAB:1",
+        "room_type": "Research",
+        "image_sprite_id": 835
+    },
+    {
+        "room_design_id": 80,
+        "room_name": "Laboratory Lv2",
+        "room_short_name": "LAB:2",
+        "room_type": "Research",
+        "image_sprite_id": 836
+    },
+    {
+        "room_design_id": 81,
+        "room_name": "Laboratory Lv3",
+        "room_short_name": "LAB:3",
+        "room_type": "Research",
+        "image_sprite_id": 837
+    },
+    {
+        "room_design_id": 82,
+        "room_name": "Command Center Lv1",
+        "room_short_name": "CMD:1",
+        "room_type": "Command",
+        "image_sprite_id": 832
+    },
+    {
+        "room_design_id": 83,
+        "room_name": "Command Center Lv2",
+        "room_short_name": "CMD:2",
+        "room_type": "Command",
+        "image_sprite_id": 833
+    },
+    {
+        "room_design_id": 84,
+        "room_name": "Command Center Lv3",
+        "room_short_name": "CMD:3",
+        "room_type": "Command",
+        "image_sprite_id": 834
+    },
+    {
+        "room_design_id": 85,
+        "room_name": "Missile Launcher Lv3",
+        "room_short_name": "MSL:3",
+        "room_type": "Missile",
+        "image_sprite_id": 1027
+    },
+    {
+        "room_design_id": 86,
+        "room_name": "Missile Launcher Lv4",
+        "room_short_name": "MSL:4",
+        "room_type": "Missile",
+        "image_sprite_id": 1028
+    },
+    {
+        "room_design_id": 87,
+        "room_name": "Missile Launcher Lv5",
+        "room_short_name": "MSL:5",
+        "room_type": "Missile",
+        "image_sprite_id": 1029
+    },
+    {
+        "room_design_id": 88,
+        "room_name": "Mineral Miner Lv7",
+        "room_short_name": "MIN:7",
+        "room_type": "Mineral",
+        "image_sprite_id": 1047
+    },
+    {
+        "room_design_id": 89,
+        "room_name": "Mineral Miner Lv8",
+        "room_short_name": "MIN:8",
+        "room_type": "Mineral",
+        "image_sprite_id": 1055
+    },
+    {
+        "room_design_id": 90,
+        "room_name": "Mineral Miner Lv9",
+        "room_short_name": "MIN:9",
+        "room_type": "Mineral",
+        "image_sprite_id": 1068
+    },
+    {
+        "room_design_id": 91,
+        "room_name": "Gas Collector Lv7",
+        "room_short_name": "Gas:7",
+        "room_type": "Gas",
+        "image_sprite_id": 1104
+    },
+    {
+        "room_design_id": 92,
+        "room_name": "Gas Collector Lv8",
+        "room_short_name": "Gas:8",
+        "room_type": "Gas",
+        "image_sprite_id": 1109
+    },
+    {
+        "room_design_id": 93,
+        "room_name": "Gas Collector Lv9",
+        "room_short_name": "Gas:9",
+        "room_type": "Gas",
+        "image_sprite_id": 1114
+    },
+    {
+        "room_design_id": 94,
+        "room_name": "Mineral Miner Lv10",
+        "room_short_name": "MIN:10",
+        "room_type": "Mineral",
+        "image_sprite_id": 1075
+    },
+    {
+        "room_design_id": 95,
+        "room_name": "Mineral Miner Lv11",
+        "room_short_name": "MIN:11",
+        "room_type": "Mineral",
+        "image_sprite_id": 1129
+    },
+    {
+        "room_design_id": 96,
+        "room_name": "Mineral Miner Lv12",
+        "room_short_name": "MIN:12",
+        "room_type": "Mineral",
+        "image_sprite_id": 1137
+    },
+    {
+        "room_design_id": 97,
+        "room_name": "Gas Storage Lv10",
+        "room_short_name": "GST:10",
+        "room_type": "Storage",
+        "image_sprite_id": 1124
+    },
+    {
+        "room_design_id": 98,
+        "room_name": "Mineral Storage Lv10",
+        "room_short_name": "MST:10",
+        "room_type": "Storage",
+        "image_sprite_id": 1151
+    },
+    {
+        "room_design_id": 99,
+        "room_name": "Mineral Storage Lv11",
+        "room_short_name": "MST:11",
+        "room_type": "Storage",
+        "image_sprite_id": 1156
+    },
+    {
+        "room_design_id": 100,
+        "room_name": "Mineral Storage Lv12",
+        "room_short_name": "MST:12",
+        "room_type": "Storage",
+        "image_sprite_id": 1161
+    },
+    {
+        "room_design_id": 101,
+        "room_name": "Gas Storage Lv11",
+        "room_short_name": "GST:11",
+        "room_type": "Storage",
+        "image_sprite_id": 1166
+    },
+    {
+        "room_design_id": 102,
+        "room_name": "Gas Storage Lv12",
+        "room_short_name": "GST:12",
+        "room_type": "Storage",
+        "image_sprite_id": 1217
+    },
+    {
+        "room_design_id": 103,
+        "room_name": "Armor Lv1",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 6972
+    },
+    {
+        "room_design_id": 104,
+        "room_name": "Shield Generator Lv3",
+        "room_short_name": "SHL:3",
+        "room_type": "Shield",
+        "image_sprite_id": 1042
+    },
+    {
+        "room_design_id": 105,
+        "room_name": "Armor Lv2",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 1250
+    },
+    {
+        "room_design_id": 106,
+        "room_name": "Armor Lv3",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 1251
+    },
+    {
+        "room_design_id": 107,
+        "room_name": "Particle Discharger Lv1",
+        "room_short_name": "PAD:1",
+        "room_type": "Laser",
+        "image_sprite_id": 1323
+    },
+    {
+        "room_design_id": 108,
+        "room_name": "Auxiliary Missile Launcher Base Lv1",
+        "room_short_name": "AML:1",
+        "room_type": "Missile",
+        "image_sprite_id": 19626
+    },
+    {
+        "room_design_id": 109,
+        "room_name": "Plasma Discharger Lv1",
+        "room_short_name": "PLA:1",
+        "room_type": "Laser",
+        "image_sprite_id": 1602
+    },
+    {
+        "room_design_id": 110,
+        "room_name": "Plasma Discharger Lv2",
+        "room_short_name": "PLA:2",
+        "room_type": "Laser",
+        "image_sprite_id": 1603
+    },
+    {
+        "room_design_id": 111,
+        "room_name": "Plasma Discharger Lv3",
+        "room_short_name": "PLA:3",
+        "room_type": "Laser",
+        "image_sprite_id": 1604
+    },
+    {
+        "room_design_id": 112,
+        "room_name": "Plasma Discharger Lv4",
+        "room_short_name": "PLA:4",
+        "room_type": "Laser",
+        "image_sprite_id": 1605
+    },
+    {
+        "room_design_id": 113,
+        "room_name": "Plasma Discharger Lv5",
+        "room_short_name": "PLA:5",
+        "room_type": "Laser",
+        "image_sprite_id": 1615
+    },
+    {
+        "room_design_id": 114,
+        "room_name": "Shield Generator Lv4",
+        "room_short_name": "SHL:4",
+        "room_type": "Shield",
+        "image_sprite_id": 1607
+    },
+    {
+        "room_design_id": 115,
+        "room_name": "Shield Generator Lv5",
+        "room_short_name": "SHL:5",
+        "room_type": "Shield",
+        "image_sprite_id": 1608
+    },
+    {
+        "room_design_id": 116,
+        "room_name": "Fusion Drive Engine Lv1",
+        "room_short_name": "FDE:1",
+        "room_type": "Engine",
+        "image_sprite_id": 1613
+    },
+    {
+        "room_design_id": 117,
+        "room_name": "Gas Collector Lv10",
+        "room_short_name": "Gas:10",
+        "room_type": "Gas",
+        "image_sprite_id": 1184
+    },
+    {
+        "room_design_id": 118,
+        "room_name": "Gas Collector Lv11",
+        "room_short_name": "Gas:11",
+        "room_type": "Gas",
+        "image_sprite_id": 1620
+    },
+    {
+        "room_design_id": 119,
+        "room_name": "Gas Collector Lv12",
+        "room_short_name": "Gas:12",
+        "room_type": "Gas",
+        "image_sprite_id": 1624
+    },
+    {
+        "room_design_id": 120,
+        "room_name": "Bolter Lv1",
+        "room_short_name": "BT:1",
+        "room_type": "Laser",
+        "image_sprite_id": 1628
+    },
+    {
+        "room_design_id": 121,
+        "room_name": "Bolter Lv2",
+        "room_short_name": "BT:2",
+        "room_type": "Laser",
+        "image_sprite_id": 1629
+    },
+    {
+        "room_design_id": 122,
+        "room_name": "Bolter Lv3",
+        "room_short_name": "BT:3",
+        "room_type": "Laser",
+        "image_sprite_id": 1630
+    },
+    {
+        "room_design_id": 123,
+        "room_name": "Bolter Lv4",
+        "room_short_name": "BT:4",
+        "room_type": "Laser",
+        "image_sprite_id": 1631
+    },
+    {
+        "room_design_id": 124,
+        "room_name": "Fusion Reactor Lv1",
+        "room_short_name": "FRE:1",
+        "room_type": "Reactor",
+        "image_sprite_id": 1901
+    },
+    {
+        "room_design_id": 125,
+        "room_name": "Fusion Reactor Lv2",
+        "room_short_name": "FRE:2",
+        "room_type": "Reactor",
+        "image_sprite_id": 1911
+    },
+    {
+        "room_design_id": 126,
+        "room_name": "Mineral Mining Laser Lv7",
+        "room_short_name": "MLZ:7",
+        "room_type": "Laser",
+        "image_sprite_id": 1890
+    },
+    {
+        "room_design_id": 127,
+        "room_name": "Mineral Mining Laser Lv8",
+        "room_short_name": "MLZ:8",
+        "room_type": "Laser",
+        "image_sprite_id": 1891
+    },
+    {
+        "room_design_id": 128,
+        "room_name": "Mineral Mining Laser Lv9",
+        "room_short_name": "MLZ:9",
+        "room_type": "Laser",
+        "image_sprite_id": 1906
+    },
+    {
+        "room_design_id": 129,
+        "room_name": "Mineral Mining Laser Lv10",
+        "room_short_name": "MLZ:10",
+        "room_type": "Laser",
+        "image_sprite_id": 1907
+    },
+    {
+        "room_design_id": 130,
+        "room_name": "Dog House Lv1",
+        "room_short_name": "DHS:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 1923
+    },
+    {
+        "room_design_id": 131,
+        "room_name": "Shield Generator Lv6",
+        "room_short_name": "SHL:6",
+        "room_type": "Shield",
+        "image_sprite_id": 1908
+    },
+    {
+        "room_design_id": 132,
+        "room_name": "Fleet Council Lv1",
+        "room_short_name": "FLE:1",
+        "room_type": "Council",
+        "image_sprite_id": 1950
+    },
+    {
+        "room_design_id": 133,
+        "room_name": "Armor Lv4",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 2076
+    },
+    {
+        "room_design_id": 134,
+        "room_name": "Armor Lv5",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 2077
+    },
+    {
+        "room_design_id": 135,
+        "room_name": "Armor Lv6",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 2090
+    },
+    {
+        "room_design_id": 136,
+        "room_name": "Armor Lv7",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 2078
+    },
+    {
+        "room_design_id": 137,
+        "room_name": "Plasma Discharger Lv6",
+        "room_short_name": "PLA:6",
+        "room_type": "Laser",
+        "image_sprite_id": 1892
+    },
+    {
+        "room_design_id": 138,
+        "room_name": "Plasma Discharger Lv7",
+        "room_short_name": "PLA:7",
+        "room_type": "Laser",
+        "image_sprite_id": 1893
+    },
+    {
+        "room_design_id": 139,
+        "room_name": "Laboratory Lv4",
+        "room_short_name": "LAB:4",
+        "room_type": "Research",
+        "image_sprite_id": 1894
+    },
+    {
+        "room_design_id": 140,
+        "room_name": "Laboratory Lv5",
+        "room_short_name": "LAB:5",
+        "room_type": "Research",
+        "image_sprite_id": 1895
+    },
+    {
+        "room_design_id": 141,
+        "room_name": "Teleport Lv7",
+        "room_short_name": "TLP:7",
+        "room_type": "Teleport",
+        "image_sprite_id": 1909
+    },
+    {
+        "room_design_id": 142,
+        "room_name": "Teleport Lv8",
+        "room_short_name": "TLP:8",
+        "room_type": "Teleport",
+        "image_sprite_id": 1910
+    },
+    {
+        "room_design_id": 143,
+        "room_name": "Plasma Discharger Lv8",
+        "room_short_name": "PLA:8",
+        "room_type": "Laser",
+        "image_sprite_id": 1916
+    },
+    {
+        "room_design_id": 144,
+        "room_name": "Missile Launcher Lv6",
+        "room_short_name": "MSL:6",
+        "room_type": "Missile",
+        "image_sprite_id": 1634
+    },
+    {
+        "room_design_id": 145,
+        "room_name": "Missile Launcher Lv7",
+        "room_short_name": "MSL:7",
+        "room_type": "Missile",
+        "image_sprite_id": 1951
+    },
+    {
+        "room_design_id": 146,
+        "room_name": "Missile Launcher Lv8",
+        "room_short_name": "MSL:8",
+        "room_type": "Missile",
+        "image_sprite_id": 1964
+    },
+    {
+        "room_design_id": 147,
+        "room_name": "Missile Launcher Lv9",
+        "room_short_name": "MSL:9",
+        "room_type": "Missile",
+        "image_sprite_id": 1966
+    },
+    {
+        "room_design_id": 148,
+        "room_name": "Fusion Reactor Lv3",
+        "room_short_name": "FRE:3",
+        "room_type": "Reactor",
+        "image_sprite_id": 2123
+    },
+    {
+        "room_design_id": 149,
+        "room_name": "Fusion Reactor Lv4",
+        "room_short_name": "FRE:4",
+        "room_type": "Reactor",
+        "image_sprite_id": 2128
+    },
+    {
+        "room_design_id": 150,
+        "room_name": "Hangar Lv1",
+        "room_short_name": "HAN:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 1633
+    },
+    {
+        "room_design_id": 151,
+        "room_name": "Fleet Council Lv2",
+        "room_short_name": "FLE:2",
+        "room_type": "Council",
+        "image_sprite_id": 2332
+    },
+    {
+        "room_design_id": 152,
+        "room_name": "Fleet Council Lv3",
+        "room_short_name": "FLE:3",
+        "room_type": "Council",
+        "image_sprite_id": 2333
+    },
+    {
+        "room_design_id": 153,
+        "room_name": "Fleet Council Lv4",
+        "room_short_name": "FLE:4",
+        "room_type": "Council",
+        "image_sprite_id": 2334
+    },
+    {
+        "room_design_id": 154,
+        "room_name": "Fleet Council Lv5",
+        "room_short_name": "FLE:5",
+        "room_type": "Council",
+        "image_sprite_id": 2335
+    },
+    {
+        "room_design_id": 155,
+        "room_name": "Anti Craft Missiles Lv1",
+        "room_short_name": "AM:1",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2365
+    },
+    {
+        "room_design_id": 156,
+        "room_name": "Anti Craft Laser Lv1",
+        "room_short_name": "AA:1",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2369
+    },
+    {
+        "room_design_id": 157,
+        "room_name": "Fusion Reactor Lv5",
+        "room_short_name": "FRE:5",
+        "room_type": "Reactor",
+        "image_sprite_id": 2388
+    },
+    {
+        "room_design_id": 158,
+        "room_name": "Fusion Reactor Lv6",
+        "room_short_name": "FRE:6",
+        "room_type": "Reactor",
+        "image_sprite_id": 2393
+    },
+    {
+        "room_design_id": 159,
+        "room_name": "Bolter Lv5",
+        "room_short_name": "BT:5",
+        "room_type": "Laser",
+        "image_sprite_id": 1965
+    },
+    {
+        "room_design_id": 160,
+        "room_name": "Bolter Lv6",
+        "room_short_name": "BT:6",
+        "room_type": "Laser",
+        "image_sprite_id": 2430
+    },
+    {
+        "room_design_id": 161,
+        "room_name": "Bolter Lv7",
+        "room_short_name": "BT:7",
+        "room_type": "Laser",
+        "image_sprite_id": 2431
+    },
+    {
+        "room_design_id": 162,
+        "room_name": "Laboratory Lv6",
+        "room_short_name": "LAB:6",
+        "room_type": "Research",
+        "image_sprite_id": 2435
+    },
+    {
+        "room_design_id": 163,
+        "room_name": "Laboratory Lv7",
+        "room_short_name": "LAB:7",
+        "room_type": "Research",
+        "image_sprite_id": 2436
+    },
+    {
+        "room_design_id": 164,
+        "room_name": "Laboratory Lv8",
+        "room_short_name": "LAB:8",
+        "room_type": "Research",
+        "image_sprite_id": 2437
+    },
+    {
+        "room_design_id": 165,
+        "room_name": "Hangar Lv2",
+        "room_short_name": "HAN:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 2412
+    },
+    {
+        "room_design_id": 166,
+        "room_name": "Hangar Lv3",
+        "room_short_name": "HAN:3",
+        "room_type": "Carrier",
+        "image_sprite_id": 2413
+    },
+    {
+        "room_design_id": 167,
+        "room_name": "Anti Craft Laser Lv2",
+        "room_short_name": "AA:2",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2481
+    },
+    {
+        "room_design_id": 168,
+        "room_name": "Anti Craft Laser Lv3",
+        "room_short_name": "AA:3",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2482
+    },
+    {
+        "room_design_id": 169,
+        "room_name": "Anti Craft Laser Lv4",
+        "room_short_name": "AA:4",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2483
+    },
+    {
+        "room_design_id": 170,
+        "room_name": "Anti Craft Laser Lv5",
+        "room_short_name": "AA:5",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2484
+    },
+    {
+        "room_design_id": 171,
+        "room_name": "Anti Craft Laser Lv6",
+        "room_short_name": "AA:6",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2485
+    },
+    {
+        "room_design_id": 172,
+        "room_name": "Anti Craft Laser Lv7",
+        "room_short_name": "AA:7",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2486
+    },
+    {
+        "room_design_id": 173,
+        "room_name": "Anti Craft Missiles Lv2",
+        "room_short_name": "AM:2",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2487
+    },
+    {
+        "room_design_id": 174,
+        "room_name": "Anti Craft Missiles Lv3",
+        "room_short_name": "AM:3",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2488
+    },
+    {
+        "room_design_id": 175,
+        "room_name": "Anti Craft Missiles Lv4",
+        "room_short_name": "AM:4",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2489
+    },
+    {
+        "room_design_id": 176,
+        "room_name": "Anti Craft Missiles Lv5",
+        "room_short_name": "AM:5",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2490
+    },
+    {
+        "room_design_id": 177,
+        "room_name": "Mineral Mining Laser Lv11",
+        "room_short_name": "MLZ:11",
+        "room_type": "Laser",
+        "image_sprite_id": 2496
+    },
+    {
+        "room_design_id": 178,
+        "room_name": "Mineral Mining Laser Lv12",
+        "room_short_name": "MLZ:12",
+        "room_type": "Laser",
+        "image_sprite_id": 2497
+    },
+    {
+        "room_design_id": 179,
+        "room_name": "Mineral Mining Laser Lv13",
+        "room_short_name": "MLZ:13",
+        "room_type": "Laser",
+        "image_sprite_id": 2498
+    },
+    {
+        "room_design_id": 180,
+        "room_name": "Bolter Lv8",
+        "room_short_name": "BT:8",
+        "room_type": "Laser",
+        "image_sprite_id": 2499
+    },
+    {
+        "room_design_id": 181,
+        "room_name": "Bolter Lv9",
+        "room_short_name": "BT:9",
+        "room_type": "Laser",
+        "image_sprite_id": 2500
+    },
+    {
+        "room_design_id": 182,
+        "room_name": "Bolter Lv10",
+        "room_short_name": "BT:10",
+        "room_type": "Laser",
+        "image_sprite_id": 2501
+    },
+    {
+        "room_design_id": 183,
+        "room_name": "Bolter Lv11",
+        "room_short_name": "BT:11",
+        "room_type": "Laser",
+        "image_sprite_id": 2502
+    },
+    {
+        "room_design_id": 184,
+        "room_name": "Hangar Lv4",
+        "room_short_name": "HAN:4",
+        "room_type": "Carrier",
+        "image_sprite_id": 2504
+    },
+    {
+        "room_design_id": 185,
+        "room_name": "Shield Generator Lv7",
+        "room_short_name": "SHL:7",
+        "room_type": "Shield",
+        "image_sprite_id": 2505
+    },
+    {
+        "room_design_id": 186,
+        "room_name": "Shield Generator Lv8",
+        "room_short_name": "SHL:8",
+        "room_type": "Shield",
+        "image_sprite_id": 2506
+    },
+    {
+        "room_design_id": 187,
+        "room_name": "Bolter Lv12",
+        "room_short_name": "BT:12",
+        "room_type": "Laser",
+        "image_sprite_id": 2503
+    },
+    {
+        "room_design_id": 188,
+        "room_name": "Bolter Lv13",
+        "room_short_name": "BT:13",
+        "room_type": "Laser",
+        "image_sprite_id": 2544
+    },
+    {
+        "room_design_id": 189,
+        "room_name": "Missile Launcher Lv10",
+        "room_short_name": "MSL:10",
+        "room_type": "Missile",
+        "image_sprite_id": 2545
+    },
+    {
+        "room_design_id": 190,
+        "room_name": "Missile Launcher Lv11",
+        "room_short_name": "MSL:11",
+        "room_type": "Missile",
+        "image_sprite_id": 2546
+    },
+    {
+        "room_design_id": 191,
+        "room_name": "Missile Launcher Lv12",
+        "room_short_name": "MSL:12",
+        "room_type": "Missile",
+        "image_sprite_id": 2559
+    },
+    {
+        "room_design_id": 192,
+        "room_name": "Bridge Lv7",
+        "room_short_name": "BRD:7",
+        "room_type": "Bridge",
+        "image_sprite_id": 2560
+    },
+    {
+        "room_design_id": 193,
+        "room_name": "Bridge Lv8",
+        "room_short_name": "BRD:8",
+        "room_type": "Bridge",
+        "image_sprite_id": 2561
+    },
+    {
+        "room_design_id": 194,
+        "room_name": "Shield Generator Lv9",
+        "room_short_name": "SHL:9",
+        "room_type": "Shield",
+        "image_sprite_id": 2562
+    },
+    {
+        "room_design_id": 195,
+        "room_name": "Shield Generator Lv10",
+        "room_short_name": "SHL:10",
+        "room_type": "Shield",
+        "image_sprite_id": 2563
+    },
+    {
+        "room_design_id": 196,
+        "room_name": "Shield Generator Lv11",
+        "room_short_name": "SHL:11",
+        "room_type": "Shield",
+        "image_sprite_id": 2564
+    },
+    {
+        "room_design_id": 197,
+        "room_name": "Shield Generator Lv12",
+        "room_short_name": "SHL:12",
+        "room_type": "Shield",
+        "image_sprite_id": 2565
+    },
+    {
+        "room_design_id": 198,
+        "room_name": "Engine Lv7",
+        "room_short_name": "ENG:7",
+        "room_type": "Engine",
+        "image_sprite_id": 2566
+    },
+    {
+        "room_design_id": 199,
+        "room_name": "Bridge Lv9",
+        "room_short_name": "BRD:9",
+        "room_type": "Bridge",
+        "image_sprite_id": 2600
+    },
+    {
+        "room_design_id": 200,
+        "room_name": "Bridge Lv10",
+        "room_short_name": "BRD:10",
+        "room_type": "Bridge",
+        "image_sprite_id": 2601
+    },
+    {
+        "room_design_id": 201,
+        "room_name": "Bridge Lv11",
+        "room_short_name": "BRD:11",
+        "room_type": "Bridge",
+        "image_sprite_id": 2602
+    },
+    {
+        "room_design_id": 202,
+        "room_name": "Engine Lv8",
+        "room_short_name": "ENG:8",
+        "room_type": "Engine",
+        "image_sprite_id": 2566
+    },
+    {
+        "room_design_id": 203,
+        "room_name": "Engine Lv9",
+        "room_short_name": "ENG:9",
+        "room_type": "Engine",
+        "image_sprite_id": 2617
+    },
+    {
+        "room_design_id": 204,
+        "room_name": "Med Bay Lv1",
+        "room_short_name": "MD:1",
+        "room_type": "Medical",
+        "image_sprite_id": 2696
+    },
+    {
+        "room_design_id": 205,
+        "room_name": "Med Bay Lv2",
+        "room_short_name": "MD:2",
+        "room_type": "Medical",
+        "image_sprite_id": 2697
+    },
+    {
+        "room_design_id": 206,
+        "room_name": "Med Bay Lv3",
+        "room_short_name": "MD:3",
+        "room_type": "Medical",
+        "image_sprite_id": 2698
+    },
+    {
+        "room_design_id": 207,
+        "room_name": "Med Bay Lv4",
+        "room_short_name": "MD:4",
+        "room_type": "Medical",
+        "image_sprite_id": 2699
+    },
+    {
+        "room_design_id": 208,
+        "room_name": "Med Bay Lv5",
+        "room_short_name": "MD:5",
+        "room_type": "Medical",
+        "image_sprite_id": 2700
+    },
+    {
+        "room_design_id": 209,
+        "room_name": "Med Bay Lv6",
+        "room_short_name": "MD:6",
+        "room_type": "Medical",
+        "image_sprite_id": 2701
+    },
+    {
+        "room_design_id": 210,
+        "room_name": "Med Bay Lv7",
+        "room_short_name": "MD:7",
+        "room_type": "Medical",
+        "image_sprite_id": 2702
+    },
+    {
+        "room_design_id": 211,
+        "room_name": "Laboratory Lv9",
+        "room_short_name": "LAB:9",
+        "room_type": "Research",
+        "image_sprite_id": 2973
+    },
+    {
+        "room_design_id": 212,
+        "room_name": "Bedroom Lv5",
+        "room_short_name": "BED:5",
+        "room_type": "Bedroom",
+        "image_sprite_id": 3072
+    },
+    {
+        "room_design_id": 213,
+        "room_name": "Hangar Lv5",
+        "room_short_name": "HAN:5",
+        "room_type": "Carrier",
+        "image_sprite_id": 2645
+    },
+    {
+        "room_design_id": 214,
+        "room_name": "Hangar Lv6",
+        "room_short_name": "HAN:6",
+        "room_type": "Carrier",
+        "image_sprite_id": 2646
+    },
+    {
+        "room_design_id": 215,
+        "room_name": "Fusion Reactor Lv7",
+        "room_short_name": "FRE:7",
+        "room_type": "Reactor",
+        "image_sprite_id": 3109
+    },
+    {
+        "room_design_id": 216,
+        "room_name": "Fusion Reactor Lv8",
+        "room_short_name": "FRE:8",
+        "room_type": "Reactor",
+        "image_sprite_id": 3117
+    },
+    {
+        "room_design_id": 217,
+        "room_name": "Cat House Lv1",
+        "room_short_name": "CAT:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 3133
+    },
+    {
+        "room_design_id": 219,
+        "room_name": "GYM Lv1",
+        "room_short_name": "GYM:1",
+        "room_type": "Training",
+        "image_sprite_id": 3147
+    },
+    {
+        "room_design_id": 220,
+        "room_name": "GYM Lv2",
+        "room_short_name": "GYM:2",
+        "room_type": "Training",
+        "image_sprite_id": 3148
+    },
+    {
+        "room_design_id": 221,
+        "room_name": "Radar Lv1",
+        "room_short_name": "RA:1",
+        "room_type": "Radar",
+        "image_sprite_id": 3244
+    },
+    {
+        "room_design_id": 222,
+        "room_name": "Ion Cannon Lv1",
+        "room_short_name": "ION:1",
+        "room_type": "Cannon",
+        "image_sprite_id": 3259
+    },
+    {
+        "room_design_id": 223,
+        "room_name": "Graveyard Lv1",
+        "room_short_name": "GRA:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 3278
+    },
+    {
+        "room_design_id": 224,
+        "room_name": "GYM Lv3",
+        "room_short_name": "GYM:3",
+        "room_type": "Training",
+        "image_sprite_id": 3345
+    },
+    {
+        "room_design_id": 225,
+        "room_name": "GYM Lv4",
+        "room_short_name": "GYM:4",
+        "room_type": "Training",
+        "image_sprite_id": 3346
+    },
+    {
+        "room_design_id": 226,
+        "room_name": "GYM Lv5",
+        "room_short_name": "GYM:5",
+        "room_type": "Training",
+        "image_sprite_id": 3347
+    },
+    {
+        "room_design_id": 227,
+        "room_name": "GYM Lv6",
+        "room_short_name": "GYM:6",
+        "room_type": "Training",
+        "image_sprite_id": 3348
+    },
+    {
+        "room_design_id": 228,
+        "room_name": "GYM Lv7",
+        "room_short_name": "GYM:7",
+        "room_type": "Training",
+        "image_sprite_id": 3349
+    },
+    {
+        "room_design_id": 229,
+        "room_name": "GYM Lv8",
+        "room_short_name": "GYM:8",
+        "room_type": "Training",
+        "image_sprite_id": 3350
+    },
+    {
+        "room_design_id": 230,
+        "room_name": "GYM Lv9",
+        "room_short_name": "GYM:9",
+        "room_type": "Training",
+        "image_sprite_id": 3351
+    },
+    {
+        "room_design_id": 231,
+        "room_name": "Oven Lv1",
+        "room_short_name": "OVE:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 3505
+    },
+    {
+        "room_design_id": 232,
+        "room_name": "Computer Room Lv1",
+        "room_short_name": "COM:1",
+        "room_type": "Command",
+        "image_sprite_id": 3570
+    },
+    {
+        "room_design_id": 233,
+        "room_name": "Prototype Mining Drill Lv1",
+        "room_short_name": "MIN:S",
+        "room_type": "Mineral",
+        "image_sprite_id": 3663
+    },
+    {
+        "room_design_id": 234,
+        "room_name": "Mineral Mining Laser Lv14",
+        "room_short_name": "MLZ:14",
+        "room_type": "Laser",
+        "image_sprite_id": 3426
+    },
+    {
+        "room_design_id": 235,
+        "room_name": "Missile Launcher Lv13",
+        "room_short_name": "MSL:13",
+        "room_type": "Missile",
+        "image_sprite_id": 3443
+    },
+    {
+        "room_design_id": 236,
+        "room_name": "Plasma Discharger Lv9",
+        "room_short_name": "PLA:9",
+        "room_type": "Laser",
+        "image_sprite_id": 3445
+    },
+    {
+        "room_design_id": 237,
+        "room_name": "Hangar Lv7",
+        "room_short_name": "HAN:7",
+        "room_type": "Carrier",
+        "image_sprite_id": 3442
+    },
+    {
+        "room_design_id": 238,
+        "room_name": "Prototype Gas Extractor Lv1",
+        "room_short_name": "GAS:S",
+        "room_type": "Gas",
+        "image_sprite_id": 3676
+    },
+    {
+        "room_design_id": 239,
+        "room_name": "Ion Cannon Lv2",
+        "room_short_name": "ION:2",
+        "room_type": "Cannon",
+        "image_sprite_id": 3699
+    },
+    {
+        "room_design_id": 240,
+        "room_name": "Mineral Storage Lv13",
+        "room_short_name": "MST:13",
+        "room_type": "Storage",
+        "image_sprite_id": 3734
+    },
+    {
+        "room_design_id": 241,
+        "room_name": "Gas Storage Lv13",
+        "room_short_name": "GST:13",
+        "room_type": "Storage",
+        "image_sprite_id": 3729
+    },
+    {
+        "room_design_id": 242,
+        "room_name": "Laboratory Lv10",
+        "room_short_name": "LAB:10",
+        "room_type": "Research",
+        "image_sprite_id": 3821
+    },
+    {
+        "room_design_id": 243,
+        "room_name": "Xmas Tree Lv1",
+        "room_short_name": "XMA:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 3834
+    },
+    {
+        "room_design_id": 244,
+        "room_name": "Warehouse Lv3",
+        "room_short_name": "WH:3",
+        "room_type": "Storage",
+        "image_sprite_id": 3816
+    },
+    {
+        "room_design_id": 245,
+        "room_name": "Warehouse Lv4",
+        "room_short_name": "WH:4",
+        "room_type": "Storage",
+        "image_sprite_id": 3855
+    },
+    {
+        "room_design_id": 246,
+        "room_name": "Engine Lv10",
+        "room_short_name": "ENG:10",
+        "room_type": "Engine",
+        "image_sprite_id": 3850
+    },
+    {
+        "room_design_id": 247,
+        "room_name": "Service Vent Lv1",
+        "room_short_name": null,
+        "room_type": "Corridor",
+        "image_sprite_id": 3955
+    },
+    {
+        "room_design_id": 248,
+        "room_name": "Lift Lv2",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 3959
+    },
+    {
+        "room_design_id": 249,
+        "room_name": "Lift Lv3",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 3960
+    },
+    {
+        "room_design_id": 250,
+        "room_name": "Lift Lv4",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 3961
+    },
+    {
+        "room_design_id": 251,
+        "room_name": "Lift Lv5",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 3962
+    },
+    {
+        "room_design_id": 252,
+        "room_name": "Lift Lv6",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 3963
+    },
+    {
+        "room_design_id": 253,
+        "room_name": "Lift Lv7",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 3964
+    },
+    {
+        "room_design_id": 254,
+        "room_name": "Armor Lv8",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 2079
+    },
+    {
+        "room_design_id": 255,
+        "room_name": "Armor Lv9",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 3997
+    },
+    {
+        "room_design_id": 256,
+        "room_name": "Armor Lv10",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 3998
+    },
+    {
+        "room_design_id": 257,
+        "room_name": "Armor Lv11",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 3999
+    },
+    {
+        "room_design_id": 258,
+        "room_name": "Armor Lv12",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 4000
+    },
+    {
+        "room_design_id": 259,
+        "room_name": "EMP Cannon Lv1",
+        "room_short_name": "EMP:1",
+        "room_type": "Cannon",
+        "image_sprite_id": 4215
+    },
+    {
+        "room_design_id": 260,
+        "room_name": "EMP Cannon Lv2",
+        "room_short_name": "EMP:2",
+        "room_type": "Cannon",
+        "image_sprite_id": 4222
+    },
+    {
+        "room_design_id": 261,
+        "room_name": "EMP Cannon Lv3",
+        "room_short_name": "EMP:3",
+        "room_type": "Cannon",
+        "image_sprite_id": 4228
+    },
+    {
+        "room_design_id": 262,
+        "room_name": "Workshop Lv1",
+        "room_short_name": "WOR:1",
+        "room_type": "Storage",
+        "image_sprite_id": 3650
+    },
+    {
+        "room_design_id": 263,
+        "room_name": "Security Gate Lv1",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 4441
+    },
+    {
+        "room_design_id": 264,
+        "room_name": "Lift Lv8",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 4453
+    },
+    {
+        "room_design_id": 265,
+        "room_name": "Lift Lv9",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 4454
+    },
+    {
+        "room_design_id": 266,
+        "room_name": "Lift Lv10",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 4455
+    },
+    {
+        "room_design_id": 267,
+        "room_name": "Lift Lv11",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 4456
+    },
+    {
+        "room_design_id": 268,
+        "room_name": "Lift Lv12",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 4457
+    },
+    {
+        "room_design_id": 269,
+        "room_name": "Academy Lv1",
+        "room_short_name": "ACA:1",
+        "room_type": "Training",
+        "image_sprite_id": 4551
+    },
+    {
+        "room_design_id": 270,
+        "room_name": "Security Gate Lv2",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 4599
+    },
+    {
+        "room_design_id": 271,
+        "room_name": "Security Gate Lv3",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 4618
+    },
+    {
+        "room_design_id": 272,
+        "room_name": "Aquarium Lv1",
+        "room_short_name": "AQU:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 4794
+    },
+    {
+        "room_design_id": 273,
+        "room_name": "Aquarium Lv2",
+        "room_short_name": "AQU:2",
+        "room_type": "Bedroom",
+        "image_sprite_id": 4843
+    },
+    {
+        "room_design_id": 274,
+        "room_name": "Coal Reactor Lv1",
+        "room_short_name": "CR:1",
+        "room_type": "Reactor",
+        "image_sprite_id": 4897
+    },
+    {
+        "room_design_id": 275,
+        "room_name": "Coal Reactor Lv2",
+        "room_short_name": "CR:2",
+        "room_type": "Reactor",
+        "image_sprite_id": 4872
+    },
+    {
+        "room_design_id": 276,
+        "room_name": "Academy Lv2",
+        "room_short_name": "ACA:2",
+        "room_type": "Training",
+        "image_sprite_id": 4552
+    },
+    {
+        "room_design_id": 277,
+        "room_name": "Academy Lv3",
+        "room_short_name": "ACA:3",
+        "room_type": "Training",
+        "image_sprite_id": 4553
+    },
+    {
+        "room_design_id": 278,
+        "room_name": "Academy Lv4",
+        "room_short_name": "ACA:4",
+        "room_type": "Training",
+        "image_sprite_id": 4609
+    },
+    {
+        "room_design_id": 279,
+        "room_name": "Academy Lv5",
+        "room_short_name": "ACA:5",
+        "room_type": "Training",
+        "image_sprite_id": 4610
+    },
+    {
+        "room_design_id": 280,
+        "room_name": "Academy Lv6",
+        "room_short_name": "ACA:6",
+        "room_type": "Training",
+        "image_sprite_id": 4611
+    },
+    {
+        "room_design_id": 281,
+        "room_name": "Academy Lv7",
+        "room_short_name": "ACA:7",
+        "room_type": "Training",
+        "image_sprite_id": 4647
+    },
+    {
+        "room_design_id": 282,
+        "room_name": "Academy Lv8",
+        "room_short_name": "ACA:8",
+        "room_type": "Training",
+        "image_sprite_id": 4997
+    },
+    {
+        "room_design_id": 283,
+        "room_name": "Academy Lv9",
+        "room_short_name": "ACA:9",
+        "room_type": "Training",
+        "image_sprite_id": 4998
+    },
+    {
+        "room_design_id": 284,
+        "room_name": "Command Center Lv4",
+        "room_short_name": "CMD:4",
+        "room_type": "Command",
+        "image_sprite_id": 834
+    },
+    {
+        "room_design_id": 285,
+        "room_name": "Command Center Lv5",
+        "room_short_name": "CMD:5",
+        "room_type": "Command",
+        "image_sprite_id": 4642
+    },
+    {
+        "room_design_id": 286,
+        "room_name": "Command Center Lv6",
+        "room_short_name": "CMD:6",
+        "room_type": "Command",
+        "image_sprite_id": 4643
+    },
+    {
+        "room_design_id": 287,
+        "room_name": "Command Center Lv7",
+        "room_short_name": "CMD:7",
+        "room_type": "Command",
+        "image_sprite_id": 4644
+    },
+    {
+        "room_design_id": 288,
+        "room_name": "Command Center Lv8",
+        "room_short_name": "CMD:8",
+        "room_type": "Command",
+        "image_sprite_id": 4645
+    },
+    {
+        "room_design_id": 289,
+        "room_name": "Command Center Lv9",
+        "room_short_name": "CMD:9",
+        "room_type": "Command",
+        "image_sprite_id": 4646
+    },
+    {
+        "room_design_id": 290,
+        "room_name": "Cruise Missile Launcher Lv1",
+        "room_short_name": "CML:1",
+        "room_type": "StationMissile",
+        "image_sprite_id": 4894
+    },
+    {
+        "room_design_id": 291,
+        "room_name": "Warehouse Lv5",
+        "room_short_name": "WH:5",
+        "room_type": "Storage",
+        "image_sprite_id": 5062
+    },
+    {
+        "room_design_id": 292,
+        "room_name": "Shield Generator Lv13",
+        "room_short_name": "SHL:13",
+        "room_type": "Shield",
+        "image_sprite_id": 5069
+    },
+    {
+        "room_design_id": 293,
+        "room_name": "Shield Generator Lv14",
+        "room_short_name": "SHL:14",
+        "room_type": "Shield",
+        "image_sprite_id": 5078
+    },
+    {
+        "room_design_id": 294,
+        "room_name": "Missile Launcher Lv14",
+        "room_short_name": "MSL:14",
+        "room_type": "Missile",
+        "image_sprite_id": 5067
+    },
+    {
+        "room_design_id": 295,
+        "room_name": "Hangar Lv8",
+        "room_short_name": "HAN:8",
+        "room_type": "Carrier",
+        "image_sprite_id": 5073
+    },
+    {
+        "room_design_id": 296,
+        "room_name": "Hangar Lv9",
+        "room_short_name": "HAN:9",
+        "room_type": "Carrier",
+        "image_sprite_id": 5074
+    },
+    {
+        "room_design_id": 297,
+        "room_name": "Station Council Lv1",
+        "room_short_name": "ALI:1",
+        "room_type": "Council",
+        "image_sprite_id": 1950
+    },
+    {
+        "room_design_id": 298,
+        "room_name": "Android Studio Lv1",
+        "room_short_name": "AS:1",
+        "room_type": "Android",
+        "image_sprite_id": 5191
+    },
+    {
+        "room_design_id": 299,
+        "room_name": "Small Beacon Lv1",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 4979
+    },
+    {
+        "room_design_id": 301,
+        "room_name": "Security Gate Lv4",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 5212
+    },
+    {
+        "room_design_id": 302,
+        "room_name": "Security Gate Lv5",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 5224
+    },
+    {
+        "room_design_id": 303,
+        "room_name": "Security Gate Lv6",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 5274
+    },
+    {
+        "room_design_id": 304,
+        "room_name": "Security Gate Lv7",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 5284
+    },
+    {
+        "room_design_id": 305,
+        "room_name": "Security Gate Lv8",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 5302
+    },
+    {
+        "room_design_id": 306,
+        "room_name": "Android Studio Lv2",
+        "room_short_name": "AS:2",
+        "room_type": "Android",
+        "image_sprite_id": 5244
+    },
+    {
+        "room_design_id": 307,
+        "room_name": "Android Studio Lv3",
+        "room_short_name": "AS:3",
+        "room_type": "Android",
+        "image_sprite_id": 5254
+    },
+    {
+        "room_design_id": 308,
+        "room_name": "Android Studio Lv4",
+        "room_short_name": "AS:4",
+        "room_type": "Android",
+        "image_sprite_id": 5264
+    },
+    {
+        "room_design_id": 309,
+        "room_name": "Android Studio Lv5",
+        "room_short_name": "AS:5",
+        "room_type": "Android",
+        "image_sprite_id": 5292
+    },
+    {
+        "room_design_id": 310,
+        "room_name": "Android Studio Lv6",
+        "room_short_name": "AS:6",
+        "room_type": "Android",
+        "image_sprite_id": 5516
+    },
+    {
+        "room_design_id": 311,
+        "room_name": "Android Studio Lv7",
+        "room_short_name": "AS:7",
+        "room_type": "Android",
+        "image_sprite_id": 5526
+    },
+    {
+        "room_design_id": 312,
+        "room_name": "Android Studio Lv8",
+        "room_short_name": "AS:8",
+        "room_type": "Android",
+        "image_sprite_id": 5536
+    },
+    {
+        "room_design_id": 313,
+        "room_name": "Android Studio Lv9",
+        "room_short_name": "AS:9",
+        "room_type": "Android",
+        "image_sprite_id": 5546
+    },
+    {
+        "room_design_id": 314,
+        "room_name": "Android Studio Lv10",
+        "room_short_name": "AS:10",
+        "room_type": "Android",
+        "image_sprite_id": 5561
+    },
+    {
+        "room_design_id": 315,
+        "room_name": "Starfleet Headquarters Lv1",
+        "room_short_name": "HQ:1",
+        "room_type": "Council",
+        "image_sprite_id": 5572
+    },
+    {
+        "room_design_id": 316,
+        "room_name": "Starfleet Headquarters Lv2",
+        "room_short_name": "HQ:2",
+        "room_type": "Council",
+        "image_sprite_id": 5573
+    },
+    {
+        "room_design_id": 317,
+        "room_name": "Starfleet Headquarters Lv3",
+        "room_short_name": "HQ:3",
+        "room_type": "Council",
+        "image_sprite_id": 5599
+    },
+    {
+        "room_design_id": 318,
+        "room_name": "Multi Turrets Lv1",
+        "room_short_name": "MT:1",
+        "room_type": "Laser",
+        "image_sprite_id": 4933
+    },
+    {
+        "room_design_id": 319,
+        "room_name": "Starbux Printer Lv1",
+        "room_short_name": "PRI:1",
+        "room_type": "Printer",
+        "image_sprite_id": 6904
+    },
+    {
+        "room_design_id": 320,
+        "room_name": "Large Reactor Lv1",
+        "room_short_name": "LRE:1",
+        "room_type": "Reactor",
+        "image_sprite_id": 6909
+    },
+    {
+        "room_design_id": 321,
+        "room_name": "Large Engine Lv1",
+        "room_short_name": "ENG:1",
+        "room_type": "Engine",
+        "image_sprite_id": 6949
+    },
+    {
+        "room_design_id": 322,
+        "room_name": "Missile Array Lv1",
+        "room_short_name": "MA:1",
+        "room_type": "Missile",
+        "image_sprite_id": 6937
+    },
+    {
+        "room_design_id": 323,
+        "room_name": "Loading Dock Lv1",
+        "room_short_name": "DOC:1",
+        "room_type": "Supply",
+        "image_sprite_id": 7064
+    },
+    {
+        "room_design_id": 324,
+        "room_name": "Gatling Laser Lv1",
+        "room_short_name": "GLZ:1",
+        "room_type": "Laser",
+        "image_sprite_id": 7039
+    },
+    {
+        "room_design_id": 325,
+        "room_name": "Heavy Shield Generator Lv1",
+        "room_short_name": "SHL:1",
+        "room_type": "Shield",
+        "image_sprite_id": 7047
+    },
+    {
+        "room_design_id": 326,
+        "room_name": "Multi Turrets Lv2",
+        "room_short_name": "MT:2",
+        "room_type": "Laser",
+        "image_sprite_id": 4936
+    },
+    {
+        "room_design_id": 327,
+        "room_name": "Multi Turrets Lv3",
+        "room_short_name": "MT:3",
+        "room_type": "Laser",
+        "image_sprite_id": 5744
+    },
+    {
+        "room_design_id": 328,
+        "room_name": "Multi Turrets Lv4",
+        "room_short_name": "MT:4",
+        "room_type": "Laser",
+        "image_sprite_id": 5750
+    },
+    {
+        "room_design_id": 329,
+        "room_name": "Multi Turrets Lv5",
+        "room_short_name": "MT:5",
+        "room_type": "Laser",
+        "image_sprite_id": 5756
+    },
+    {
+        "room_design_id": 330,
+        "room_name": "Multi Turrets Lv6",
+        "room_short_name": "MT:6",
+        "room_type": "Laser",
+        "image_sprite_id": 5762
+    },
+    {
+        "room_design_id": 331,
+        "room_name": "Multi Turrets Lv7",
+        "room_short_name": "MT:7",
+        "room_type": "Laser",
+        "image_sprite_id": 5768
+    },
+    {
+        "room_design_id": 332,
+        "room_name": "Multi Turrets Lv8",
+        "room_short_name": "MT:8",
+        "room_type": "Laser",
+        "image_sprite_id": 5778
+    },
+    {
+        "room_design_id": 333,
+        "room_name": "Multi Turrets Lv9",
+        "room_short_name": "MT:9",
+        "room_type": "Laser",
+        "image_sprite_id": 6740
+    },
+    {
+        "room_design_id": 334,
+        "room_name": "Large Reactor Lv2",
+        "room_short_name": "LRE:2",
+        "room_type": "Reactor",
+        "image_sprite_id": 6913
+    },
+    {
+        "room_design_id": 335,
+        "room_name": "Large Reactor Lv3",
+        "room_short_name": "LRE:3",
+        "room_type": "Reactor",
+        "image_sprite_id": 6917
+    },
+    {
+        "room_design_id": 336,
+        "room_name": "Large Reactor Lv4",
+        "room_short_name": "LRE:4",
+        "room_type": "Reactor",
+        "image_sprite_id": 6921
+    },
+    {
+        "room_design_id": 337,
+        "room_name": "Large Reactor Lv5",
+        "room_short_name": "LRE:5",
+        "room_type": "Reactor",
+        "image_sprite_id": 6925
+    },
+    {
+        "room_design_id": 338,
+        "room_name": "Large Reactor Lv6",
+        "room_short_name": "LRE:6",
+        "room_type": "Reactor",
+        "image_sprite_id": 6929
+    },
+    {
+        "room_design_id": 339,
+        "room_name": "Large Reactor Lv7",
+        "room_short_name": "LRE:7",
+        "room_type": "Reactor",
+        "image_sprite_id": 7017
+    },
+    {
+        "room_design_id": 340,
+        "room_name": "Heavy Shield Generator Lv2",
+        "room_short_name": "SHL:2",
+        "room_type": "Shield",
+        "image_sprite_id": 7048
+    },
+    {
+        "room_design_id": 341,
+        "room_name": "Heavy Shield Generator Lv3",
+        "room_short_name": "SHL:3",
+        "room_type": "Shield",
+        "image_sprite_id": 7049
+    },
+    {
+        "room_design_id": 342,
+        "room_name": "Heavy Shield Generator Lv4",
+        "room_short_name": "SHL:4",
+        "room_type": "Shield",
+        "image_sprite_id": 7063
+    },
+    {
+        "room_design_id": 343,
+        "room_name": "Heavy Shield Generator Lv5",
+        "room_short_name": "SHL:5",
+        "room_type": "Shield",
+        "image_sprite_id": 7068
+    },
+    {
+        "room_design_id": 344,
+        "room_name": "Heavy Shield Generator Lv6",
+        "room_short_name": "SHL:6",
+        "room_type": "Shield",
+        "image_sprite_id": 7071
+    },
+    {
+        "room_design_id": 347,
+        "room_name": "Loading Dock Lv2",
+        "room_short_name": "DOC:2",
+        "room_type": "Supply",
+        "image_sprite_id": 7065
+    },
+    {
+        "room_design_id": 348,
+        "room_name": "Loading Dock Lv3",
+        "room_short_name": "DOC:3",
+        "room_type": "Supply",
+        "image_sprite_id": 7069
+    },
+    {
+        "room_design_id": 349,
+        "room_name": "Loading Dock Lv4",
+        "room_short_name": "DOC:4",
+        "room_type": "Supply",
+        "image_sprite_id": 7070
+    },
+    {
+        "room_design_id": 350,
+        "room_name": "Loading Dock Lv5",
+        "room_short_name": "DOC:5",
+        "room_type": "Supply",
+        "image_sprite_id": 7072
+    },
+    {
+        "room_design_id": 351,
+        "room_name": "Loading Dock Lv6",
+        "room_short_name": "DOC:6",
+        "room_type": "Supply",
+        "image_sprite_id": 7073
+    },
+    {
+        "room_design_id": 352,
+        "room_name": "Loading Dock Lv7",
+        "room_short_name": "DOC:7",
+        "room_type": "Supply",
+        "image_sprite_id": 7073
+    },
+    {
+        "room_design_id": 353,
+        "room_name": "Starfleet Headquarters Lv4",
+        "room_short_name": "HQ:4",
+        "room_type": "Council",
+        "image_sprite_id": 5601
+    },
+    {
+        "room_design_id": 354,
+        "room_name": "Starfleet Headquarters Lv5",
+        "room_short_name": "HQ:5",
+        "room_type": "Council",
+        "image_sprite_id": 5601
+    },
+    {
+        "room_design_id": 356,
+        "room_name": "Large Engine Lv2",
+        "room_short_name": "ENG:2",
+        "room_type": "Engine",
+        "image_sprite_id": 6952
+    },
+    {
+        "room_design_id": 357,
+        "room_name": "Large Engine Lv3",
+        "room_short_name": "ENG:3",
+        "room_type": "Engine",
+        "image_sprite_id": 6955
+    },
+    {
+        "room_design_id": 358,
+        "room_name": "Large Engine Lv4",
+        "room_short_name": "ENG:4",
+        "room_type": "Engine",
+        "image_sprite_id": 6958
+    },
+    {
+        "room_design_id": 359,
+        "room_name": "Large Engine Lv5",
+        "room_short_name": "ENG:5",
+        "room_type": "Engine",
+        "image_sprite_id": 6958
+    },
+    {
+        "room_design_id": 360,
+        "room_name": "Large Engine Lv6",
+        "room_short_name": "ENG:6",
+        "room_type": "Engine",
+        "image_sprite_id": 6984
+    },
+    {
+        "room_design_id": 361,
+        "room_name": "Large Engine Lv7",
+        "room_short_name": "ENG:7",
+        "room_type": "Engine",
+        "image_sprite_id": 6984
+    },
+    {
+        "room_design_id": 362,
+        "room_name": "Gatling Laser Lv2",
+        "room_short_name": "GLZ:2",
+        "room_type": "Laser",
+        "image_sprite_id": 7040
+    },
+    {
+        "room_design_id": 363,
+        "room_name": "Gatling Laser Lv3",
+        "room_short_name": "GLZ:3",
+        "room_type": "Laser",
+        "image_sprite_id": 7041
+    },
+    {
+        "room_design_id": 364,
+        "room_name": "Gatling Laser Lv4",
+        "room_short_name": "GLZ:4",
+        "room_type": "Laser",
+        "image_sprite_id": 7044
+    },
+    {
+        "room_design_id": 365,
+        "room_name": "Gatling Laser Lv5",
+        "room_short_name": "GLZ:5",
+        "room_type": "Laser",
+        "image_sprite_id": 7045
+    },
+    {
+        "room_design_id": 366,
+        "room_name": "Gatling Laser Lv6",
+        "room_short_name": "GLZ:6",
+        "room_type": "Laser",
+        "image_sprite_id": 7045
+    },
+    {
+        "room_design_id": 367,
+        "room_name": "Starbux Printer Lv2",
+        "room_short_name": "PRI:2",
+        "room_type": "Printer",
+        "image_sprite_id": 6905
+    },
+    {
+        "room_design_id": 368,
+        "room_name": "Starbux Printer Lv3",
+        "room_short_name": "PRI:3",
+        "room_type": "Printer",
+        "image_sprite_id": 6906
+    },
+    {
+        "room_design_id": 369,
+        "room_name": "Starbux Printer Lv4",
+        "room_short_name": "PRI:4",
+        "room_type": "Printer",
+        "image_sprite_id": 6907
+    },
+    {
+        "room_design_id": 370,
+        "room_name": "Large Reactor Lv8",
+        "room_short_name": "LRE:8",
+        "room_type": "Reactor",
+        "image_sprite_id": 7223
+    },
+    {
+        "room_design_id": 371,
+        "room_name": "Large Reactor Lv9",
+        "room_short_name": "LRE:9",
+        "room_type": "Reactor",
+        "image_sprite_id": 7227
+    },
+    {
+        "room_design_id": 372,
+        "room_name": "Missile Array Lv2",
+        "room_short_name": "MA:2",
+        "room_type": "Missile",
+        "image_sprite_id": 6938
+    },
+    {
+        "room_design_id": 373,
+        "room_name": "Missile Array Lv3",
+        "room_short_name": "MA:3",
+        "room_type": "Missile",
+        "image_sprite_id": 6939
+    },
+    {
+        "room_design_id": 374,
+        "room_name": "Missile Array Lv4",
+        "room_short_name": "MA:4",
+        "room_type": "Missile",
+        "image_sprite_id": 6940
+    },
+    {
+        "room_design_id": 375,
+        "room_name": "Missile Array Lv5",
+        "room_short_name": "MA:5",
+        "room_type": "Missile",
+        "image_sprite_id": 6987
+    },
+    {
+        "room_design_id": 376,
+        "room_name": "Missile Array Lv6",
+        "room_short_name": "MA:6",
+        "room_type": "Missile",
+        "image_sprite_id": 7000
+    },
+    {
+        "room_design_id": 377,
+        "room_name": "Missile Array Lv7",
+        "room_short_name": "MA:7",
+        "room_type": "Missile",
+        "image_sprite_id": 7000
+    },
+    {
+        "room_design_id": 378,
+        "room_name": "Loading Dock Lv8",
+        "room_short_name": "DOC:8",
+        "room_type": "Supply",
+        "image_sprite_id": 7123
+    },
+    {
+        "room_design_id": 379,
+        "room_name": "Loading Dock Lv9",
+        "room_short_name": "DOC:9",
+        "room_type": "Supply",
+        "image_sprite_id": 7124
+    },
+    {
+        "room_design_id": 380,
+        "room_name": "Cruise Missile Launcher Lv2",
+        "room_short_name": "CML:2",
+        "room_type": "StationMissile",
+        "image_sprite_id": 4895
+    },
+    {
+        "room_design_id": 381,
+        "room_name": "Cruise Missile Launcher Lv3",
+        "room_short_name": "CML:3",
+        "room_type": "StationMissile",
+        "image_sprite_id": 7215
+    },
+    {
+        "room_design_id": 382,
+        "room_name": "Cruise Missile Launcher Lv4",
+        "room_short_name": "CML:4",
+        "room_type": "StationMissile",
+        "image_sprite_id": 7216
+    },
+    {
+        "room_design_id": 383,
+        "room_name": "Cruise Missile Launcher Lv5",
+        "room_short_name": "CML:5",
+        "room_type": "StationMissile",
+        "image_sprite_id": 7217
+    },
+    {
+        "room_design_id": 384,
+        "room_name": "Cruise Missile Launcher Lv6",
+        "room_short_name": "CML:6",
+        "room_type": "StationMissile",
+        "image_sprite_id": 7218
+    },
+    {
+        "room_design_id": 385,
+        "room_name": "Robotics Bay Lv1",
+        "room_short_name": "Rob:1",
+        "room_type": "Android",
+        "image_sprite_id": 7241
+    },
+    {
+        "room_design_id": 386,
+        "room_name": "Vault Lv1",
+        "room_short_name": "VAL:1",
+        "room_type": "Storage",
+        "image_sprite_id": 7408
+    },
+    {
+        "room_design_id": 387,
+        "room_name": "Vault Lv2",
+        "room_short_name": "VAL:2",
+        "room_type": "Storage",
+        "image_sprite_id": 7409
+    },
+    {
+        "room_design_id": 388,
+        "room_name": "Vault Lv3",
+        "room_short_name": "VAL:3",
+        "room_type": "Storage",
+        "image_sprite_id": 7410
+    },
+    {
+        "room_design_id": 389,
+        "room_name": "Vault Lv4",
+        "room_short_name": "VAL:4",
+        "room_type": "Storage",
+        "image_sprite_id": 7411
+    },
+    {
+        "room_design_id": 390,
+        "room_name": "Vault Lv5",
+        "room_short_name": "VAL:5",
+        "room_type": "Storage",
+        "image_sprite_id": 7428
+    },
+    {
+        "room_design_id": 391,
+        "room_name": "Missile Array Lv8",
+        "room_short_name": "MA:8",
+        "room_type": "Missile",
+        "image_sprite_id": 7358
+    },
+    {
+        "room_design_id": 392,
+        "room_name": "Missile Array Lv9",
+        "room_short_name": "MA:9",
+        "room_type": "Missile",
+        "image_sprite_id": 7401
+    },
+    {
+        "room_design_id": 393,
+        "room_name": "Missile Array Lv10",
+        "room_short_name": "MA:10",
+        "room_type": "Missile",
+        "image_sprite_id": 7401
+    },
+    {
+        "room_design_id": 394,
+        "room_name": "Warehouse Lv6",
+        "room_short_name": "WH:6",
+        "room_type": "Storage",
+        "image_sprite_id": 5092
+    },
+    {
+        "room_design_id": 395,
+        "room_name": "Warehouse Lv7",
+        "room_short_name": "WH:7",
+        "room_type": "Storage",
+        "image_sprite_id": 5113
+    },
+    {
+        "room_design_id": 396,
+        "room_name": "Warehouse Lv8",
+        "room_short_name": "WH:8",
+        "room_type": "Storage",
+        "image_sprite_id": 7566
+    },
+    {
+        "room_design_id": 397,
+        "room_name": "Warehouse Lv9",
+        "room_short_name": "WH:9",
+        "room_type": "Storage",
+        "image_sprite_id": 7572
+    },
+    {
+        "room_design_id": 398,
+        "room_name": "Starport Lv1",
+        "room_short_name": "STA:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 7464
+    },
+    {
+        "room_design_id": 399,
+        "room_name": "Starport Lv2",
+        "room_short_name": "STA:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 7465
+    },
+    {
+        "room_design_id": 400,
+        "room_name": "Starport Lv3",
+        "room_short_name": "STA:3",
+        "room_type": "Carrier",
+        "image_sprite_id": 7466
+    },
+    {
+        "room_design_id": 401,
+        "room_name": "Starport Lv4",
+        "room_short_name": "STA:4",
+        "room_type": "Carrier",
+        "image_sprite_id": 7467
+    },
+    {
+        "room_design_id": 402,
+        "room_name": "Zakian Cryopod Base Lv1",
+        "room_short_name": "CP:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 7695
+    },
+    {
+        "room_design_id": 403,
+        "room_name": "Apocalypse Missile Array Lv1",
+        "room_short_name": "AMA:1",
+        "room_type": "Missile",
+        "image_sprite_id": 7728
+    },
+    {
+        "room_design_id": 405,
+        "room_name": "Auxiliary Missile Launcher Lv1",
+        "room_short_name": "AML:1",
+        "room_type": "Missile",
+        "image_sprite_id": 19626
+    },
+    {
+        "room_design_id": 406,
+        "room_name": "Car Garage Lv1",
+        "room_short_name": "CAR:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 8022
+    },
+    {
+        "room_design_id": 407,
+        "room_name": "Zaki Dragon Gym Base Lv1",
+        "room_short_name": "GYM:1",
+        "room_type": "Training",
+        "image_sprite_id": 9474
+    },
+    {
+        "room_design_id": 408,
+        "room_name": "Backup Capacitor Lv1",
+        "room_short_name": "BC:1",
+        "room_type": "Reactor",
+        "image_sprite_id": 7736
+    },
+    {
+        "room_design_id": 409,
+        "room_name": "Backup Capacitor Lv2",
+        "room_short_name": "BC:2",
+        "room_type": "Reactor",
+        "image_sprite_id": 7737
+    },
+    {
+        "room_design_id": 410,
+        "room_name": "Backup Capacitor Lv3",
+        "room_short_name": "BC:3",
+        "room_type": "Reactor",
+        "image_sprite_id": 7737
+    },
+    {
+        "room_design_id": 411,
+        "room_name": "Zakian Cryopod Lv1",
+        "room_short_name": "CP:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 7695
+    },
+    {
+        "room_design_id": 412,
+        "room_name": "Cryopod Lv1",
+        "room_short_name": "CP:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 8060
+    },
+    {
+        "room_design_id": 413,
+        "room_name": "Visiri Mechbay Lv1",
+        "room_short_name": "VM:1",
+        "room_type": "Android",
+        "image_sprite_id": 7964
+    },
+    {
+        "room_design_id": 415,
+        "room_name": "Kias Phaser Base Lv1",
+        "room_short_name": "KP:1",
+        "room_type": "Laser",
+        "image_sprite_id": 8220
+    },
+    {
+        "room_design_id": 416,
+        "room_name": "Cloak Generator Lv1",
+        "room_short_name": "CG:1",
+        "room_type": "Stealth",
+        "image_sprite_id": 5557
+    },
+    {
+        "room_design_id": 417,
+        "room_name": "Kias Phaser Lv1",
+        "room_short_name": "KP:1",
+        "room_type": "Laser",
+        "image_sprite_id": 8289
+    },
+    {
+        "room_design_id": 418,
+        "room_name": "K Blaster Lv1",
+        "room_short_name": "KB:1",
+        "room_type": "Laser",
+        "image_sprite_id": 8220
+    },
+    {
+        "room_design_id": 419,
+        "room_name": "Lift Lv13",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 8301
+    },
+    {
+        "room_design_id": 420,
+        "room_name": "Lift Lv14",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 8301
+    },
+    {
+        "room_design_id": 421,
+        "room_name": "Toilet Lv1",
+        "room_short_name": "WC:1",
+        "room_type": "Medical",
+        "image_sprite_id": 8303
+    },
+    {
+        "room_design_id": 422,
+        "room_name": "Bio Recycling Lv1",
+        "room_short_name": "BIO:1",
+        "room_type": "Recycling",
+        "image_sprite_id": 8356
+    },
+    {
+        "room_design_id": 423,
+        "room_name": "Radar Lv2",
+        "room_short_name": "RA:2",
+        "room_type": "Radar",
+        "image_sprite_id": 8328
+    },
+    {
+        "room_design_id": 424,
+        "room_name": "Radar Lv3",
+        "room_short_name": "RA:3",
+        "room_type": "Radar",
+        "image_sprite_id": 8342
+    },
+    {
+        "room_design_id": 425,
+        "room_name": "Cloak Generator Lv2",
+        "room_short_name": "CG:2",
+        "room_type": "Stealth",
+        "image_sprite_id": 8312
+    },
+    {
+        "room_design_id": 426,
+        "room_name": "Cloak Generator Lv3",
+        "room_short_name": "CG:3",
+        "room_type": "Stealth",
+        "image_sprite_id": 8320
+    },
+    {
+        "room_design_id": 427,
+        "room_name": "Cloak Generator Lv4",
+        "room_short_name": "CG:4",
+        "room_type": "Stealth",
+        "image_sprite_id": 8906
+    },
+    {
+        "room_design_id": 428,
+        "room_name": "Radar Lv4",
+        "room_short_name": "RA:4",
+        "room_type": "Radar",
+        "image_sprite_id": 8923
+    },
+    {
+        "room_design_id": 429,
+        "room_name": "Fusion Reactor Lv9",
+        "room_short_name": "FRE:9",
+        "room_type": "Reactor",
+        "image_sprite_id": 5574
+    },
+    {
+        "room_design_id": 430,
+        "room_name": "Fusion Reactor Lv10",
+        "room_short_name": "FRE:10",
+        "room_type": "Reactor",
+        "image_sprite_id": 5582
+    },
+    {
+        "room_design_id": 433,
+        "room_name": "Workshop Lv2",
+        "room_short_name": "WOR:2",
+        "room_type": "Storage",
+        "image_sprite_id": 7629
+    },
+    {
+        "room_design_id": 434,
+        "room_name": "Teleport Lv9",
+        "room_short_name": "TLP:9",
+        "room_type": "Teleport",
+        "image_sprite_id": 8914
+    },
+    {
+        "room_design_id": 435,
+        "room_name": "Mineral Mining Laser Lv15",
+        "room_short_name": "MLZ:15",
+        "room_type": "Laser",
+        "image_sprite_id": 3426
+    },
+    {
+        "room_design_id": 436,
+        "room_name": "Ion Cannon Lv3",
+        "room_short_name": "ION:3",
+        "room_type": "Cannon",
+        "image_sprite_id": 8915
+    },
+    {
+        "room_design_id": 438,
+        "room_name": "Small Gas Trap Lv1",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 9220
+    },
+    {
+        "room_design_id": 439,
+        "room_name": "Radar Lv5",
+        "room_short_name": "RA:5",
+        "room_type": "Radar",
+        "image_sprite_id": 9248
+    },
+    {
+        "room_design_id": 440,
+        "room_name": "Zaki Dragon Gym Lv9",
+        "room_short_name": "GYM:9",
+        "room_type": "Training",
+        "image_sprite_id": 9474
+    },
+    {
+        "room_design_id": 441,
+        "room_name": "Galaxy Gym Lv9",
+        "room_short_name": "GYM:9",
+        "room_type": "Training",
+        "image_sprite_id": 9459
+    },
+    {
+        "room_design_id": 442,
+        "room_name": "Medium Weapons Platform Lv0",
+        "room_short_name": "MWP:0",
+        "room_type": null,
+        "image_sprite_id": 9578
+    },
+    {
+        "room_design_id": 443,
+        "room_name": "Railgun Lv1",
+        "room_short_name": "RG:1",
+        "room_type": "Laser",
+        "image_sprite_id": 9662
+    },
+    {
+        "room_design_id": 444,
+        "room_name": "Laser Blaster Lv1",
+        "room_short_name": "LB:1",
+        "room_type": "Laser",
+        "image_sprite_id": 9579
+    },
+    {
+        "room_design_id": 445,
+        "room_name": "Photon Disruptor Lv1",
+        "room_short_name": "PD:1",
+        "room_type": "Laser",
+        "image_sprite_id": 9533
+    },
+    {
+        "room_design_id": 446,
+        "room_name": "Bio Recycling Lv2",
+        "room_short_name": "BIO:2",
+        "room_type": "Recycling",
+        "image_sprite_id": 9110
+    },
+    {
+        "room_design_id": 447,
+        "room_name": "Bio Recycling Lv3",
+        "room_short_name": "BIO:3",
+        "room_type": "Recycling",
+        "image_sprite_id": 9144
+    },
+    {
+        "room_design_id": 448,
+        "room_name": "Bio Recycling Lv4",
+        "room_short_name": "BIO:4",
+        "room_type": "Recycling",
+        "image_sprite_id": 9312
+    },
+    {
+        "room_design_id": 449,
+        "room_name": "Bio Recycling Lv5",
+        "room_short_name": "BIO:5",
+        "room_type": "Recycling",
+        "image_sprite_id": 9340
+    },
+    {
+        "room_design_id": 450,
+        "room_name": "Laser Blaster Lv2",
+        "room_short_name": "LB:2",
+        "room_type": "Laser",
+        "image_sprite_id": 9593
+    },
+    {
+        "room_design_id": 451,
+        "room_name": "Laser Blaster Lv3",
+        "room_short_name": "LB:3",
+        "room_type": "Laser",
+        "image_sprite_id": 9607
+    },
+    {
+        "room_design_id": 452,
+        "room_name": "Laser Blaster Lv4",
+        "room_short_name": "LB:4",
+        "room_type": "Laser",
+        "image_sprite_id": 9621
+    },
+    {
+        "room_design_id": 453,
+        "room_name": "Laser Blaster Lv5",
+        "room_short_name": "LB:5",
+        "room_type": "Laser",
+        "image_sprite_id": 9635
+    },
+    {
+        "room_design_id": 454,
+        "room_name": "Railgun Lv2",
+        "room_short_name": "RG:2",
+        "room_type": "Laser",
+        "image_sprite_id": 9668
+    },
+    {
+        "room_design_id": 455,
+        "room_name": "Railgun Lv3",
+        "room_short_name": "RG:3",
+        "room_type": "Laser",
+        "image_sprite_id": 9674
+    },
+    {
+        "room_design_id": 456,
+        "room_name": "Railgun Lv4",
+        "room_short_name": "RG:4",
+        "room_type": "Laser",
+        "image_sprite_id": 9680
+    },
+    {
+        "room_design_id": 457,
+        "room_name": "Railgun Lv5",
+        "room_short_name": "RG:5",
+        "room_type": "Laser",
+        "image_sprite_id": 9686
+    },
+    {
+        "room_design_id": 458,
+        "room_name": "Photon Disruptor Lv2",
+        "room_short_name": "PD:2",
+        "room_type": "Laser",
+        "image_sprite_id": 9547
+    },
+    {
+        "room_design_id": 459,
+        "room_name": "Photon Disruptor Lv3",
+        "room_short_name": "PD:3",
+        "room_type": "Laser",
+        "image_sprite_id": 9555
+    },
+    {
+        "room_design_id": 460,
+        "room_name": "Photon Disruptor Lv4",
+        "room_short_name": "PD:4",
+        "room_type": "Laser",
+        "image_sprite_id": 9565
+    },
+    {
+        "room_design_id": 461,
+        "room_name": "Photon Disruptor Lv5",
+        "room_short_name": "PD:5",
+        "room_type": "Laser",
+        "image_sprite_id": 9573
+    },
+    {
+        "room_design_id": 462,
+        "room_name": "Shield Battery Lv1",
+        "room_short_name": "SB:1",
+        "room_type": "Shield",
+        "image_sprite_id": 9815
+    },
+    {
+        "room_design_id": 463,
+        "room_name": "Shield Battery Lv2",
+        "room_short_name": "SB:2",
+        "room_type": "Shield",
+        "image_sprite_id": 9816
+    },
+    {
+        "room_design_id": 464,
+        "room_name": "Shield Battery Lv3",
+        "room_short_name": "SB:3",
+        "room_type": "Shield",
+        "image_sprite_id": 9817
+    },
+    {
+        "room_design_id": 465,
+        "room_name": "Shield Battery Lv4",
+        "room_short_name": "SB:4",
+        "room_type": "Shield",
+        "image_sprite_id": 9818
+    },
+    {
+        "room_design_id": 466,
+        "room_name": "Shield Battery Lv5",
+        "room_short_name": "SB:5",
+        "room_type": "Shield",
+        "image_sprite_id": 9819
+    },
+    {
+        "room_design_id": 467,
+        "room_name": "Shield Battery Lv6",
+        "room_short_name": "SB:6",
+        "room_type": "Shield",
+        "image_sprite_id": 9820
+    },
+    {
+        "room_design_id": 468,
+        "room_name": "Shield Battery Lv7",
+        "room_short_name": "SB:7",
+        "room_type": "Shield",
+        "image_sprite_id": 9867
+    },
+    {
+        "room_design_id": 469,
+        "room_name": "Zaki Tentacle Garden Base Lv1",
+        "room_short_name": "ZTG:1",
+        "room_type": "Trap",
+        "image_sprite_id": 10378
+    },
+    {
+        "room_design_id": 470,
+        "room_name": "Disintegrator Gate Lv1",
+        "room_short_name": "DG:1",
+        "room_type": "Trap",
+        "image_sprite_id": 10384
+    },
+    {
+        "room_design_id": 471,
+        "room_name": "Zaki Tentacle Garden Lv1",
+        "room_short_name": "DG:1",
+        "room_type": "Trap",
+        "image_sprite_id": 10378
+    },
+    {
+        "room_design_id": 472,
+        "room_name": "Captain's Quarters Lv0",
+        "room_short_name": "CAP:0",
+        "room_type": "Bedroom",
+        "image_sprite_id": 13
+    },
+    {
+        "room_design_id": 473,
+        "room_name": "Destroyed Bedroom Lv1",
+        "room_short_name": "BED:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 717
+    },
+    {
+        "room_design_id": 474,
+        "room_name": "Destroyed Small Reactor Lv1",
+        "room_short_name": "REA:1",
+        "room_type": "Reactor",
+        "image_sprite_id": 854
+    },
+    {
+        "room_design_id": 475,
+        "room_name": "Small Weapons Platform Lv0",
+        "room_short_name": "SWP:0",
+        "room_type": null,
+        "image_sprite_id": 11830
+    },
+    {
+        "room_design_id": 476,
+        "room_name": "Minigun Lv1",
+        "room_short_name": "MG:1",
+        "room_type": "Laser",
+        "image_sprite_id": 11802
+    },
+    {
+        "room_design_id": 477,
+        "room_name": "Minigun Lv2",
+        "room_short_name": "MG:2",
+        "room_type": "Laser",
+        "image_sprite_id": 11806
+    },
+    {
+        "room_design_id": 478,
+        "room_name": "Minigun Lv3",
+        "room_short_name": "MG:3",
+        "room_type": "Laser",
+        "image_sprite_id": 11810
+    },
+    {
+        "room_design_id": 479,
+        "room_name": "Minigun Lv4",
+        "room_short_name": "MG:4",
+        "room_type": "Laser",
+        "image_sprite_id": 11814
+    },
+    {
+        "room_design_id": 480,
+        "room_name": "Minigun Lv5",
+        "room_short_name": "MG:5",
+        "room_type": "Laser",
+        "image_sprite_id": 11818
+    },
+    {
+        "room_design_id": 481,
+        "room_name": "Minigun Lv6",
+        "room_short_name": "MG:6",
+        "room_type": "Laser",
+        "image_sprite_id": 11822
+    },
+    {
+        "room_design_id": 482,
+        "room_name": "Minigun Lv7",
+        "room_short_name": "MG:7",
+        "room_type": "Laser",
+        "image_sprite_id": 11826
+    },
+    {
+        "room_design_id": 483,
+        "room_name": "Photon Phaser Lv1",
+        "room_short_name": "PP:1",
+        "room_type": "Laser",
+        "image_sprite_id": 11760
+    },
+    {
+        "room_design_id": 484,
+        "room_name": "Photon Phaser Lv2",
+        "room_short_name": "PP:2",
+        "room_type": "Laser",
+        "image_sprite_id": 11766
+    },
+    {
+        "room_design_id": 485,
+        "room_name": "Photon Phaser Lv3",
+        "room_short_name": "PP:3",
+        "room_type": "Laser",
+        "image_sprite_id": 11772
+    },
+    {
+        "room_design_id": 486,
+        "room_name": "Photon Phaser Lv4",
+        "room_short_name": "PP:4",
+        "room_type": "Laser",
+        "image_sprite_id": 11778
+    },
+    {
+        "room_design_id": 487,
+        "room_name": "Photon Phaser Lv5",
+        "room_short_name": "PP:5",
+        "room_type": "Laser",
+        "image_sprite_id": 11784
+    },
+    {
+        "room_design_id": 488,
+        "room_name": "Photon Phaser Lv6",
+        "room_short_name": "PP:6",
+        "room_type": "Laser",
+        "image_sprite_id": 11790
+    },
+    {
+        "room_design_id": 489,
+        "room_name": "Photon Phaser Lv7",
+        "room_short_name": "PP:7",
+        "room_type": "Laser",
+        "image_sprite_id": 11796
+    },
+    {
+        "room_design_id": 490,
+        "room_name": "Captain's Quarters Lv1",
+        "room_short_name": "CAP:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 13
+    },
+    {
+        "room_design_id": 493,
+        "room_name": "Flower Gardens Lv1",
+        "room_short_name": "FG:1",
+        "room_type": "Medical",
+        "image_sprite_id": 12464
+    },
+    {
+        "room_design_id": 494,
+        "room_name": "Zongzi Factory Lv1",
+        "room_short_name": "ZF:1",
+        "room_type": "Android",
+        "image_sprite_id": 12597
+    },
+    {
+        "room_design_id": 496,
+        "room_name": "HYDRA Workshop Base Lv1",
+        "room_short_name": "WOR:1",
+        "room_type": "Storage",
+        "image_sprite_id": 12720
+    },
+    {
+        "room_design_id": 497,
+        "room_name": "HYDRA Workshop Lv1",
+        "room_short_name": "WOR:1",
+        "room_type": "Storage",
+        "image_sprite_id": 12720
+    },
+    {
+        "room_design_id": 498,
+        "room_name": "Serious Workshop Lv1",
+        "room_short_name": "WOR:1",
+        "room_type": "Storage",
+        "image_sprite_id": 12721
+    },
+    {
+        "room_design_id": 505,
+        "room_name": "Lunar College Lv9",
+        "room_short_name": "LCO:9",
+        "room_type": "Training",
+        "image_sprite_id": 12953
+    },
+    {
+        "room_design_id": 506,
+        "room_name": "Ghostly Factory Lv1",
+        "room_short_name": "GF:1",
+        "room_type": "Android",
+        "image_sprite_id": 13081
+    },
+    {
+        "room_design_id": 507,
+        "room_name": "Graveyard Lv1",
+        "room_short_name": "GRA:1",
+        "room_type": "Bedroom",
+        "image_sprite_id": 3278
+    },
+    {
+        "room_design_id": 509,
+        "room_name": "Launch Pad Lv1",
+        "room_short_name": "LP:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 20034
+    },
+    {
+        "room_design_id": 517,
+        "room_name": "Superlaser Lv1",
+        "room_short_name": "SPL:1",
+        "room_type": "Laser",
+        "image_sprite_id": 14017
+    },
+    {
+        "room_design_id": 518,
+        "room_name": "Big Flying Rocket Launcher Lv1",
+        "room_short_name": "BFR:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 19576
+    },
+    {
+        "room_design_id": 519,
+        "room_name": "Hwacha Artillery Launcher Lv1",
+        "room_short_name": "HAL:1",
+        "room_type": "Missile",
+        "image_sprite_id": 19759
+    },
+    {
+        "room_design_id": 520,
+        "room_name": "Android Studio Lv11",
+        "room_short_name": "AS:11",
+        "room_type": "Android",
+        "image_sprite_id": 14207
+    },
+    {
+        "room_design_id": 521,
+        "room_name": "Anti Craft Laser Lv8",
+        "room_short_name": "AA:8",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 3441
+    },
+    {
+        "room_design_id": 522,
+        "room_name": "EMP Cannon Lv4",
+        "room_short_name": "EMP:4",
+        "room_type": "Cannon",
+        "image_sprite_id": 14228
+    },
+    {
+        "room_design_id": 524,
+        "room_name": "Ion Cannon Lv4",
+        "room_short_name": "ION:4",
+        "room_type": "Cannon",
+        "image_sprite_id": 14191
+    },
+    {
+        "room_design_id": 525,
+        "room_name": "Hangar Lv10",
+        "room_short_name": "HAN:10",
+        "room_type": "Carrier",
+        "image_sprite_id": 14201
+    },
+    {
+        "room_design_id": 526,
+        "room_name": "Engine Lv11",
+        "room_short_name": "ENG:11",
+        "room_type": "Engine",
+        "image_sprite_id": 14265
+    },
+    {
+        "room_design_id": 527,
+        "room_name": "Gas Collector Lv13",
+        "room_short_name": "Gas:13",
+        "room_type": "Gas",
+        "image_sprite_id": 1624
+    },
+    {
+        "room_design_id": 528,
+        "room_name": "Bolter Lv14",
+        "room_short_name": "BT:14",
+        "room_type": "Laser",
+        "image_sprite_id": 3739
+    },
+    {
+        "room_design_id": 529,
+        "room_name": "Laser Blaster Lv6",
+        "room_short_name": "LB:6",
+        "room_type": "Laser",
+        "image_sprite_id": 14280
+    },
+    {
+        "room_design_id": 530,
+        "room_name": "Mineral Mining Laser Lv16",
+        "room_short_name": "MLZ:16",
+        "room_type": "Laser",
+        "image_sprite_id": 14442
+    },
+    {
+        "room_design_id": 532,
+        "room_name": "Minigun Lv8",
+        "room_short_name": "MG:8",
+        "room_type": "Laser",
+        "image_sprite_id": 14269
+    },
+    {
+        "room_design_id": 533,
+        "room_name": "Photon Disruptor Lv6",
+        "room_short_name": "PD:6",
+        "room_type": "Laser",
+        "image_sprite_id": 14294
+    },
+    {
+        "room_design_id": 534,
+        "room_name": "Photon Phaser Lv8",
+        "room_short_name": "PP:8",
+        "room_type": "Laser",
+        "image_sprite_id": 14274
+    },
+    {
+        "room_design_id": 535,
+        "room_name": "Plasma Discharger Lv10",
+        "room_short_name": "PLA:10",
+        "room_type": "Laser",
+        "image_sprite_id": 14227
+    },
+    {
+        "room_design_id": 536,
+        "room_name": "Lift Lv15",
+        "room_short_name": null,
+        "room_type": "Lift",
+        "image_sprite_id": 14313
+    },
+    {
+        "room_design_id": 537,
+        "room_name": "Railgun Lv6",
+        "room_short_name": "RG:6",
+        "room_type": "Laser",
+        "image_sprite_id": 14302
+    },
+    {
+        "room_design_id": 541,
+        "room_name": "Med Bay Lv8",
+        "room_short_name": "MD:8",
+        "room_type": "Medical",
+        "image_sprite_id": 14217
+    },
+    {
+        "room_design_id": 542,
+        "room_name": "Mineral Miner Lv13",
+        "room_short_name": "MIN:13",
+        "room_type": "Mineral",
+        "image_sprite_id": 14542
+    },
+    {
+        "room_design_id": 543,
+        "room_name": "Missile Launcher Lv15",
+        "room_short_name": "MSL:15",
+        "room_type": "Missile",
+        "image_sprite_id": 14459
+    },
+    {
+        "room_design_id": 544,
+        "room_name": "Radar Lv6",
+        "room_short_name": "RA:6",
+        "room_type": "Radar",
+        "image_sprite_id": 9262
+    },
+    {
+        "room_design_id": 545,
+        "room_name": "Shield Battery Lv8",
+        "room_short_name": "SB:8",
+        "room_type": "Shield",
+        "image_sprite_id": 14187
+    },
+    {
+        "room_design_id": 546,
+        "room_name": "Shield Generator Lv15",
+        "room_short_name": "SHL:15",
+        "room_type": "Shield",
+        "image_sprite_id": 14273
+    },
+    {
+        "room_design_id": 547,
+        "room_name": "Gas Storage Lv14",
+        "room_short_name": "GST:14",
+        "room_type": "Storage",
+        "image_sprite_id": 10854
+    },
+    {
+        "room_design_id": 548,
+        "room_name": "Mineral Storage Lv14",
+        "room_short_name": "MST:14",
+        "room_type": "Storage",
+        "image_sprite_id": 14260
+    },
+    {
+        "room_design_id": 549,
+        "room_name": "Teleport Lv10",
+        "room_short_name": "TLP:10",
+        "room_type": "Teleport",
+        "image_sprite_id": 14200
+    },
+    {
+        "room_design_id": 550,
+        "room_name": "Security Gate Lv9",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 14219
+    },
+    {
+        "room_design_id": 551,
+        "room_name": "Armor Lv13",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 8940
+    },
+    {
+        "room_design_id": 552,
+        "room_name": "Laboratory Lv11",
+        "room_short_name": "LAB:11",
+        "room_type": "Research",
+        "image_sprite_id": 14616
+    },
+    {
+        "room_design_id": 557,
+        "room_name": "Small Reactor Lv7",
+        "room_short_name": "REA:7",
+        "room_type": "Reactor",
+        "image_sprite_id": 14202
+    },
+    {
+        "room_design_id": 558,
+        "room_name": "Fusion Reactor Lv11",
+        "room_short_name": "FRE:11",
+        "room_type": "Reactor",
+        "image_sprite_id": 14252
+    },
+    {
+        "room_design_id": 559,
+        "room_name": "Warehouse Lv10",
+        "room_short_name": "WH:10",
+        "room_type": "Storage",
+        "image_sprite_id": 14308
+    },
+    {
+        "room_design_id": 560,
+        "room_name": "Cloak Generator Lv5",
+        "room_short_name": "CG:5",
+        "room_type": "Stealth",
+        "image_sprite_id": 14236
+    },
+    {
+        "room_design_id": 561,
+        "room_name": "Bridge Lv12",
+        "room_short_name": "BRD:12",
+        "room_type": "Bridge",
+        "image_sprite_id": 14218
+    },
+    {
+        "room_design_id": 562,
+        "room_name": "Power Capacitor Lv1",
+        "room_short_name": null,
+        "room_type": "Reactor",
+        "image_sprite_id": 14323
+    },
+    {
+        "room_design_id": 571,
+        "room_name": "Gas Mining Laser Lv9",
+        "room_short_name": "MLZ:9",
+        "room_type": "Laser",
+        "image_sprite_id": 14642
+    },
+    {
+        "room_design_id": 572,
+        "room_name": "Gas Mining Laser Lv10",
+        "room_short_name": "MLZ:10",
+        "room_type": "Laser",
+        "image_sprite_id": 14651
+    },
+    {
+        "room_design_id": 573,
+        "room_name": "Gas Mining Laser Lv11",
+        "room_short_name": "MLZ:11",
+        "room_type": "Laser",
+        "image_sprite_id": 14660
+    },
+    {
+        "room_design_id": 574,
+        "room_name": "Gas Mining Laser Lv12",
+        "room_short_name": "MLZ:12",
+        "room_type": "Laser",
+        "image_sprite_id": 14669
+    },
+    {
+        "room_design_id": 575,
+        "room_name": "Gas Mining Laser Lv13",
+        "room_short_name": "MLZ:13",
+        "room_type": "Laser",
+        "image_sprite_id": 14678
+    },
+    {
+        "room_design_id": 576,
+        "room_name": "Gas Mining Laser Lv14",
+        "room_short_name": "MLZ:14",
+        "room_type": "Laser",
+        "image_sprite_id": 14687
+    },
+    {
+        "room_design_id": 577,
+        "room_name": "Gas Mining Laser Lv15",
+        "room_short_name": "MLZ:15",
+        "room_type": "Laser",
+        "image_sprite_id": 14696
+    },
+    {
+        "room_design_id": 578,
+        "room_name": "Gas Mining Laser Lv16",
+        "room_short_name": "MLZ:16",
+        "room_type": "Laser",
+        "image_sprite_id": 14705
+    },
+    {
+        "room_design_id": 579,
+        "room_name": "Power Capacitor Lv2",
+        "room_short_name": null,
+        "room_type": "Reactor",
+        "image_sprite_id": 14732
+    },
+    {
+        "room_design_id": 587,
+        "room_name": "Irradiator Lv7",
+        "room_short_name": "IR:7",
+        "room_type": "Laser",
+        "image_sprite_id": 15246
+    },
+    {
+        "room_design_id": 588,
+        "room_name": "Irradiator Lv8",
+        "room_short_name": "IR:8",
+        "room_type": "Laser",
+        "image_sprite_id": 15247
+    },
+    {
+        "room_design_id": 598,
+        "room_name": "Security Gate Lv10",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 15613
+    },
+    {
+        "room_design_id": 599,
+        "room_name": "Small Gas Trap Lv2",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 15624
+    },
+    {
+        "room_design_id": 602,
+        "room_name": "Defense Platform Lv0",
+        "room_short_name": "DP:0",
+        "room_type": null,
+        "image_sprite_id": 16104
+    },
+    {
+        "room_design_id": 603,
+        "room_name": "Avenger Defense System Lv1",
+        "room_short_name": "AV:1",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 16041
+    },
+    {
+        "room_design_id": 604,
+        "room_name": "Avenger Defense System Lv2",
+        "room_short_name": "AV:2",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 16049
+    },
+    {
+        "room_design_id": 605,
+        "room_name": "Avenger Defense System Lv3",
+        "room_short_name": "AV:3",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 16058
+    },
+    {
+        "room_design_id": 606,
+        "room_name": "Seeker Defense System Lv1",
+        "room_short_name": "SD:1",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 16067
+    },
+    {
+        "room_design_id": 607,
+        "room_name": "Seeker Defense System Lv2",
+        "room_short_name": "SD:2",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 16074
+    },
+    {
+        "room_design_id": 608,
+        "room_name": "Seeker Defense System Lv3",
+        "room_short_name": "SD:3",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 16081
+    },
+    {
+        "room_design_id": 611,
+        "room_name": "Destroyed Bedroom Lv2",
+        "room_short_name": "BED:2",
+        "room_type": "Bedroom",
+        "image_sprite_id": 717
+    },
+    {
+        "room_design_id": 612,
+        "room_name": "Destroyed Bedroom Lv3",
+        "room_short_name": "BED:3",
+        "room_type": "Bedroom",
+        "image_sprite_id": 717
+    },
+    {
+        "room_design_id": 613,
+        "room_name": "Destroyed Bedroom Lv4",
+        "room_short_name": "BED:4",
+        "room_type": "Bedroom",
+        "image_sprite_id": 717
+    },
+    {
+        "room_design_id": 614,
+        "room_name": "Destroyed Bedroom Lv5",
+        "room_short_name": "BED:5",
+        "room_type": "Bedroom",
+        "image_sprite_id": 717
+    },
+    {
+        "room_design_id": 615,
+        "room_name": "Destroyed Small Reactor Lv2",
+        "room_short_name": "REA:2",
+        "room_type": "Reactor",
+        "image_sprite_id": 854
+    },
+    {
+        "room_design_id": 616,
+        "room_name": "Destroyed Small Reactor Lv3",
+        "room_short_name": "REA:3",
+        "room_type": "Reactor",
+        "image_sprite_id": 854
+    },
+    {
+        "room_design_id": 617,
+        "room_name": "Destroyed Small Reactor Lv4",
+        "room_short_name": "REA:4",
+        "room_type": "Reactor",
+        "image_sprite_id": 854
+    },
+    {
+        "room_design_id": 618,
+        "room_name": "Destroyed Small Reactor Lv5",
+        "room_short_name": "REA:5",
+        "room_type": "Reactor",
+        "image_sprite_id": 854
+    },
+    {
+        "room_design_id": 619,
+        "room_name": "Destroyed Small Reactor Lv6",
+        "room_short_name": "REA:6",
+        "room_type": "Reactor",
+        "image_sprite_id": 854
+    },
+    {
+        "room_design_id": 620,
+        "room_name": "Destroyed Small Reactor Lv7",
+        "room_short_name": "REA:7",
+        "room_type": "Reactor",
+        "image_sprite_id": 854
+    },
+    {
+        "room_design_id": 636,
+        "room_name": "Hull (1HP) Lv1",
+        "room_short_name": null,
+        "room_type": "Hull",
+        "image_sprite_id": 15079
+    },
+    {
+        "room_design_id": 637,
+        "room_name": "Hull (2HP) Lv2",
+        "room_short_name": null,
+        "room_type": "Hull",
+        "image_sprite_id": 15080
+    },
+    {
+        "room_design_id": 638,
+        "room_name": "Hull (5HP) Lv3",
+        "room_short_name": null,
+        "room_type": "Hull",
+        "image_sprite_id": 15081
+    },
+    {
+        "room_design_id": 639,
+        "room_name": "Hull (10HP) Lv4",
+        "room_short_name": null,
+        "room_type": "Hull",
+        "image_sprite_id": 15079
+    },
+    {
+        "room_design_id": 640,
+        "room_name": "Hull (25HP) Lv5",
+        "room_short_name": null,
+        "room_type": "Hull",
+        "image_sprite_id": 15083
+    },
+    {
+        "room_design_id": 659,
+        "room_name": "Bridge Lv13",
+        "room_short_name": "BRD:13",
+        "room_type": "Bridge",
+        "image_sprite_id": 14218
+    },
+    {
+        "room_design_id": 661,
+        "room_name": "Mineral Mining Laser Lv17",
+        "room_short_name": "MLZ:17",
+        "room_type": "Laser",
+        "image_sprite_id": 22105
+    },
+    {
+        "room_design_id": 663,
+        "room_name": "Gas Mining Laser Lv17",
+        "room_short_name": "MLZ:17",
+        "room_type": "Laser",
+        "image_sprite_id": 21895
+    },
+    {
+        "room_design_id": 664,
+        "room_name": "Mineral Miner Lv14",
+        "room_short_name": "MIN:14",
+        "room_type": "Mineral",
+        "image_sprite_id": 14542
+    },
+    {
+        "room_design_id": 665,
+        "room_name": "Mineral Miner Lv15",
+        "room_short_name": "MIN:15",
+        "room_type": "Mineral",
+        "image_sprite_id": 14542
+    },
+    {
+        "room_design_id": 666,
+        "room_name": "Gas Collector Lv14",
+        "room_short_name": "Gas:14",
+        "room_type": "Gas",
+        "image_sprite_id": 1624
+    },
+    {
+        "room_design_id": 667,
+        "room_name": "Gas Collector Lv15",
+        "room_short_name": "Gas:15",
+        "room_type": "Gas",
+        "image_sprite_id": 1624
+    },
+    {
+        "room_design_id": 669,
+        "room_name": "Security Gate Lv11",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 22139
+    },
+    {
+        "room_design_id": 671,
+        "room_name": "Cloak Generator Lv6",
+        "room_short_name": "CG:6",
+        "room_type": "Stealth",
+        "image_sprite_id": 22273
+    },
+    {
+        "room_design_id": 674,
+        "room_name": "Fusion Reactor Lv12",
+        "room_short_name": "FRE:12",
+        "room_type": "Reactor",
+        "image_sprite_id": 14252
+    },
+    {
+        "room_design_id": 679,
+        "room_name": "Workshop Lv3",
+        "room_short_name": "WOR:3",
+        "room_type": "Storage",
+        "image_sprite_id": 7629
+    },
+    {
+        "room_design_id": 680,
+        "room_name": "Armor Lv14",
+        "room_short_name": null,
+        "room_type": "Wall",
+        "image_sprite_id": 17939
+    },
+    {
+        "room_design_id": 686,
+        "room_name": "Gray Launch Pad Lv1",
+        "room_short_name": "LP:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 17849
+    },
+    {
+        "room_design_id": 688,
+        "room_name": "Drone Hangar Lv1",
+        "room_short_name": "DH:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 19023
+    },
+    {
+        "room_design_id": 689,
+        "room_name": "Drone Hangar Lv2",
+        "room_short_name": "DH:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 19153
+    },
+    {
+        "room_design_id": 690,
+        "room_name": "Drone Hangar Lv3",
+        "room_short_name": "DH:3",
+        "room_type": "Carrier",
+        "image_sprite_id": 19154
+    },
+    {
+        "room_design_id": 691,
+        "room_name": "Drone Hangar Lv4",
+        "room_short_name": "DH:4",
+        "room_type": "Carrier",
+        "image_sprite_id": 19155
+    },
+    {
+        "room_design_id": 692,
+        "room_name": "Decoy Drone Bay Lv1",
+        "room_short_name": "DB:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 19606
+    },
+    {
+        "room_design_id": 693,
+        "room_name": "Rocket Artillery Launcher Lv1",
+        "room_short_name": "RAL:1",
+        "room_type": "Missile",
+        "image_sprite_id": 1601
+    },
+    {
+        "room_design_id": 694,
+        "room_name": "Rocket Artillery Launcher Lv2",
+        "room_short_name": "RAL:2",
+        "room_type": "Missile",
+        "image_sprite_id": 1601
+    },
+    {
+        "room_design_id": 695,
+        "room_name": "Rocket Artillery Launcher Lv3",
+        "room_short_name": "RAL:3",
+        "room_type": "Missile",
+        "image_sprite_id": 1601
+    },
+    {
+        "room_design_id": 696,
+        "room_name": "Rocket Artillery Launcher Lv4",
+        "room_short_name": "RAL:4",
+        "room_type": "Missile",
+        "image_sprite_id": 1601
+    },
+    {
+        "room_design_id": 697,
+        "room_name": "Decoy Drone Bay Lv2",
+        "room_short_name": "DB:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 19607
+    },
+    {
+        "room_design_id": 698,
+        "room_name": "Decoy Drone Bay Lv3",
+        "room_short_name": "DB:3",
+        "room_type": "Carrier",
+        "image_sprite_id": 19608
+    },
+    {
+        "room_design_id": 699,
+        "room_name": "Decoy Drone Bay Lv4",
+        "room_short_name": "DB:4",
+        "room_type": "Carrier",
+        "image_sprite_id": 19609
+    },
+    {
+        "room_design_id": 700,
+        "room_name": "Guardian Defense System Lv1",
+        "room_short_name": "GDS:1",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 19632
+    },
+    {
+        "room_design_id": 701,
+        "room_name": "Guardian Defense System Lv2",
+        "room_short_name": "GDS:2",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 19633
+    },
+    {
+        "room_design_id": 702,
+        "room_name": "Guardian Defense System Lv3",
+        "room_short_name": "GDS:3",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 19634
+    },
+    {
+        "room_design_id": 703,
+        "room_name": "Mass Teleporter Lv1",
+        "room_short_name": "MTLP:1",
+        "room_type": "Teleport",
+        "image_sprite_id": 21269
+    },
+    {
+        "room_design_id": 704,
+        "room_name": "Reisen Drone Launcher Lv1",
+        "room_short_name": "RDL:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 14019
+    },
+    {
+        "room_design_id": 705,
+        "room_name": "Shield Capacitor Lv1",
+        "room_short_name": "SHC:1",
+        "room_type": "Shield",
+        "image_sprite_id": 22332
+    },
+    {
+        "room_design_id": 706,
+        "room_name": "Shield Overcharger Lv1",
+        "room_short_name": "SHO:1",
+        "room_type": "Shield",
+        "image_sprite_id": 22354
+    },
+    {
+        "room_design_id": 707,
+        "room_name": "Torpedo Launcher Lv1",
+        "room_short_name": "TPL:1",
+        "room_type": "Missile",
+        "image_sprite_id": 22314
+    },
+    {
+        "room_design_id": 708,
+        "room_name": "Tractor Beam Emitter Lv1",
+        "room_short_name": "TB:1",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 23226
+    },
+    {
+        "room_design_id": 709,
+        "room_name": "Turbo Laser Lv1",
+        "room_short_name": "TL:1",
+        "room_type": "Laser",
+        "image_sprite_id": 23195
+    },
+    {
+        "room_design_id": 710,
+        "room_name": "Heavy Turbo Laser Lv1",
+        "room_short_name": "HTL:1",
+        "room_type": "Laser",
+        "image_sprite_id": 23141
+    },
+    {
+        "room_design_id": 711,
+        "room_name": "Mini Nuke Launcher Lv1",
+        "room_short_name": "MN:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 23167
+    },
+    {
+        "room_design_id": 712,
+        "room_name": "Tactical Nuke Launcher Lv1",
+        "room_short_name": "TNL:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 23181
+    },
+    {
+        "room_design_id": 713,
+        "room_name": "Cluster Missile Launcher Lv1",
+        "room_short_name": "CM:1",
+        "room_type": "Missile",
+        "image_sprite_id": 23122
+    },
+    {
+        "room_design_id": 714,
+        "room_name": "Hellstorm Rocket Battery Lv1",
+        "room_short_name": "HRB:1",
+        "room_type": "Missile",
+        "image_sprite_id": 23149
+    },
+    {
+        "room_design_id": 715,
+        "room_name": "Cruise Missile Launcher Lv7",
+        "room_short_name": "CML:7",
+        "room_type": "StationMissile",
+        "image_sprite_id": 7218
+    },
+    {
+        "room_design_id": 716,
+        "room_name": "Starfleet Headquarters Lv6",
+        "room_short_name": "HQ:6",
+        "room_type": "Council",
+        "image_sprite_id": 5601
+    },
+    {
+        "room_design_id": 717,
+        "room_name": "Starfleet Headquarters Lv7",
+        "room_short_name": "HQ:7",
+        "room_type": "Council",
+        "image_sprite_id": 5601
+    },
+    {
+        "room_design_id": 718,
+        "room_name": "Multi Turrets Lv10",
+        "room_short_name": "MT:10",
+        "room_type": "Laser",
+        "image_sprite_id": 6740
+    },
+    {
+        "room_design_id": 719,
+        "room_name": "Starbux Printer Lv5",
+        "room_short_name": "PRI:5",
+        "room_type": "Printer",
+        "image_sprite_id": 6907
+    },
+    {
+        "room_design_id": 720,
+        "room_name": "Starbux Printer Lv6",
+        "room_short_name": "PRI:6",
+        "room_type": "Printer",
+        "image_sprite_id": 6907
+    },
+    {
+        "room_design_id": 721,
+        "room_name": "Large Reactor Lv10",
+        "room_short_name": "LRE:10",
+        "room_type": "Reactor",
+        "image_sprite_id": 7311
+    },
+    {
+        "room_design_id": 722,
+        "room_name": "Large Engine Lv8",
+        "room_short_name": "ENG:8",
+        "room_type": "Engine",
+        "image_sprite_id": 6984
+    },
+    {
+        "room_design_id": 724,
+        "room_name": "Loading Dock Lv10",
+        "room_short_name": "DOC:10",
+        "room_type": "Supply",
+        "image_sprite_id": 7124
+    },
+    {
+        "room_design_id": 725,
+        "room_name": "Heavy Shield Generator Lv7",
+        "room_short_name": "SHL:7",
+        "room_type": "Shield",
+        "image_sprite_id": 7347
+    },
+    {
+        "room_design_id": 726,
+        "room_name": "Gatling Laser Lv7",
+        "room_short_name": "GLZ:7",
+        "room_type": "Laser",
+        "image_sprite_id": 7359
+    },
+    {
+        "room_design_id": 727,
+        "room_name": "Anti Craft Missiles Lv6",
+        "room_short_name": "AM:6",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 2490
+    },
+    {
+        "room_design_id": 728,
+        "room_name": "Robotics Bay Lv2",
+        "room_short_name": "Rob:2",
+        "room_type": "Android",
+        "image_sprite_id": 7241
+    },
+    {
+        "room_design_id": 729,
+        "room_name": "Robotics Bay Lv3",
+        "room_short_name": "Rob:3",
+        "room_type": "Android",
+        "image_sprite_id": 7241
+    },
+    {
+        "room_design_id": 730,
+        "room_name": "Vault Lv6",
+        "room_short_name": "VAL:6",
+        "room_type": "Storage",
+        "image_sprite_id": 7428
+    },
+    {
+        "room_design_id": 731,
+        "room_name": "Starport Lv5",
+        "room_short_name": "STA:5",
+        "room_type": "Carrier",
+        "image_sprite_id": 7467
+    },
+    {
+        "room_design_id": 732,
+        "room_name": "Backup Capacitor Lv4",
+        "room_short_name": "BC:4",
+        "room_type": "Reactor",
+        "image_sprite_id": 7737
+    },
+    {
+        "room_design_id": 733,
+        "room_name": "Apocalypse Missile Array Lv2",
+        "room_short_name": "AMA:2",
+        "room_type": "Missile",
+        "image_sprite_id": 7728
+    },
+    {
+        "room_design_id": 734,
+        "room_name": "Heavy Shield Generator Lv8",
+        "room_short_name": "SHL:8",
+        "room_type": "Shield",
+        "image_sprite_id": 7348
+    },
+    {
+        "room_design_id": 735,
+        "room_name": "Gatling Laser Lv8",
+        "room_short_name": "GLZ:8",
+        "room_type": "Laser",
+        "image_sprite_id": 7361
+    },
+    {
+        "room_design_id": 736,
+        "room_name": "Gatling Laser Lv9",
+        "room_short_name": "GLZ:9",
+        "room_type": "Laser",
+        "image_sprite_id": 7362
+    },
+    {
+        "room_design_id": 737,
+        "room_name": "Debris Harvestor Lv1",
+        "room_short_name": "DbH:1",
+        "room_type": "Printer",
+        "image_sprite_id": 20114
+    },
+    {
+        "room_design_id": 738,
+        "room_name": "Debris Harvestor Lv2",
+        "room_short_name": "DbH:2",
+        "room_type": "Printer",
+        "image_sprite_id": 20114
+    },
+    {
+        "room_design_id": 739,
+        "room_name": "Debris Harvestor Lv3",
+        "room_short_name": "DbH:3",
+        "room_type": "Printer",
+        "image_sprite_id": 20114
+    },
+    {
+        "room_design_id": 740,
+        "room_name": "Debris Harvestor Lv4",
+        "room_short_name": "DbH:4",
+        "room_type": "Printer",
+        "image_sprite_id": 20114
+    },
+    {
+        "room_design_id": 741,
+        "room_name": "Poker Room Lv1",
+        "room_short_name": "PKR:1",
+        "room_type": "Printer",
+        "image_sprite_id": 21480
+    },
+    {
+        "room_design_id": 742,
+        "room_name": "Bolter Lv15",
+        "room_short_name": "BT:15",
+        "room_type": "Laser",
+        "image_sprite_id": 22104
+    },
+    {
+        "room_design_id": 743,
+        "room_name": "Engine Lv12",
+        "room_short_name": "ENG:12",
+        "room_type": "Engine",
+        "image_sprite_id": 21904
+    },
+    {
+        "room_design_id": 744,
+        "room_name": "Shield Generator Lv16",
+        "room_short_name": "SHL:16",
+        "room_type": "Shield",
+        "image_sprite_id": 21908
+    },
+    {
+        "room_design_id": 745,
+        "room_name": "Bridge Lv14",
+        "room_short_name": "BRD:14",
+        "room_type": "Bridge",
+        "image_sprite_id": 21909
+    },
+    {
+        "room_design_id": 746,
+        "room_name": "Mineral Miner Lv16",
+        "room_short_name": "MIN:16",
+        "room_type": "Mineral",
+        "image_sprite_id": 21910
+    },
+    {
+        "room_design_id": 747,
+        "room_name": "Gas Collector Lv16",
+        "room_short_name": "Gas:16",
+        "room_type": "Gas",
+        "image_sprite_id": 14538
+    },
+    {
+        "room_design_id": 748,
+        "room_name": "Mineral Storage Lv15",
+        "room_short_name": "MST:15",
+        "room_type": "Storage",
+        "image_sprite_id": 10726
+    },
+    {
+        "room_design_id": 749,
+        "room_name": "Gas Storage Lv15",
+        "room_short_name": "GST:15",
+        "room_type": "Storage",
+        "image_sprite_id": 22114
+    },
+    {
+        "room_design_id": 750,
+        "room_name": "Missile Launcher Lv16",
+        "room_short_name": "MSL:16",
+        "room_type": "Missile",
+        "image_sprite_id": 21925
+    },
+    {
+        "room_design_id": 751,
+        "room_name": "Plasma Discharger Lv11",
+        "room_short_name": "PLA:11",
+        "room_type": "Laser",
+        "image_sprite_id": 21926
+    },
+    {
+        "room_design_id": 753,
+        "room_name": "Power Capacitor Lv3",
+        "room_short_name": null,
+        "room_type": "Reactor",
+        "image_sprite_id": 21927
+    },
+    {
+        "room_design_id": 754,
+        "room_name": "Anti Craft Laser Lv9",
+        "room_short_name": "AA:9",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 22015
+    },
+    {
+        "room_design_id": 755,
+        "room_name": "Med Bay Lv9",
+        "room_short_name": "MD:9",
+        "room_type": "Medical",
+        "image_sprite_id": 22028
+    },
+    {
+        "room_design_id": 756,
+        "room_name": "Radar Lv7",
+        "room_short_name": "RA:7",
+        "room_type": "Radar",
+        "image_sprite_id": 22029
+    },
+    {
+        "room_design_id": 757,
+        "room_name": "Ion Cannon Lv5",
+        "room_short_name": "ION:5",
+        "room_type": "Cannon",
+        "image_sprite_id": 22043
+    },
+    {
+        "room_design_id": 758,
+        "room_name": "Warehouse Lv11",
+        "room_short_name": "WH:11",
+        "room_type": "Storage",
+        "image_sprite_id": 22121
+    },
+    {
+        "room_design_id": 759,
+        "room_name": "EMP Cannon Lv5",
+        "room_short_name": "EMP:5",
+        "room_type": "Cannon",
+        "image_sprite_id": 22130
+    },
+    {
+        "room_design_id": 760,
+        "room_name": "Laser Blaster Lv7",
+        "room_short_name": "LB:7",
+        "room_type": "Laser",
+        "image_sprite_id": 22148
+    },
+    {
+        "room_design_id": 761,
+        "room_name": "Railgun Lv7",
+        "room_short_name": "RG:7",
+        "room_type": "Laser",
+        "image_sprite_id": 14302
+    },
+    {
+        "room_design_id": 762,
+        "room_name": "Photon Phaser Lv9",
+        "room_short_name": "PP:9",
+        "room_type": "Laser",
+        "image_sprite_id": 22162
+    },
+    {
+        "room_design_id": 763,
+        "room_name": "Photon Disruptor Lv7",
+        "room_short_name": "PD:7",
+        "room_type": "Laser",
+        "image_sprite_id": 22168
+    },
+    {
+        "room_design_id": 764,
+        "room_name": "Minigun Lv9",
+        "room_short_name": "MG:9",
+        "room_type": "Laser",
+        "image_sprite_id": 22176
+    },
+    {
+        "room_design_id": 765,
+        "room_name": "Superlaser Lv2",
+        "room_short_name": "SPL:2",
+        "room_type": "Laser",
+        "image_sprite_id": 22180
+    },
+    {
+        "room_design_id": 766,
+        "room_name": "Hwacha Artillery Launcher Lv2",
+        "room_short_name": "HAL:2",
+        "room_type": "Missile",
+        "image_sprite_id": 22186
+    },
+    {
+        "room_design_id": 767,
+        "room_name": "Big Flying Rocket Launcher Lv2",
+        "room_short_name": "BFR:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 22204
+    },
+    {
+        "room_design_id": 768,
+        "room_name": "Avenger Defense System Lv4",
+        "room_short_name": "AV:4",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 22219
+    },
+    {
+        "room_design_id": 769,
+        "room_name": "Seeker Defense System Lv4",
+        "room_short_name": "SD:4",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 22228
+    },
+    {
+        "room_design_id": 770,
+        "room_name": "Guardian Defense System Lv4",
+        "room_short_name": "GDS:4",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 22235
+    },
+    {
+        "room_design_id": 771,
+        "room_name": "Mass Teleporter Lv2",
+        "room_short_name": "MTLP:2",
+        "room_type": "Teleport",
+        "image_sprite_id": 22257
+    },
+    {
+        "room_design_id": 772,
+        "room_name": "Shield Battery Lv9",
+        "room_short_name": "SB:9",
+        "room_type": "Shield",
+        "image_sprite_id": 14187
+    },
+    {
+        "room_design_id": 773,
+        "room_name": "Launch Pad Lv2",
+        "room_short_name": "LP:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 22272
+    },
+    {
+        "room_design_id": 774,
+        "room_name": "Irradiator Lv9",
+        "room_short_name": "IR:9",
+        "room_type": "Laser",
+        "image_sprite_id": 22283
+    },
+    {
+        "room_design_id": 775,
+        "room_name": "Fleet Council Lv6",
+        "room_short_name": "FLE:6",
+        "room_type": "Council",
+        "image_sprite_id": 22281
+    },
+    {
+        "room_design_id": 776,
+        "room_name": "Hangar Lv11",
+        "room_short_name": "HAN:11",
+        "room_type": "Carrier",
+        "image_sprite_id": 22282
+    },
+    {
+        "room_design_id": 777,
+        "room_name": "Drone Hangar Lv5",
+        "room_short_name": "DH:5",
+        "room_type": "Carrier",
+        "image_sprite_id": 19155
+    },
+    {
+        "room_design_id": 778,
+        "room_name": "Decoy Drone Bay Lv5",
+        "room_short_name": "DB:5",
+        "room_type": "Carrier",
+        "image_sprite_id": 19609
+    },
+    {
+        "room_design_id": 779,
+        "room_name": "Auxiliary Booster Lv1",
+        "room_short_name": "AB:1",
+        "room_type": "Booster",
+        "image_sprite_id": 22284
+    },
+    {
+        "room_design_id": 781,
+        "room_name": "Teleport Interdictor Gate Lv1",
+        "room_short_name": null,
+        "room_type": "AntiTeleport",
+        "image_sprite_id": 22376
+    },
+    {
+        "room_design_id": 782,
+        "room_name": "Teleport Repulsor Lv1",
+        "room_short_name": "TR:1",
+        "room_type": "AntiTeleport",
+        "image_sprite_id": 22406
+    },
+    {
+        "room_design_id": 786,
+        "room_name": "Auxiliary Booster Lv2",
+        "room_short_name": "AB:2",
+        "room_type": "Booster",
+        "image_sprite_id": 22299
+    },
+    {
+        "room_design_id": 787,
+        "room_name": "Torpedo Launcher Lv2",
+        "room_short_name": "TPL:2",
+        "room_type": "Missile",
+        "image_sprite_id": 22323
+    },
+    {
+        "room_design_id": 788,
+        "room_name": "Shield Capacitor Lv2",
+        "room_short_name": "SHC:2",
+        "room_type": "Shield",
+        "image_sprite_id": 22343
+    },
+    {
+        "room_design_id": 789,
+        "room_name": "Shield Overcharger Lv2",
+        "room_short_name": "SHO:2",
+        "room_type": "Shield",
+        "image_sprite_id": 22365
+    },
+    {
+        "room_design_id": 790,
+        "room_name": "Teleport Interdictor Gate Lv2",
+        "room_short_name": null,
+        "room_type": "AntiTeleport",
+        "image_sprite_id": 22389
+    },
+    {
+        "room_design_id": 791,
+        "room_name": "Teleport Repulsor Lv2",
+        "room_short_name": "TR:2",
+        "room_type": "AntiTeleport",
+        "image_sprite_id": 22420
+    },
+    {
+        "room_design_id": 792,
+        "room_name": "Bedroom Lv6",
+        "room_short_name": "BED:6",
+        "room_type": "Bedroom",
+        "image_sprite_id": 3072
+    },
+    {
+        "room_design_id": 793,
+        "room_name": "Doomlaser Lv1",
+        "room_short_name": "DOOM:1",
+        "room_type": "Laser",
+        "image_sprite_id": 14017
+    },
+    {
+        "room_design_id": 794,
+        "room_name": "Missile Pod Lv1",
+        "room_short_name": "MP:1",
+        "room_type": "Missile",
+        "image_sprite_id": 23213
+    },
+    {
+        "room_design_id": 795,
+        "room_name": "Ship Thrusters Lv1",
+        "room_short_name": "ST:1",
+        "room_type": "Engine",
+        "image_sprite_id": 23221
+    },
+    {
+        "room_design_id": 796,
+        "room_name": "Turbo Laser Lv2",
+        "room_short_name": "TL:2",
+        "room_type": "Laser",
+        "image_sprite_id": 23195
+    },
+    {
+        "room_design_id": 797,
+        "room_name": "Turbo Laser Lv3",
+        "room_short_name": "TL:3",
+        "room_type": "Laser",
+        "image_sprite_id": 23195
+    },
+    {
+        "room_design_id": 798,
+        "room_name": "Heavy Turbo Laser Lv2",
+        "room_short_name": "HTL:2",
+        "room_type": "Laser",
+        "image_sprite_id": 23141
+    },
+    {
+        "room_design_id": 799,
+        "room_name": "Heavy Turbo Laser Lv3",
+        "room_short_name": "HTL:3",
+        "room_type": "Laser",
+        "image_sprite_id": 23141
+    },
+    {
+        "room_design_id": 800,
+        "room_name": "Mini Nuke Launcher Lv2",
+        "room_short_name": "MN:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 23167
+    },
+    {
+        "room_design_id": 801,
+        "room_name": "Mini Nuke Launcher Lv3",
+        "room_short_name": "MN:3",
+        "room_type": "Carrier",
+        "image_sprite_id": 23167
+    },
+    {
+        "room_design_id": 802,
+        "room_name": "Tactical Nuke Launcher Lv2",
+        "room_short_name": "TNL:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 23181
+    },
+    {
+        "room_design_id": 803,
+        "room_name": "Tactical Nuke Launcher Lv3",
+        "room_short_name": "TNL:3",
+        "room_type": "Carrier",
+        "image_sprite_id": 23181
+    },
+    {
+        "room_design_id": 804,
+        "room_name": "Cluster Missile Launcher Lv2",
+        "room_short_name": "CM:2",
+        "room_type": "Missile",
+        "image_sprite_id": 23122
+    },
+    {
+        "room_design_id": 805,
+        "room_name": "Hellstorm Rocket Battery Lv2",
+        "room_short_name": "HRB:2",
+        "room_type": "Missile",
+        "image_sprite_id": 23149
+    },
+    {
+        "room_design_id": 806,
+        "room_name": "Cluster Missile Launcher Lv3",
+        "room_short_name": "CM:3",
+        "room_type": "Missile",
+        "image_sprite_id": 23122
+    },
+    {
+        "room_design_id": 807,
+        "room_name": "Hellstorm Rocket Battery Lv3",
+        "room_short_name": "HRB:3",
+        "room_type": "Missile",
+        "image_sprite_id": 23149
+    },
+    {
+        "room_design_id": 808,
+        "room_name": "Turbo Laser Lv4",
+        "room_short_name": "TL:4",
+        "room_type": "Laser",
+        "image_sprite_id": 23195
+    },
+    {
+        "room_design_id": 809,
+        "room_name": "Mini Nuke Launcher Lv4",
+        "room_short_name": "MN:4",
+        "room_type": "Carrier",
+        "image_sprite_id": 23167
+    },
+    {
+        "room_design_id": 810,
+        "room_name": "Cluster Missile Launcher Lv4",
+        "room_short_name": "CM:4",
+        "room_type": "Missile",
+        "image_sprite_id": 23122
+    },
+    {
+        "room_design_id": 811,
+        "room_name": "Ship Thrusters Lv2",
+        "room_short_name": "ST:2",
+        "room_type": "Engine",
+        "image_sprite_id": 23221
+    },
+    {
+        "room_design_id": 812,
+        "room_name": "Ship Thrusters Lv3",
+        "room_short_name": "ST:3",
+        "room_type": "Engine",
+        "image_sprite_id": 23221
+    },
+    {
+        "room_design_id": 813,
+        "room_name": "Missile Pod Lv2",
+        "room_short_name": "MP:2",
+        "room_type": "Missile",
+        "image_sprite_id": 23213
+    },
+    {
+        "room_design_id": 814,
+        "room_name": "Missile Pod Lv3",
+        "room_short_name": "MP:3",
+        "room_type": "Missile",
+        "image_sprite_id": 23213
+    },
+    {
+        "room_design_id": 815,
+        "room_name": "Ship Thrusters Lv4",
+        "room_short_name": "ST:4",
+        "room_type": "Engine",
+        "image_sprite_id": 23221
+    },
+    {
+        "room_design_id": 816,
+        "room_name": "Ship Thrusters Lv5",
+        "room_short_name": "ST:5",
+        "room_type": "Engine",
+        "image_sprite_id": 23221
+    },
+    {
+        "room_design_id": 817,
+        "room_name": "Ship Thrusters Lv6",
+        "room_short_name": "ST:6",
+        "room_type": "Engine",
+        "image_sprite_id": 23221
+    },
+    {
+        "room_design_id": 818,
+        "room_name": "Missile Pod Lv4",
+        "room_short_name": "MP:4",
+        "room_type": "Missile",
+        "image_sprite_id": 23213
+    },
+    {
+        "room_design_id": 819,
+        "room_name": "Missile Pod Lv5",
+        "room_short_name": "MP:5",
+        "room_type": "Missile",
+        "image_sprite_id": 23213
+    },
+    {
+        "room_design_id": 820,
+        "room_name": "Missile Pod Lv6",
+        "room_short_name": "MP:6",
+        "room_type": "Missile",
+        "image_sprite_id": 23213
+    },
+    {
+        "room_design_id": 821,
+        "room_name": "Tractor Beam Emitter Lv2",
+        "room_short_name": "TB:2",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 23226
+    },
+    {
+        "room_design_id": 822,
+        "room_name": "Tractor Beam Emitter Lv3",
+        "room_short_name": "TB:3",
+        "room_type": "AntiCraft",
+        "image_sprite_id": 23226
+    },
+    {
+        "room_design_id": 823,
+        "room_name": "Defense Hangar Lv1",
+        "room_short_name": "DFH:1",
+        "room_type": "Carrier",
+        "image_sprite_id": 23211
+    },
+    {
+        "room_design_id": 824,
+        "room_name": "Defense Hangar Lv2",
+        "room_short_name": "DFH:2",
+        "room_type": "Carrier",
+        "image_sprite_id": 23211
+    },
+    {
+        "room_design_id": 825,
+        "room_name": "Defense Hangar Lv3",
+        "room_short_name": "DFH:3",
+        "room_type": "Carrier",
+        "image_sprite_id": 25378
+    },
+    {
+        "room_design_id": 826,
+        "room_name": "Disintegrator Gate Lv2",
+        "room_short_name": "DG:2",
+        "room_type": "Trap",
+        "image_sprite_id": 10384
+    },
+    {
+        "room_design_id": 827,
+        "room_name": "Zaki Tentacle Garden Lv2",
+        "room_short_name": "DG:2",
+        "room_type": "Trap",
+        "image_sprite_id": 10378
+    },
+    {
+        "room_design_id": 828,
+        "room_name": "Small Gas Trap Lv3",
+        "room_short_name": null,
+        "room_type": "Trap",
+        "image_sprite_id": 15624
+    },
+    {
+        "room_design_id": 829,
+        "room_name": "Zongzi Factory Lv2",
+        "room_short_name": "ZF:2",
+        "room_type": "Android",
+        "image_sprite_id": 12597
+    },
+    {
+        "room_design_id": 830,
+        "room_name": "Ghostly Factory Lv2",
+        "room_short_name": "GF:2",
+        "room_type": "Android",
+        "image_sprite_id": 13081
+    },
+    {
+        "room_design_id": 831,
+        "room_name": "Visiri Mechbay Lv2",
+        "room_short_name": "VM:2",
+        "room_type": "Android",
+        "image_sprite_id": 7964
+    }
+]

@@ -27,12 +27,12 @@ let allModules: Record<string, () => Promise<RawEntity[]>> = {};
 
 if (import.meta.env.DEV) {
   const crewModules: Record<string, () => Promise<RawEntity[]>> = {
-    ...import.meta.glob<RawEntity[]>("../../data/crew_ai*.json", { import: "default" }),
-    ...import.meta.glob<RawEntity[]>("../../data/character_ai*.json", { import: "default" }),
+    ...import.meta.glob<RawEntity[]>("../../data/*crew_ai*.json", { import: "default" }),
+    ...import.meta.glob<RawEntity[]>("../../data/*character_ai*.json", { import: "default" }),
   };
 
   const roomModules: Record<string, () => Promise<RawEntity[]>> = {
-    ...import.meta.glob<RawEntity[]>("../../data/room_ai*.json", { import: "default" }),
+    ...import.meta.glob<RawEntity[]>("../../data/*room_ai*.json", { import: "default" }),
   };
 
   // Combine crew and room modules into a single samples list.

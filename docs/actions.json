@@ -1,0 +1,704 @@
+[
+    {
+        "action_type_id": 1,
+        "action_type_name": "Set Maximum Power",
+        "action_type_description": "Sets current assigned power to the maximum available",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 2
+    },
+    {
+        "action_type_id": 2,
+        "action_type_name": "Set Zero Power",
+        "action_type_description": "Resets all assigned power to 0",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 3
+    },
+    {
+        "action_type_id": 3,
+        "action_type_name": "Increase Power By 1",
+        "action_type_description": "Increases assigned power by 1 if available",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 4,
+        "action_type_name": "Decrease Power By 1",
+        "action_type_description": "Decreases assigned power by 1",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 1
+    },
+    {
+        "action_type_id": 5,
+        "action_type_name": "Target Enemy Laser",
+        "action_type_description": "Set current target to an enemy Laser type room",
+        "action_type_category": "Target",
+        "room_type": "Laser",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 6,
+        "action_type_name": "Target Enemy Shield Room",
+        "action_type_description": "Sets current target to an enemy Shield type room",
+        "action_type_category": "Target",
+        "room_type": "Shield",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 9,
+        "action_type_name": "Target Enemy Engine",
+        "action_type_description": "Sets current target to an enemy Engine type room",
+        "action_type_category": "Target",
+        "room_type": "Engine",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 12,
+        "action_type_name": "Target Enemy Reactor",
+        "action_type_description": "Sets current target to an enemy Reactor type room",
+        "action_type_category": "Target",
+        "room_type": "Reactor",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 13,
+        "action_type_name": "Target Your Laser",
+        "action_type_description": "Sets current target to a friendly Laser type weapon room",
+        "action_type_category": "Target",
+        "room_type": "Laser",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 16,
+        "action_type_name": "Target Your Engine",
+        "action_type_description": "Sets current target to a friendly Engine type room",
+        "action_type_category": "Target",
+        "room_type": "Engine",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 19,
+        "action_type_name": "Target Your Shield Room",
+        "action_type_description": "Sets current target to a friendly Shield type room",
+        "action_type_category": "Target",
+        "room_type": "Shield",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 20,
+        "action_type_name": "Target Your Reactor",
+        "action_type_description": "Sets current target to a friendly Reactor type room",
+        "action_type_category": "Target",
+        "room_type": "Reactor",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 21,
+        "action_type_name": "Target Random Enemy Room",
+        "action_type_description": "Sets current target to a valid random enemy room",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 22,
+        "action_type_name": "Target Enemy Missile Room",
+        "action_type_description": "Sets current target to an enemy Missile type room",
+        "action_type_category": "Target",
+        "room_type": "Missile",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 23,
+        "action_type_name": "Target Your Missile Room",
+        "action_type_description": "Sets current target to a friendly Missile type room",
+        "action_type_category": "Target",
+        "room_type": "Missile",
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 25,
+        "action_type_name": "Target Enemy Teleport Room",
+        "action_type_description": "Sets current target to an enemy Teleport type room",
+        "action_type_category": "Target",
+        "room_type": "Teleport",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 26,
+        "action_type_name": "Target Your Teleport",
+        "action_type_description": "Sets current target to a friendly Teleport type room",
+        "action_type_category": "Target",
+        "room_type": "Teleport",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 27,
+        "action_type_name": "Set Cheapest Items",
+        "action_type_description": "Sets current assigned ammo to the cheapest available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 6
+    },
+    {
+        "action_type_id": 28,
+        "action_type_name": "Set Dearest Items",
+        "action_type_description": "Sets current assigned ammo to the most expensive available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 7
+    },
+    {
+        "action_type_id": 29,
+        "action_type_name": "Target Condition Room",
+        "action_type_description": "Target condition room that satisfies conditions",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 1
+    },
+    {
+        "action_type_id": 30,
+        "action_type_name": "Target Your Hangar",
+        "action_type_description": "Sets current target to a friendly Hangar type room",
+        "action_type_category": "Target",
+        "room_type": "Carrier",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 31,
+        "action_type_name": "Target Enemy Hangar",
+        "action_type_description": "Sets current target to an enemy Hangar type room",
+        "action_type_category": "Target",
+        "room_type": "Carrier",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 32,
+        "action_type_name": "Target Your Anti-Craft Room",
+        "action_type_description": "Sets current target to a friendly Anti-craft type room",
+        "action_type_category": "Target",
+        "room_type": "AntiCraft",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 33,
+        "action_type_name": "Target Enemy Anti-Craft Room",
+        "action_type_description": "Sets current target to an enemy Anti-craft type room",
+        "action_type_category": "Target",
+        "room_type": "AntiCraft",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 34,
+        "action_type_name": "Use Special Power",
+        "action_type_description": "Activates crew special abilities if unused. This AI command will be run last and separately from other AI commands.",
+        "action_type_category": "UseSpecialPower",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 35,
+        "action_type_name": "Set Highest System Damage",
+        "action_type_description": "Sets current assigned ammo to the highest system damage ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 8
+    },
+    {
+        "action_type_id": 36,
+        "action_type_name": "Set Highest Hull Damage",
+        "action_type_description": "Sets current assigned ammo to the highest hull damage ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 10
+    },
+    {
+        "action_type_id": 37,
+        "action_type_name": "Set Highest EMP",
+        "action_type_description": "Sets current assigned ammo to the highest EMP stat ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 94,
+        "order_index": 14
+    },
+    {
+        "action_type_id": 38,
+        "action_type_name": "Set Highest Character Damage",
+        "action_type_description": "Sets current assigned ammo to the highest crew damage ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 9
+    },
+    {
+        "action_type_id": 39,
+        "action_type_name": "Target Your Medical Room",
+        "action_type_description": "Sets current target to a friendly Medical type room",
+        "action_type_category": "Target",
+        "room_type": "Medical",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 40,
+        "action_type_name": "Target Enemy Medical Room",
+        "action_type_description": "Sets current target to an enemy Medical type room",
+        "action_type_category": "Target",
+        "room_type": "Medical",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 41,
+        "action_type_name": "Set Highest Fire Items",
+        "action_type_description": "Sets current assigned ammo to the highest Incendiary stat ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 94,
+        "order_index": 13
+    },
+    {
+        "action_type_id": 42,
+        "action_type_name": "Target Enemy Cannon",
+        "action_type_description": "Sets current target to an enemy Cannon type room",
+        "action_type_category": "Target",
+        "room_type": "Cannon",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 43,
+        "action_type_name": "Target Your Cannon",
+        "action_type_description": "Sets current target to a friendly Cannon type room",
+        "action_type_category": "Target",
+        "room_type": "Cannon",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 44,
+        "action_type_name": "Continue Current Job",
+        "action_type_description": "Continues performing currently assigned actions",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 96,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 45,
+        "action_type_name": "Target Enemy Security Room",
+        "action_type_description": "Sets current target to an enemy Security type room",
+        "action_type_category": "Target",
+        "room_type": "Trap",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 46,
+        "action_type_name": "Target Your Security Room",
+        "action_type_description": "Sets current target to a friendly Security type room",
+        "action_type_category": "Target",
+        "room_type": "Trap",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 47,
+        "action_type_name": "Target Your Android Room",
+        "action_type_description": "Sets current target to a friendly Android type room",
+        "action_type_category": "Target",
+        "room_type": "Android",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 48,
+        "action_type_name": "Target Enemy Android Room",
+        "action_type_description": "Sets current target to an enemy Android type room",
+        "action_type_category": "Target",
+        "room_type": "Android",
+        "required_research_design_id": 94,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 49,
+        "action_type_name": "Target Enemy Radar",
+        "action_type_description": "Sets current target to an enemy Radar type room",
+        "action_type_category": "Target",
+        "room_type": "Radar",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 50,
+        "action_type_name": "Target Your Radar",
+        "action_type_description": "Sets current target to a friendly Radar type room",
+        "action_type_category": "Target",
+        "room_type": "Radar",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 51,
+        "action_type_name": "Target Enemy Cloaking Room",
+        "action_type_description": "Sets current target to an enemy Cloak type room",
+        "action_type_category": "Target",
+        "room_type": "Stealth",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 52,
+        "action_type_name": "Target Your Cloaking Room",
+        "action_type_description": "Sets current target to a friendly Cloak type room",
+        "action_type_category": "Target",
+        "room_type": "Stealth",
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 53,
+        "action_type_name": "Set Highest AP Damage",
+        "action_type_description": "Sets current assigned ammo to the highest AP damage ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 12
+    },
+    {
+        "action_type_id": 54,
+        "action_type_name": "Set Highest Shield Damage",
+        "action_type_description": "Sets current assigned ammo to the highest shield damage ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 11
+    },
+    {
+        "action_type_id": 55,
+        "action_type_name": "Set Power To 1",
+        "action_type_description": "Sets current assigned power to 1",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 4
+    },
+    {
+        "action_type_id": 56,
+        "action_type_name": "Set Item to None",
+        "action_type_description": "Unassigns any currently equipped ammo",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 94,
+        "order_index": 99
+    },
+    {
+        "action_type_id": 57,
+        "action_type_name": "Set Power To 2",
+        "action_type_description": "Sets current assigned power to 2",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 94,
+        "order_index": 5
+    },
+    {
+        "action_type_id": 58,
+        "action_type_name": "Do Not Use Special Power",
+        "action_type_description": "Will prevent 'Use Special Power' action from running",
+        "action_type_category": "UseSpecialPower",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 1
+    },
+    {
+        "action_type_id": 59,
+        "action_type_name": "Target Current Room",
+        "action_type_description": "Sets current target to the subject's current room",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 60,
+        "action_type_name": "Target Origin Room",
+        "action_type_description": "Sets current target to the subject's starting room",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 61,
+        "action_type_name": "Target Enemy Superweapon",
+        "action_type_description": "Set current target to an enemy superweapon room",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 62,
+        "action_type_name": "Target Your Superweapon",
+        "action_type_description": "Sets current target to a friendly superweapon room",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 95,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 65,
+        "action_type_name": "Set Power To 3",
+        "action_type_description": "Sets current assigned power to 3",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 94,
+        "order_index": 6
+    },
+    {
+        "action_type_id": 66,
+        "action_type_name": "Set Power To 4",
+        "action_type_description": "Sets current assigned power to 4",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 95,
+        "order_index": 7
+    },
+    {
+        "action_type_id": 67,
+        "action_type_name": "Set Power To 5",
+        "action_type_description": "Sets current assigned power to 5",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 95,
+        "order_index": 8
+    },
+    {
+        "action_type_id": 68,
+        "action_type_name": "Set Power To 6",
+        "action_type_description": "Sets current assigned power to 6",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 96,
+        "order_index": 9
+    },
+    {
+        "action_type_id": 70,
+        "action_type_name": "Set Item {0}",
+        "action_type_description": "Sets current assigned ammo to the specified ammo type",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 71,
+        "action_type_name": "Set Item {1}",
+        "action_type_description": "Sets current assigned ammo to the specified ammo type",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 1
+    },
+    {
+        "action_type_id": 72,
+        "action_type_name": "Set Item {2}",
+        "action_type_description": "Sets current assigned ammo to the specified ammo type",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 2
+    },
+    {
+        "action_type_id": 73,
+        "action_type_name": "Set Item {3}",
+        "action_type_description": "Sets current assigned ammo to the specified ammo type",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 3
+    },
+    {
+        "action_type_id": 74,
+        "action_type_name": "Set Item {4}",
+        "action_type_description": "Sets current assigned ammo to the specified ammo type",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 4
+    },
+    {
+        "action_type_id": 75,
+        "action_type_name": "Set Item {5}",
+        "action_type_description": "Sets current assigned ammo to the specified ammo type",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 5
+    },
+    {
+        "action_type_id": 82,
+        "action_type_name": "Set No Target",
+        "action_type_description": "Sets current target to none. This will stop the room from activating.",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 83,
+        "action_type_name": "Target Another Room",
+        "action_type_description": "Change the current target to another target with matching parameters.",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 0,
+        "order_index": 1
+    },
+    {
+        "action_type_id": 85,
+        "action_type_name": "Skip Next Power Action",
+        "action_type_description": "Skips the next power-based action.",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 213,
+        "order_index": 10
+    },
+    {
+        "action_type_id": 86,
+        "action_type_name": "Skip Next Target Action",
+        "action_type_description": "Skips the next target-based action.",
+        "action_type_category": "Target",
+        "room_type": null,
+        "required_research_design_id": 213,
+        "order_index": 10
+    },
+    {
+        "action_type_id": 87,
+        "action_type_name": "Skip Next Ammo Action",
+        "action_type_description": "Skips the next ammo-based action.",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 213,
+        "order_index": 10
+    },
+    {
+        "action_type_id": 88,
+        "action_type_name": "Skip Next Special Power Action",
+        "action_type_description": "Skips the next special power action.",
+        "action_type_category": "UseSpecialPower",
+        "room_type": null,
+        "required_research_design_id": 213,
+        "order_index": 10
+    },
+    {
+        "action_type_id": 89,
+        "action_type_name": "Set Highest HP",
+        "action_type_description": "Sets current assigned ammo to the highest HP stat ammo available",
+        "action_type_category": "SetItem",
+        "room_type": "Carrier",
+        "required_research_design_id": 95,
+        "order_index": 15
+    },
+    {
+        "action_type_id": 90,
+        "action_type_name": "Set Highest HP",
+        "action_type_description": "Sets current assigned ammo to the highest HP stat ammo available",
+        "action_type_category": "SetItem",
+        "room_type": "Android",
+        "required_research_design_id": 95,
+        "order_index": 16
+    },
+    {
+        "action_type_id": 91,
+        "action_type_name": "Set Highest Speed",
+        "action_type_description": "Sets current assigned ammo to the highest speed stat ammo available",
+        "action_type_category": "SetItem",
+        "room_type": null,
+        "required_research_design_id": 96,
+        "order_index": 17
+    },
+    {
+        "action_type_id": 92,
+        "action_type_name": "Set Highest Attack Distance",
+        "action_type_description": "Sets current assigned ammo to the highest Attack Distance stat ammo available",
+        "action_type_category": "SetItem",
+        "room_type": "Carrier",
+        "required_research_design_id": 96,
+        "order_index": 18
+    },
+    {
+        "action_type_id": 94,
+        "action_type_name": "Keep Current Power",
+        "action_type_description": "Keeps the current assigned power.",
+        "action_type_category": "SetPower",
+        "room_type": null,
+        "required_research_design_id": 213,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 95,
+        "action_type_name": "Target Enemy Anti-Teleport",
+        "action_type_description": "Set current target to an enemy Anti-Teleport type room",
+        "action_type_category": "Target",
+        "room_type": "AntiTeleport",
+        "required_research_design_id": 213,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 97,
+        "action_type_name": "Target Enemy Booster",
+        "action_type_description": "Set current target to an enemy Booster type room",
+        "action_type_category": "Target",
+        "room_type": "Booster",
+        "required_research_design_id": 213,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 99,
+        "action_type_name": "Target Your Anti-Teleport",
+        "action_type_description": "Sets current target to a friendly Anti-Teleport type weapon room",
+        "action_type_category": "Target",
+        "room_type": "AntiTeleport",
+        "required_research_design_id": 213,
+        "order_index": 0
+    },
+    {
+        "action_type_id": 101,
+        "action_type_name": "Target Your Booster",
+        "action_type_description": "Sets current target to a friendly Booster type weapon room",
+        "action_type_category": "Target",
+        "room_type": "Booster",
+        "required_research_design_id": 213,
+        "order_index": 0
+    }
+]
