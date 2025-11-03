@@ -17,6 +17,7 @@ export interface SearchSelectProps {
   className?: string;
   dropdownClassName?: string;
   noMatchesText?: string;
+  autoFocus?: boolean;
 }
 
 export function SearchSelect({
@@ -29,6 +30,7 @@ export function SearchSelect({
   className = "",
   dropdownClassName = "",
   noMatchesText = "No matches",
+  autoFocus = false,
 }: SearchSelectProps) {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const controlRef = useRef<HTMLDivElement | null>(null);
@@ -72,6 +74,16 @@ export function SearchSelect({
       anchorRectRef.current = null;
     }
   }, [open]);
+
+  useEffect(() => {
+    if (autoFocus && inputRef.current && !disabled) {
+      // Small delay to ensure the input is fully mounted and visible
+      const timer = setTimeout(() => {
+        inputRef.current?.focus();
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [autoFocus, disabled]);
 
   useEffect(() => {
     setHighlightedIndex(0);
@@ -162,15 +174,17 @@ export function SearchSelect({
   const displayValue = selectedOption?.label ?? "";
   const inputValue = open ? query : displayValue;
 
-  const selectOption = (option: SearchSelectOption | undefined) => {
+  const selectOption = (option: SearchSelectOption | undefined, shouldBlur = false) => {
     if (!option) return;
     onChange(option.value);
     setOpen(false);
     setQuery("");
     setHighlightedIndex(0);
-    requestAnimationFrame(() => {
-      inputRef.current?.blur();
-    });
+    if (shouldBlur) {
+      requestAnimationFrame(() => {
+        inputRef.current?.blur();
+      });
+    }
   };
 
   const handleInputFocus = () => {
@@ -229,7 +243,8 @@ export function SearchSelect({
         setOpen(true);
         return;
       }
-      selectOption(filteredOptions[highlightedIndex]);
+      // Select highlighted option and keep focus so Tab can move to next field
+      selectOption(filteredOptions[highlightedIndex], false);
       return;
     }
 
@@ -240,7 +255,31 @@ export function SearchSelect({
     }
 
     if (event.key === "Tab") {
+      event.preventDefault();
+      // If dropdown is open, select current highlighted option before tabbing
+      if (open && filteredOptions[highlightedIndex]) {
+        selectOption(filteredOptions[highlightedIndex], false);
+      }
       setOpen(false);
+      // Allow natural tab navigation by removing focus from current input
+      // so browser can move to next tabbable element
+      setTimeout(() => {
+        const form = inputRef.current?.closest('form') || inputRef.current?.closest('.ruleComposer, .builderSplit');
+        if (!form) {
+          // No form container, just blur and let browser handle tab
+          inputRef.current?.blur();
+          return;
+        }
+        const tabbables = Array.from(
+          form.querySelectorAll('input:not([disabled]), button:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+        ) as HTMLElement[];
+        const currentIndex = tabbables.indexOf(inputRef.current!);
+        const nextElement = tabbables[currentIndex + 1];
+        if (nextElement) {
+          nextElement.focus();
+        }
+      }, 0);
+      return;
     }
   };
 
@@ -313,7 +352,7 @@ export function SearchSelect({
                   className={`searchSelectOption${isActive ? " active" : ""}${isSelected ? " selected" : ""}`}
                   aria-selected={isSelected}
                   onMouseDown={event => event.preventDefault()}
-                  onClick={() => selectOption(option)}
+                  onClick={() => selectOption(option, true)}
                 >
                   {option.label}
                 </button>

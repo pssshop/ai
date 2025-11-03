@@ -411,6 +411,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
             <div className="builderField">
               <label htmlFor={`entity-sprite-${entity.id}`}>Crew / Room</label>
               <SearchSelect
+                key={`sprite-${entity.id}-${showEntitySettings}`}
                 id={`entity-sprite-${entity.id}`}
                 options={spriteOptions}
                 value={selectedSpriteId}
@@ -431,6 +432,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
                 }}
                 placeholder={isLoadingSprites ? "Loading..." : "Select crew/room…"}
                 disabled={isLoadingSprites || spriteOptions.length === 0}
+                autoFocus
               />
             </div>
             <div className="builderField">
@@ -454,11 +456,13 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
               <div className="ruleInput">
                 <span className="ruleInputLabel">Condition</span>
                 <SearchSelect
+                  key={`cond-${entity.id}-${showAddRule}`}
                   id={`rule-cond-${entity.id}`}
                   value={selectedCondition}
                   onChange={setSelectedCondition}
                   options={composerConditionOptions}
                   placeholder="None"
+                  autoFocus
                 />
               </div>
               <div className="ruleInput">
