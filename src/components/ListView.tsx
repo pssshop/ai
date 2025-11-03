@@ -130,7 +130,9 @@ export function ListView({ entities, filter, onFilterChange, onSelect, onDeleteD
         <div>Entities</div>
         <div id="entityCount">{count}</div>
       </div>
-      <input id="entitySearch" placeholder="Filter by name..." value={filter} onChange={handleFilterChange} />
+      {entities.length > 0 && (
+        <input id="entitySearch" placeholder="Filter by name..." value={filter} onChange={handleFilterChange} />
+      )}
       <div id="entityList">
         {renderSection("Crew", crews)}
         {renderSection("Rooms", rooms)}
