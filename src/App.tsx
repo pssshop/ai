@@ -322,7 +322,7 @@ export default function App() {
       <aside id="sidebar">
         <div id="sidebarTop">
             <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="PSS AI" className="sideLogo" />
-            <h1>PSS AI</h1>
+            <h1>pssshop.github.io/ai</h1>
         </div>
 
         <div id="listActions">
