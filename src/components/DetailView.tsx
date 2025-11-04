@@ -227,7 +227,8 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
     });
 
     const filename = `${safeName.replace(/\s+/g, "-").toLowerCase()}-ai.json`;
-    downloadJson(exportData, filename);
+    // Always wrap in array for consistent format
+    downloadJson([exportData], filename);
   };
 
   const { headerSpriteUrl, specialKey, sourceFileName } = extractEntityMetadata(entity.source);

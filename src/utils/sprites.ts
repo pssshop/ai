@@ -6,19 +6,19 @@ function withBase(path: string): string {
 }
 
 interface Character {
-  character_design_id: number;
+  character_design_id: number | string;
   character_design_name: string;
-  profile_sprite_id: number;
+  profile_sprite_id: number | string;
   rarity?: string;
   special_ability_type?: string;
 }
 
 interface Room {
-  room_design_id: number;
+  room_design_id: number | string;
   room_name: string;
   room_short_name: string | null;
   room_type: string;
-  image_sprite_id: number;
+  image_sprite_id: number | string;
 }
 
 let charactersCache: Character[] | null = null;
@@ -32,7 +32,13 @@ export async function loadCharacters(): Promise<Character[]> {
   if (!response.ok) {
     throw new Error(`Failed to load characters: ${response.statusText}`);
   }
-  charactersCache = await response.json();
+  const raw = await response.json();
+  // Normalize IDs to numbers for consistent usage
+  charactersCache = raw.map((c: any) => ({
+    ...c,
+    character_design_id: typeof c.character_design_id === 'string' ? parseInt(c.character_design_id, 10) : c.character_design_id,
+    profile_sprite_id: typeof c.profile_sprite_id === 'string' ? parseInt(c.profile_sprite_id, 10) : c.profile_sprite_id,
+  }));
   return charactersCache!;
 }
 
@@ -44,7 +50,13 @@ export async function loadRooms(): Promise<Room[]> {
   if (!response.ok) {
     throw new Error(`Failed to load rooms: ${response.statusText}`);
   }
-  roomsCache = await response.json();
+  const raw = await response.json();
+  // Normalize IDs to numbers for consistent usage
+  roomsCache = raw.map((r: any) => ({
+    ...r,
+    room_design_id: typeof r.room_design_id === 'string' ? parseInt(r.room_design_id, 10) : r.room_design_id,
+    image_sprite_id: typeof r.image_sprite_id === 'string' ? parseInt(r.image_sprite_id, 10) : r.image_sprite_id,
+  }));
   return roomsCache!;
 }
 

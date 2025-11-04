@@ -42,7 +42,8 @@ export async function prepareEntityExport(options: ExportOptions): Promise<Recor
         const chars = await loadCharacters();
         const match = chars.find(c => Number(c.profile_sprite_id) === spriteNum);
         if (match) {
-          exportData.character_design_id = String(match.character_design_id);
+          // Always export design IDs as integers
+          exportData.character_design_id = Number(match.character_design_id);
           if (match.special_ability_type) {
             exportData.special = match.special_ability_type;
           }
@@ -56,7 +57,8 @@ export async function prepareEntityExport(options: ExportOptions): Promise<Recor
         const rooms = await loadRooms();
         const match = rooms.find(r => Number(r.image_sprite_id) === spriteNum);
         if (match) {
-          exportData.room_design_id = String(match.room_design_id);
+          // Always export design IDs as integers
+          exportData.room_design_id = Number(match.room_design_id);
         }
       } catch (e) {
         console.warn("Export: failed to enrich room fields", e);
@@ -70,7 +72,7 @@ export async function prepareEntityExport(options: ExportOptions): Promise<Recor
 /**
  * Trigger a browser download of JSON data
  */
-export function downloadJson(data: Record<string, unknown>, filename: string): void {
+export function downloadJson(data: Record<string, unknown> | Record<string, unknown>[], filename: string): void {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");

@@ -41,21 +41,31 @@ Create new AI scripts from scratch:
 The app imports/exports JSON files with this structure:
 
 ```json
-{
-    "name": "Example Name",
-    "special": "HealRoomHp",      // For crew only
-    "character_design_id": "123", // For crew
-    "profile_sprite_id": 1234,    // For crew
-
-    "room_design_id": "123",      // For rooms
-    "image_sprite_id": 1234,     // For rooms
-
-    "ai": [
-        {
-            "index": 0,
-            "condition": "SomeCondition",
-            "action": "SomeAction"
-        }
-    ]
-}
+[
+    {
+        "name": "Example Crew",
+        "special": "HealRoomHp",
+        "character_design_id": 123,
+        "profile_sprite_id": 1234,
+        "ai": [
+            {
+                "index": 0,
+                "condition": "SomeCondition",
+                "action": "SomeAction"
+            }
+        ]
+    },
+    {
+        "name": "Example Room",
+        "room_design_id": 123,
+        "image_sprite_id": 1234,
+        "ai": [
+            {
+                "index": 0,
+                "condition": "SomeCondition",
+                "action": "SomeAction"
+            }
+        ]
+    }
+]
 ```
