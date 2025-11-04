@@ -10,7 +10,10 @@ import { useSamples } from "@/hooks/useSamples";
 import { useWorkspace } from "@/hooks/useWorkspace";
 import { randomId } from "@/utils/random";
 
+const ENTITY_COLUMN_WIDTH = 565;
+
 export default function App() {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [sources, setSources] = useState<Array<{ id: string; name: string; crew: RawEntity[]; rooms: RawEntity[] }>>(() => {
     // Load drafts from localStorage on mount
     const savedDrafts = localStorage.getItem("pssai:drafts");
@@ -45,6 +48,11 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("pssai:showSummaries", String(showSummaries));
   }, [showSummaries]);
+
+  // Trigger sticky header recalculation when sidebar collapses/expands
+  useEffect(() => {
+    window.dispatchEvent(new Event("pss:columns-changed"));
+  }, [sidebarCollapsed]);
 
   // Save drafts to localStorage whenever sources change
   useEffect(() => {
@@ -173,6 +181,10 @@ export default function App() {
   };
 
   const handleCreateDraft = () => {
+    if (!sidebarCollapsed && typeof window !== "undefined" && window.innerWidth < ENTITY_COLUMN_WIDTH) {
+      setSidebarCollapsed(true);
+    }
+
     const draftRaw: RawEntity = {
       id: randomId("draft"),
       name: "New AI",
@@ -319,100 +331,127 @@ export default function App() {
 
   return (
     <>
-      <aside id="sidebar">
-        <div id="sidebarTop">
-            <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="PSS AI" className="sideLogo" />
-            <h1>pssshop.github.io/ai</h1>
-        </div>
-
-        <div id="listActions">
-          <button type="button" className="listActionBtn" onClick={handleCreateDraft}>
-            Create AI
-          </button>
+      <aside id="sidebar" className={sidebarCollapsed ? "collapsed" : ""}>
+        <div id="sidebarTop" className={sidebarCollapsed ? "collapsed" : ""}>
+          {!sidebarCollapsed ? (
+            <>
+              <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="PSS AI" className="sideLogo" />
+              <div className="sidebarTitleWrap">
+                <h1>pssshop.github.io/ai</h1>
+                <a
+                  href="https://pssshop.github.io"
+                  className="sidebarBackLink"
+                  aria-label="Back to main site"
+                  title="Back to pssshop.github.io"
+                >
+                  ← Back to main site
+                </a>
+              </div>
+            </>
+          ) : null}
           <button
             type="button"
-            className={`listActionBtn summariesToggle${showSummaries ? " active" : ""}`}
-            onClick={() => setShowSummaries(prev => !prev)}
-            title={showSummaries ? "Hide AI summaries" : "Show AI summaries"}
+            className="sidebarCollapseBtn"
+            onClick={() => setSidebarCollapsed(prev => !prev)}
+            aria-label={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+            title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
-            🧠
+            <span aria-hidden>{sidebarCollapsed ? "»" : "«"}</span>
           </button>
         </div>
 
-        <div id="fileInputs">
-          <label htmlFor="importFile">Import AI JSON (characters or rooms)</label>
-          <input
-            id="importFile"
-            type="file"
-            accept="application/json"
-            multiple
-            onChange={(event: ChangeEvent<HTMLInputElement>) => handleFiles(event.target.files ?? null)}
-          />
-
-          {import.meta.env.DEV && samples.length ? (
-            <SearchSelect
-              id="sampleSelect"
-              value={sampleValue}
-              onChange={value => {
-                if (!value) return;
-                setSampleValue(value);
-                handleSampleSelect({ target: { value } });
-                setTimeout(() => setSampleValue(""), 0);
-              }}
-              options={[{ value: "", label: "Load from /data…" }, ...samples.map(sample => ({ value: sample.id, label: sample.label }))]}
-              placeholder="Load from /data…"
-            />
-          ) : null}
-
-          <div id="loadStatus">{loadStatus}</div>
-          {importError || sampleError || errorMessage ? (
-            <div className="unreachableNote errorMessage">{importError ?? sampleError ?? errorMessage}</div>
-          ) : null}
-
-          {sources.length ? (
-            <div id="sourcesList">
-              {sources.map(s => {
-                if (s.name === "Drafts") {
-                  const crewSaved = s.crew.filter(raw => (raw as any)?.__builderMeta?.saved).length;
-                  const roomSaved = s.rooms.filter(raw => (raw as any)?.__builderMeta?.saved).length;
-                  if (crewSaved + roomSaved === 0) return null; // hide Drafts when nothing saved
-                  return (
-                    <div key={s.id} className="sourceRow">
-                      <span className="sourceName">{s.name}</span>
-                      <span className="sourceCounts">{crewSaved} crew / {roomSaved} rooms</span>
-                      <button
-                        type="button"
-                        onClick={() => removeSource(s.id)}
-                        className="sourceRemoveBtn"
-                        aria-label={`Remove ${s.name}`}
-                        title="Remove source"
-                      >
-                        ✕
-                      </button>
-                    </div>
-                  );
-                }
-                return (
-                  <div key={s.id} className="sourceRow">
-                    <span className="sourceName">{s.name}</span>
-                    <span className="sourceCounts">{s.crew.length} crew / {s.rooms.length} rooms</span>
-                    <button
-                      type="button"
-                      onClick={() => removeSource(s.id)}
-                      className="sourceRemoveBtn"
-                      aria-label={`Remove ${s.name}`}
-                      title="Remove source"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                );
-              })}
+        {!sidebarCollapsed ? (
+          <div className="sidebarContent">
+            <div id="listActions">
+              <button type="button" className="listActionBtn" onClick={handleCreateDraft}>
+                Create AI
+              </button>
+              <button
+                type="button"
+                className={`listActionBtn summariesToggle${showSummaries ? " active" : ""}`}
+                onClick={() => setShowSummaries(prev => !prev)}
+                title={showSummaries ? "Hide AI summaries" : "Show AI summaries"}
+              >
+                🧠
+              </button>
             </div>
-          ) : null}
-        </div>
 
-        <ListView entities={allEntities} filter={filter} onFilterChange={setFilter} onSelect={add} onDeleteDraft={handleDeleteDraft} />
+            <div id="fileInputs">
+              <label htmlFor="importFile">Import AI JSON (characters or rooms)</label>
+              <input
+                id="importFile"
+                type="file"
+                accept="application/json"
+                multiple
+                onChange={(event: ChangeEvent<HTMLInputElement>) => handleFiles(event.target.files ?? null)}
+              />
+
+              {import.meta.env.DEV && samples.length ? (
+                <SearchSelect
+                  id="sampleSelect"
+                  value={sampleValue}
+                  onChange={value => {
+                    if (!value) return;
+                    setSampleValue(value);
+                    handleSampleSelect({ target: { value } });
+                    setTimeout(() => setSampleValue(""), 0);
+                  }}
+                  options={[{ value: "", label: "Load from /data…" }, ...samples.map(sample => ({ value: sample.id, label: sample.label }))]}
+                  placeholder="Load from /data…"
+                />
+              ) : null}
+
+              <div id="loadStatus">{loadStatus}</div>
+              {importError || sampleError || errorMessage ? (
+                <div className="unreachableNote errorMessage">{importError ?? sampleError ?? errorMessage}</div>
+              ) : null}
+
+              {sources.length ? (
+                <div id="sourcesList">
+                  {sources.map(s => {
+                    if (s.name === "Drafts") {
+                      const crewSaved = s.crew.filter(raw => (raw as any)?.__builderMeta?.saved).length;
+                      const roomSaved = s.rooms.filter(raw => (raw as any)?.__builderMeta?.saved).length;
+                      if (crewSaved + roomSaved === 0) return null; // hide Drafts when nothing saved
+                      return (
+                        <div key={s.id} className="sourceRow">
+                          <span className="sourceName">{s.name}</span>
+                          <span className="sourceCounts">{crewSaved} crew / {roomSaved} rooms</span>
+                          <button
+                            type="button"
+                            onClick={() => removeSource(s.id)}
+                            className="sourceRemoveBtn"
+                            aria-label={`Remove ${s.name}`}
+                            title="Remove source"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      );
+                    }
+                    return (
+                      <div key={s.id} className="sourceRow">
+                        <span className="sourceName">{s.name}</span>
+                        <span className="sourceCounts">{s.crew.length} crew / {s.rooms.length} rooms</span>
+                        <button
+                          type="button"
+                          onClick={() => removeSource(s.id)}
+                          className="sourceRemoveBtn"
+                          aria-label={`Remove ${s.name}`}
+                          title="Remove source"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </div>
+
+            <ListView entities={allEntities} filter={filter} onFilterChange={setFilter} onSelect={add} onDeleteDraft={handleDeleteDraft} />
+          </div>
+        ) : null}
       </aside>
 
       <Workspace
