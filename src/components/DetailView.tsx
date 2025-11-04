@@ -89,12 +89,14 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
     const sourceId = entity.source?.profile_sprite_id || entity.source?.image_sprite_id;
     setSelectedSpriteId(sourceId ? String(sourceId) : "");
 
-    // Show entity settings by default for new draft entities
-    const isDraft = (entity.source as any)?.__builderMeta?.isDraft;
-    if (isDraft) {
+    // Show entity settings by default ONLY for new unsaved drafts
+    const meta = (entity.source as any)?.__builderMeta;
+    if (meta?.isDraft && !meta?.saved) {
       setShowEntitySettings(true);
       setShowAddRule(false);
       setNameManuallyEdited(false); // Reset for new drafts so name can be auto-filled
+    } else {
+      setShowEntitySettings(false);
     }
   }, [entity.id]);
 

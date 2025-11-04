@@ -1,14 +1,14 @@
 # Copilot Instructions for pssai
 
-Purpose: concise, actionable guidance so an AI coding assistant can stay productive with this React + Vite app for exploring Pixel Starships AI scripts.
+Purpose: concise, actionable guidance so an AI coding assistant can stay productive with this React + Vite app for exploring and building Pixel Starships AI scripts.
 
 Keep this short — open the referenced files when in doubt.
 
 - Project overview
 
   - Tech: React + Vite + TypeScript; styling with Tailwind (preferred) backed by `src/styles.css` for globals.
-  - Goal: load crew and room AI JSON and display the rule order (linear list of rules).
-  - Entry: `src/main.tsx` → `src/App.tsx`; UI logic lives under `src/components/`, rule helpers in `src/utils/`.
+  - Goal: load crew and room AI JSON, display rules in evaluation order, and provide a builder for creating/editing AI scripts.
+  - Entry: `src/main.tsx` → `src/App.tsx`; UI logic lives under `src/components/`, rule helpers in `src/utils/`, custom hooks in `src/hooks/`.
 
 - Core domain ideas
 
@@ -19,19 +19,32 @@ Keep this short — open the referenced files when in doubt.
     - if the rule's condition is false, move to the next rule.
   - “None” is an always-true condition but can still be suppressed by a preceding Skip (so a Skip with condition "None" is an always-on skip).
   - Segmenting: treat every non-Skip action as the terminator for a segment — the segment is the sequence of rules from after the previous non-Skip action up to and including this action. That makes each action's IF-set local to its segment.
-  - The app focuses on the view presenting rules in evaluation order. Advanced path enumeration and enhanced summaries were removed to keep the UI simple.
+  - The app shows rules in linear evaluation order and provides optional IF/DO summaries (togglable via brain icon, default off, persisted to localStorage).
 
 - Key files
 
-  - `src/App.tsx` — orchestrates data loading and shared state.
-  - `src/components/ListView.tsx`, `DetailView.tsx`, `Workspace.tsx` — sidebar, detail rendering, and workspace layout.
+  - `src/App.tsx` — orchestrates data loading, shared state, workspace management, drafts lifecycle, and localStorage persistence. Manages a single "Drafts" source; only persists drafts with `saved: true` flag.
+  - `src/components/ListView.tsx` — sidebar with file inputs, entity browser, filter, version buttons, and draft management (delete button for saved drafts).
+  - `src/components/DetailView.tsx` — entity editor with header (avatar, name, special badge, actions), settings panel (sprite picker, name input), rule composer (keyboard-friendly), rules list (drag-reorder, inline edit), and optional summaries.
+  - `src/components/SearchSelect.tsx` — keyboard-friendly searchable dropdown with autoFocus, Enter-to-select, Tab-to-advance behavior.
+  - `src/components/Workspace.tsx` — horizontal scrollable workspace holding entity columns.
   - `src/utils/logic.ts` — normalization, subsystem bucketing, skip-aware segmentation, and rule evaluation helpers.
-  - `src/utils/fixtures.ts` — loads bundled JSON fixtures.
+  - `src/utils/sprites.ts` — loads characters.json and rooms.json for sprite picker.
+  - `src/utils/export.ts` — prepares entity JSON for download (strips internal metadata, enriches with design IDs/specials).
+  - `src/hooks/useEntitySprites.ts` — loads sprite options with meta (type, specialKey).
+  - `src/hooks/useSegmentSummaries.ts` — computes IF/DO summaries for each rule.
+  - `src/hooks/useSticky.ts` — sticky header behavior for entity columns.
+  - `src/hooks/useDragReorder.ts` — drag-and-drop reordering for rules.
 
-- How it should work
+- How it works
 
-  - Load `data/crew_ai*.json` / `data/room_ai*.json` via upload or dropdown.
-  - The UI presents the view (linear list of rules). Workspace columns stay in sync; the app no longer supports multiple view modes.
+  - **Load data**: upload JSON or select from dropdown; entities appear in sidebar grouped by source file.
+  - **Browse/open**: click entity or version button to open in workspace column; multiple columns can be open side-by-side.
+  - **Edit**: inline edit rules (condition/action dropdowns), drag to reorder, delete with ✕ button.
+  - **Builder (drafts)**: click "Create AI" to start a new draft; auto-opens entity settings; select crew/room sprite (auto-fills name and special power); add rules via composer; save to persist draft to localStorage; delete draft via ListView.
+  - **Keyboard navigation**: Create AI auto-focuses sprite picker; Add Rule auto-focuses condition field; Enter selects, Tab advances to next field; after adding rule, focus returns to "Add Rule" link for rapid entry.
+  - **Export**: download individual entity JSON via header menu.
+  - **Summaries**: toggle brain icon in ListView to show/hide IF/DO summaries; preference persisted to localStorage (default off).
 
 # AI parsing & execution model (pssai)
 
@@ -61,8 +74,8 @@ Skip semantics (important)
 
 How the app presents firing conditions
 
-- The UI shows each rule's condition and action in order. For non-skip rules we display a small IF/DO summary when a simple requirement expression can be computed.
-- `src/utils/logic.ts` still produces `RuleInsight` and `SegmentInsight` shapes; the UI uses a subset of that data for the view and requirement summaries.
+- The UI shows each rule's condition and action in order. For non-skip rules we display optional IF/DO summaries when enabled (toggled via brain icon).
+- `src/utils/logic.ts` produces `RuleInsight` and `SegmentInsight` shapes; `useSegmentSummaries` hook computes summaries; DetailView conditionally renders them based on `showSummaries` prop.
 
 Edge cases to handle / tests to add
 
@@ -85,6 +98,76 @@ Implementation notes / small rules
 - Always display rule indices as `index + 1` to match human-facing references.
 - Avoid reordering rules — preserve original dump order in analysis and UI.
 - When computing requirementExpressions, prefer readable, factored expressions (factor common AND parts) instead of long monolithic AND lists.
+
+## Key workflows & UX patterns
+
+### Drafts lifecycle
+
+- **Create**: New draft added with `__builderMeta: { isDraft: true, saved: false, fileId: randomId() }`.
+- **Save**: Sets `saved: true`, persists to localStorage (key: `pssai-drafts`).
+- **Delete**: Removes from sources and localStorage.
+- **Close**: Unsaved drafts discarded; saved drafts remain.
+- **Persist**: Only drafts with `isDraft: true && saved: true` are persisted.
+- **Sources**: Single "Drafts" source; unsaved drafts hidden from ListView.
+
+### Keyboard navigation
+
+#### Entity settings (Create AI)
+- Auto-focus sprite picker when panel opens (uses `key` prop to force remount).
+- Flow: Type → Enter selects → Tab to name field → type name → Tab out.
+
+#### Rule composer (Add Rule)
+- Auto-focus condition field when composer opens (uses `key` prop to force remount).
+- Flow: Type → Enter selects → Tab to action → type → Enter selects → Tab to "Add rule" button → Enter adds rule.
+- **Rapid entry**: After adding rule, focus returns to "Add Rule" link → hit Enter to add another.
+
+#### SearchSelect behavior
+- **Enter**: Selects highlighted option without blur (allows Tab to advance naturally).
+- **Tab**: Selects highlighted option and programmatically focuses next tabbable element.
+- **Click**: Selects and blurs.
+- **autoFocus prop**: Focuses input on mount with 50ms delay; remount via `key` prop when parent panels open.
+
+### Header & layout
+
+- **Sticky headers**: Entity column headers stick on scroll using `useSticky` hook; spacer div added when `isFixed` to prevent layout jump.
+- **Header structure**: Single flex container (`.entityColumnHeader`) with two children: `.entityHeaderMain` (avatar, name, badges) and `.entityHeaderActions` (buttons).
+- **Min-height**: Enforced to prevent shifts when sprite loads or changes.
+- **Placeholder avatar**: Question mark SVG shown when no sprite selected.
+
+### Special powers
+
+- When selecting sprite in draft mode, special power is resolved from sprite's `meta.specialKey` (from `characters.json` `special_ability_type`).
+- Humanized via `SPECIAL_NAMES` map in `src/utils/specials.ts`; icon loaded via `getAssetForName` from `src/utils/assets.ts`.
+- Badge displays next to entity name in header.
+
+### Export enrichment
+
+- Strips `__builderMeta` and `__sourceFile` internal metadata.
+- Enriches with design IDs and special keys for import compatibility.
+
+## Common patterns
+
+### Adding auto-focus to a form field
+
+1. Add `autoFocus` prop to SearchSelect.
+2. Add `key` prop that changes when panel opens (e.g., `key={`field-${entity.id}-${showPanel}`}`).
+3. SearchSelect will remount and trigger focus effect.
+
+### Adding a new draft-only field
+
+1. Add state in DetailView: `const [myField, setMyField] = useState("");`.
+2. Add to init effect (reset when `entity.id` changes).
+3. Add to `isDirty` check if field should trigger save.
+4. Add to `handleSave` payload.
+5. Add input/SearchSelect in entity settings panel.
+6. Update export logic in `src/utils/export.ts` if needed.
+
+### Modifying keyboard shortcuts
+
+1. Add handler in `handleKeyDown` within SearchSelect or component.
+2. Use `event.preventDefault()` if overriding default.
+3. Test Enter, Tab, Escape behavior thoroughly.
+4. Ensure focus management (blur/focus) is correct for natural tab flow.
 
 ---
 
