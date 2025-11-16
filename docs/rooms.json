@@ -1520,15 +1520,15 @@
     },
     {
         "room_design_id": 219,
-        "room_name": "GYM Lv1",
-        "room_short_name": "GYM:1",
+        "room_name": "Gym Lv1",
+        "room_short_name": "Gym:1",
         "room_type": "Training",
         "image_sprite_id": 3147
     },
     {
         "room_design_id": 220,
-        "room_name": "GYM Lv2",
-        "room_short_name": "GYM:2",
+        "room_name": "Gym Lv2",
+        "room_short_name": "Gym:2",
         "room_type": "Training",
         "image_sprite_id": 3148
     },
@@ -1555,50 +1555,50 @@
     },
     {
         "room_design_id": 224,
-        "room_name": "GYM Lv3",
-        "room_short_name": "GYM:3",
+        "room_name": "Gym Lv3",
+        "room_short_name": "Gym:3",
         "room_type": "Training",
         "image_sprite_id": 3345
     },
     {
         "room_design_id": 225,
-        "room_name": "GYM Lv4",
-        "room_short_name": "GYM:4",
+        "room_name": "Gym Lv4",
+        "room_short_name": "Gym:4",
         "room_type": "Training",
         "image_sprite_id": 3346
     },
     {
         "room_design_id": 226,
-        "room_name": "GYM Lv5",
-        "room_short_name": "GYM:5",
+        "room_name": "Gym Lv5",
+        "room_short_name": "Gym:5",
         "room_type": "Training",
         "image_sprite_id": 3347
     },
     {
         "room_design_id": 227,
-        "room_name": "GYM Lv6",
-        "room_short_name": "GYM:6",
+        "room_name": "Gym Lv6",
+        "room_short_name": "Gym:6",
         "room_type": "Training",
         "image_sprite_id": 3348
     },
     {
         "room_design_id": 228,
-        "room_name": "GYM Lv7",
-        "room_short_name": "GYM:7",
+        "room_name": "Gym Lv7",
+        "room_short_name": "Gym:7",
         "room_type": "Training",
         "image_sprite_id": 3349
     },
     {
         "room_design_id": 229,
-        "room_name": "GYM Lv8",
-        "room_short_name": "GYM:8",
+        "room_name": "Gym Lv8",
+        "room_short_name": "Gym:8",
         "room_type": "Training",
         "image_sprite_id": 3350
     },
     {
         "room_design_id": 230,
-        "room_name": "GYM Lv9",
-        "room_short_name": "GYM:9",
+        "room_name": "Gym Lv9",
+        "room_short_name": "Gym:9",
         "room_type": "Training",
         "image_sprite_id": 3351
     },
@@ -2802,7 +2802,7 @@
     {
         "room_design_id": 407,
         "room_name": "Zaki Dragon Gym Base Lv1",
-        "room_short_name": "GYM:1",
+        "room_short_name": "Gym:1",
         "room_type": "Training",
         "image_sprite_id": 9474
     },
@@ -3005,14 +3005,14 @@
     {
         "room_design_id": 440,
         "room_name": "Zaki Dragon Gym Lv9",
-        "room_short_name": "GYM:9",
+        "room_short_name": "Gym:9",
         "room_type": "Training",
         "image_sprite_id": 9474
     },
     {
         "room_design_id": 441,
         "room_name": "Galaxy Gym Lv9",
-        "room_short_name": "GYM:9",
+        "room_short_name": "Gym:9",
         "room_type": "Training",
         "image_sprite_id": 9459
     },
