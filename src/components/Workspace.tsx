@@ -25,7 +25,7 @@ export function Workspace({ entities, onRemove, onUpdate, showSummaries }: Works
         ) : (
           <div className="workspaceEmptyCard">
             <div className="workspaceEmptyTitle">No AI selected</div>
-            <div className="workspaceEmptySubtitle">Open a crew or room from the list, or create a new draft.</div>
+            <div className="workspaceEmptySubtitle">Open a crew or room from the list, or create a new AI (In Browser).</div>
           </div>
         )}
       </div>

@@ -414,10 +414,10 @@ export default function App() {
               {sources.length ? (
                 <div id="sourcesList">
                   {sources.map(s => {
-                    if (s.name === "Drafts") {
+                    if (s.name === "In Browser") {
                       const crewSaved = s.crew.filter(raw => (raw as any)?.__builderMeta?.saved).length;
                       const roomSaved = s.rooms.filter(raw => (raw as any)?.__builderMeta?.saved).length;
-                      if (crewSaved + roomSaved === 0) return null; // hide Drafts when nothing saved
+                      if (crewSaved + roomSaved === 0) return null; // hide In Browser when nothing saved
                       return (
                         <div key={s.id} className="sourceRow">
                           <span className="sourceName">{s.name}</span>

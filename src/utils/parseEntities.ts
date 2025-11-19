@@ -1,4 +1,5 @@
 import type { RawEntity } from "@/types";
+import { findCharacterByName, findRoomByName } from "./sprites";
 
 /**
  * Classify an array of raw objects into crew and room arrays using common
@@ -61,11 +62,11 @@ export function parseCrewaiText(
 
     const entity: any = { name };
 
-    // Try to match the title prefix against known characters or rooms (case-insensitive exact match)
+    // Try to match the title prefix against known characters or rooms (use shared helpers)
     let matchedChar: any | undefined;
     let matchedRoom: any | undefined;
-    if (Array.isArray(chars) && chars.length) matchedChar = (chars as any[]).find(c => String((c && c.name) || c.character_name || c.character_design_id || "").toLowerCase() === titlePrefix.toLowerCase()) as any;
-    if (Array.isArray(rooms) && rooms.length) matchedRoom = (rooms as any[]).find(r => String((r && r.name) || r.room_name || r.room_design_id || "").toLowerCase() === titlePrefix.toLowerCase()) as any;
+    if (Array.isArray(chars) && chars.length) matchedChar = findCharacterByName(titlePrefix, chars as any[]);
+    if (Array.isArray(rooms) && rooms.length) matchedRoom = findRoomByName(titlePrefix, rooms as any[]);
 
     if (matchedChar) {
       entity.character_design_id = matchedChar.character_design_id;
