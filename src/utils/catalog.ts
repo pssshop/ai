@@ -182,7 +182,9 @@ export function useCatalogOptions() {
 export function ensureCatalogOption(options: CatalogOption[], value: string): CatalogOption[] {
   const trimmed = value.trim();
   if (!trimmed) return options;
-  if (options.some(option => option.value === trimmed)) {
+  // If an option already matches this value by value or label (case-insensitive), don't add a duplicate
+  const lower = trimmed.toLowerCase();
+  if (options.some(option => option.value === trimmed || option.label.toLowerCase() === lower)) {
     return options;
   }
   return [{ value: trimmed, label: trimmed }, ...options];
@@ -196,7 +198,11 @@ export function toSearchOptions<T extends { value: string; label: string; meta?:
   placeholder: { value: string; label: string }
 ): Array<{ value: string; label: string; meta?: any }> {
   const seen = new Set<string>();
-  const list: Array<{ value: string; label: string; meta?: any }> = [placeholder];
+  // If an existing item already has the same label (case-insensitive) or the same value
+  // as the placeholder, don't include the placeholder to avoid duplicate labels like "None".
+  const placeholderLabelLower = placeholder.label.trim().toLowerCase();
+  const hasPlaceholderDuplicate = items.some(i => i.value === placeholder.value || i.label.trim().toLowerCase() === placeholderLabelLower);
+  const list: Array<{ value: string; label: string; meta?: any }> = hasPlaceholderDuplicate ? [] : [placeholder];
   items.forEach(option => {
     if (!seen.has(option.value)) {
       seen.add(option.value);

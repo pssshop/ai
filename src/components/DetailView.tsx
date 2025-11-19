@@ -304,7 +304,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
             type="button"
             className="iconBtn saveBtn"
             onClick={handleSave}
-            disabled={!isDirty}
+            disabled={false}
             title="Save changes"
             aria-label="Save changes"
           >
@@ -357,7 +357,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
                     handleSave();
                     setShowActionsMenu(false);
                   }}
-                  disabled={!isDirty}
+                  disabled={false}
                 >
                   <span className="actionsMenuIcon">💾</span>
                   <span>Save changes</span>

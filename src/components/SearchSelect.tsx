@@ -171,6 +171,33 @@ export function SearchSelect({
     };
   }, [open]);
 
+  // When dropdown opens, highlight the currently selected option and scroll it into view
+  useEffect(() => {
+    if (!open) return;
+    if (!filteredOptions || filteredOptions.length === 0) return;
+
+    const selectedIdx = filteredOptions.findIndex(opt => opt.value === value);
+    const startIndex = selectedIdx >= 0 ? selectedIdx : 0;
+    setHighlightedIndex(startIndex);
+
+    // Ensure the selected element is visible inside the dropdown
+    requestAnimationFrame(() => {
+      const option = filteredOptions[startIndex];
+      if (!option) return;
+      const elId = `${id ?? ""}-option-${option.value}`;
+      const el = dropdownRef.current?.querySelector(`#${CSS.escape(elId)}`) as HTMLElement | null;
+      const container = dropdownRef.current;
+      if (el && container) {
+        const elTop = el.offsetTop;
+        const elBottom = elTop + el.offsetHeight;
+        const viewTop = container.scrollTop;
+        const viewBottom = viewTop + container.clientHeight;
+        if (elTop < viewTop) container.scrollTop = elTop;
+        else if (elBottom > viewBottom) container.scrollTop = elBottom - container.clientHeight;
+      }
+    });
+  }, [open, filteredOptions, value, id]);
+
   const displayValue = selectedOption?.label ?? "";
   const inputValue = open ? query : displayValue;
 

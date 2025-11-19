@@ -23,7 +23,7 @@ export default function App() {
         if (drafts.length > 0) {
           return [{
             id: randomId("source"),
-            name: "Drafts",
+            name: "In Browser",
             crew: drafts.filter(d => d.type === "crew"),
             rooms: drafts.filter(d => d.type === "room"),
           }];
@@ -123,7 +123,7 @@ export default function App() {
     setSources(prev => prev.filter(s => s.id !== id));
   };
 
-  // Close an entity; if it's an unsaved draft, remove it entirely from the Drafts source
+  // Close an entity; if it's an unsaved draft, remove it entirely from the In Browser source
   const handleCloseEntity = (entityId: string) => {
     const entity = allEntities.find(e => e.id === entityId);
     if (entity) {
@@ -134,13 +134,13 @@ export default function App() {
         setSources(prev =>
           prev
             .map(src => {
-              if (src.name !== "Drafts") return src;
+              if (src.name !== "In Browser") return src;
               const crew = src.crew.filter(raw => raw !== entity.source);
               const rooms = src.rooms.filter(raw => raw !== entity.source);
               return { ...src, crew, rooms };
             })
-            // If Drafts is now empty, drop it entirely
-            .filter(src => (src.name === "Drafts" ? src.crew.length + src.rooms.length > 0 : true))
+            // If In Browser is now empty, drop it entirely
+            .filter(src => (src.name === "In Browser" ? src.crew.length + src.rooms.length > 0 : true))
         );
       }
     }
@@ -197,7 +197,7 @@ export default function App() {
         saved: false,
       },
       __sourceFile: {
-        fileName: "Draft",
+        fileName: "In Browser",
         // Provide a stable fileId so normalized IDs don't depend on array index
         fileId: undefined as any, // placeholder, set just after object creation
       },
@@ -205,10 +205,10 @@ export default function App() {
     // After creation, set fileId to stable unique id (use draft id)
     (draftRaw as any).__sourceFile.fileId = draftRaw.id;
 
-    // Insert into a single shared "Drafts" source in-memory (hidden until saved)
+    // Insert into a single shared "In Browser" source in-memory (hidden until saved)
     setSources(prev => {
-      // Find existing Drafts source (by name)
-      const idx = prev.findIndex(s => s.name === "Drafts");
+      // Find existing In Browser source (by name)
+      const idx = prev.findIndex(s => s.name === "In Browser");
       if (idx >= 0) {
         const next = [...prev];
         const src = next[idx];
@@ -217,10 +217,10 @@ export default function App() {
         pendingDraftRef.current = draftRaw;
         return next;
       }
-      // Create a new Drafts source (hidden until any draft is saved)
+      // Create a new In Browser source (hidden until any draft is saved)
       const newDraftsSource = {
         id: randomId("source"),
-        name: "Drafts",
+        name: "In Browser",
         crew: [draftRaw],
         rooms: [] as RawEntity[],
       };
@@ -240,15 +240,29 @@ export default function App() {
 
     let replacementId: string | null = null;
 
-    setSources(prevSources => prevSources.map(source => {
-      const crewIndex = source.crew.findIndex(raw => raw === entity.source);
-      const roomIndex = source.rooms.findIndex(raw => raw === entity.source);
+    setSources(prevSources => {
+      // Work on a shallow copy
+      const next = prevSources.map(s => ({ ...s, crew: [...s.crew], rooms: [...s.rooms] }));
 
-      if (crewIndex === -1 && roomIndex === -1) {
-        return source;
+      // Find the source that contains the original raw
+      let srcIndex = -1;
+      let isCrew = false;
+      for (let i = 0; i < next.length; i++) {
+        const s = next[i];
+        if (s.crew.includes(entity.source as RawEntity)) {
+          srcIndex = i;
+          isCrew = true;
+          break;
+        }
+        if (s.rooms.includes(entity.source as RawEntity)) {
+          srcIndex = i;
+          isCrew = false;
+          break;
+        }
       }
 
       const wasDraft = Boolean((entity.source as any)?.__builderMeta?.isDraft);
+
       const updatedRaw: RawEntity = {
         ...(entity.source as RawEntity),
         name: safeName,
@@ -257,8 +271,8 @@ export default function App() {
         __builderMeta: {
           ...((entity.source as any).__builderMeta ?? {}),
           updatedAt: new Date().toISOString(),
-          // Mark draft as saved when the user explicitly saves
-          ...(wasDraft ? { saved: true } : {}),
+          // If this was already a draft we mark saved; if not, when saving we promote it to saved in-browser
+          ...(wasDraft ? { saved: true } : { isDraft: true, saved: true, createdAt: new Date().toISOString() }),
         },
       };
 
@@ -274,52 +288,43 @@ export default function App() {
         }
       }
 
-      if (crewIndex >= 0) {
-        if (payload.type === "crew") {
-          const newCrew = [...source.crew];
-          newCrew[crewIndex] = updatedRaw;
-          if (!replacementId) {
-            const normalized = normalizeEntities(newCrew, "crew");
-            const found = normalized.find(item => item.source === updatedRaw);
-            if (found) replacementId = found.id;
-          }
-          return { ...source, crew: newCrew };
+      // If the original source is the In Browser source we replace the raw there.
+      // Otherwise (an imported file/source) we leave it untouched so saving only creates
+      // a copy in the In Browser source and does not modify the original imported structure.
+      if (srcIndex >= 0) {
+        const s = next[srcIndex];
+        if (s.name === "In Browser") {
+          if (isCrew) s.crew = s.crew.filter(r => r !== entity.source);
+          else s.rooms = s.rooms.filter(r => r !== entity.source);
         }
-
-        const newCrew = source.crew.filter((_, idx) => idx !== crewIndex);
-        const newRooms = [...source.rooms, updatedRaw];
-        if (!replacementId) {
-          const normalized = normalizeEntities(newRooms, "room");
-          const found = normalized.find(item => item.source === updatedRaw);
-          if (found) replacementId = found.id;
-        }
-        return { ...source, crew: newCrew, rooms: newRooms };
       }
 
-      if (roomIndex >= 0) {
-        if (payload.type === "room") {
-          const newRooms = [...source.rooms];
-          newRooms[roomIndex] = updatedRaw;
-          if (!replacementId) {
-            const normalized = normalizeEntities(newRooms, "room");
-            const found = normalized.find(item => item.source === updatedRaw);
-            if (found) replacementId = found.id;
-          }
-          return { ...source, rooms: newRooms };
-        }
-
-        const newRooms = source.rooms.filter((_, idx) => idx !== roomIndex);
-        const newCrew = [...source.crew, updatedRaw];
-        if (!replacementId) {
-          const normalized = normalizeEntities(newCrew, "crew");
-          const found = normalized.find(item => item.source === updatedRaw);
-          if (found) replacementId = found.id;
-        }
-        return { ...source, crew: newCrew, rooms: newRooms };
+      // Find or create the In Browser source
+      let inIdx = next.findIndex(s => s.name === "In Browser");
+      if (inIdx === -1) {
+        const newSrc = { id: randomId("source"), name: "In Browser", crew: [] as RawEntity[], rooms: [] as RawEntity[] };
+        next.unshift(newSrc);
+        inIdx = 0;
       }
 
-      return source;
-    }));
+      // Add updatedRaw to the appropriate list in In Browser
+      if (payload.type === "crew") {
+        next[inIdx].crew.push(updatedRaw);
+      } else {
+        next[inIdx].rooms.push(updatedRaw);
+      }
+
+      // Compute replacementId for normalized IDs
+      try {
+        const normalized = normalizeEntities(next[inIdx].crew.concat(next[inIdx].rooms), payload.type === "crew" ? "crew" : "room");
+        const found = normalized.find(item => item.source === updatedRaw);
+        if (found) replacementId = found.id;
+      } catch (e) {
+        // ignore
+      }
+
+      return next;
+    });
 
     if (replacementId && replacementId !== entity.id) {
       const nextId = replacementId;
@@ -377,14 +382,14 @@ export default function App() {
             </div>
 
             <div id="fileInputs">
-              <label htmlFor="importFile">Import AI JSON (characters or rooms)</label>
-              <input
-                id="importFile"
-                type="file"
-                accept="application/json"
-                multiple
-                onChange={(event: ChangeEvent<HTMLInputElement>) => handleFiles(event.target.files ?? null)}
-              />
+                <label htmlFor="importFile">Import AI (JSON or .txt)</label>
+                <input
+                  id="importFile"
+                  type="file"
+                  accept=".json,.txt,application/json,text/plain"
+                  multiple
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => handleFiles(event.target.files ?? null)}
+                />
 
               {import.meta.env.DEV && samples.length ? (
                 <SearchSelect
