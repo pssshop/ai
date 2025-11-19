@@ -41,8 +41,8 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
   const [showAddRule, setShowAddRule] = useState(false);
   const [showActionsMenu, setShowActionsMenu] = useState(false);
   const actionsMenuRef = useRef<HTMLDivElement | null>(null);
-  const addRuleFormRef = useRef<HTMLDivElement | null>(null);
   const rulesAddLinkRef = useRef<HTMLButtonElement | null>(null);
+
   const [selectedSpriteId, setSelectedSpriteId] = useState<string>("");
   const [nameManuallyEdited, setNameManuallyEdited] = useState(false);
 
@@ -171,16 +171,37 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
     ]);
     // Close the form after adding
     setShowAddRule(false);
-    // Wait for React to render the new rule, then focus the Add Rule link so user can immediately add another
+    // Focus the Add Rule link after the DOM updates
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        if (containerRef.current) {
-          containerRef.current.scrollIntoView({ behavior: "auto", block: "end" });
+        try {
+          rulesAddLinkRef.current?.focus({ preventScroll: true });
+        } catch (e) {
+          // some older browsers may not support the options parameter
+          rulesAddLinkRef.current?.focus();
         }
-        rulesAddLinkRef.current?.focus();
+      });
+    });
+    // Wait for the DOM to render the new row, then try to scroll it into view
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        try {
+          const root = containerRef.current;
+          const newRow = root?.querySelector(`[data-rule-id="${newId}"]`) as HTMLElement | null;
+          if (newRow) {
+            newRow.scrollIntoView({ behavior: "auto", block: "end" });
+          } else if (root) {
+            // fallback to scrolling the column container
+            root.scrollIntoView({ behavior: "auto", block: "end" });
+          }
+        } catch (e) {
+          containerRef.current?.scrollIntoView({ behavior: "auto", block: "end" });
+        }
       });
     });
   };
+
+
 
   const updateRule = (ruleId: string, field: "condition" | "action", value: string) => {
     setDraftRules(prev => prev.map(rule => (rule.id === ruleId ? { ...rule, [field]: value } : rule)));
@@ -456,7 +477,7 @@ export function DetailView({ entity, onRemove, onUpdate, showSummaries }: Detail
         ) : null}
 
         {showAddRule ? (
-          <div className="ruleComposer" ref={addRuleFormRef}>
+          <div className="ruleComposer">
             <div className="ruleInputs">
               <div className="ruleInput">
                 <span className="ruleInputLabel">Condition</span>
