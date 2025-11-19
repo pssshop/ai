@@ -6,6 +6,8 @@ export function useDragReorder(rules: BuilderRule[], setRules: (updater: (prev: 
   const [dropIndicatorIndex, setDropIndicatorIndex] = useState<number | null>(null);
   const draggingRef = useRef<string | null>(null);
   const lastIndicatorRef = useRef<number | null>(null);
+  // track last preview move to avoid redundant setRules on repeated dragover
+  const previewRef = useRef<{ sourceId: string | null; target: number | null }>({ sourceId: null, target: null });
 
   const moveRuleToIndex = useCallback((sourceId: string, targetSlot: number | null) => {
     if (!sourceId || targetSlot == null) return;
@@ -32,6 +34,9 @@ export function useDragReorder(rules: BuilderRule[], setRules: (updater: (prev: 
   const endRuleDrag = useCallback(() => {
     setDraggingRuleId(null);
     setDropIndicatorIndex(null);
+    lastIndicatorRef.current = null;
+    draggingRef.current = null;
+    previewRef.current = { sourceId: null, target: null };
   }, []);
 
   // keep refs in sync so global handlers can read latest values
@@ -52,7 +57,9 @@ export function useDragReorder(rules: BuilderRule[], setRules: (updater: (prev: 
         ev.preventDefault();
         ev.stopPropagation();
         const target = lastIndicatorRef.current != null ? lastIndicatorRef.current : rules.length;
-        moveRuleToIndex(id, target);
+        if (!(previewRef.current.sourceId === id && previewRef.current.target === target)) {
+          moveRuleToIndex(id, target);
+        }
       } catch (e) {
         // ignore
       } finally {
@@ -76,7 +83,11 @@ export function useDragReorder(rules: BuilderRule[], setRules: (updater: (prev: 
     event.dataTransfer.effectAllowed = "move";
     event.dataTransfer.setData("text/plain", ruleId);
     setDraggingRuleId(ruleId);
-    setDropIndicatorIndex(index + 1);
+    const v = index + 1;
+    setDropIndicatorIndex(v);
+    lastIndicatorRef.current = v;
+    // store immediately so fast drops can read it
+    draggingRef.current = ruleId;
   }, []);
 
   // Determine target slot (insertion index) for a row based on pointer position.
@@ -97,69 +108,95 @@ export function useDragReorder(rules: BuilderRule[], setRules: (updater: (prev: 
   }, []);
 
   const handleRowDragOver = useCallback((event: DragEvent<HTMLDivElement>, rowIndex: number) => {
-    const sourceId = draggingRuleId ?? event.dataTransfer.getData("text/plain");
+    const sourceId = draggingRef.current ?? draggingRuleId ?? (event.dataTransfer && event.dataTransfer.getData ? event.dataTransfer.getData("text/plain") : null);
     if (!sourceId) return;
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
-    setDropIndicatorIndex(slotForRowEvent(event, rowIndex));
+    const v = slotForRowEvent(event, rowIndex);
+
+    // Apply preview move BEFORE showing the visual indicator so fast drops already have the order saved.
+    if (previewRef.current.sourceId !== sourceId || previewRef.current.target !== v) {
+      // perform preview move
+      moveRuleToIndex(sourceId, v);
+      previewRef.current = { sourceId, target: v };
+    }
+
+    setDropIndicatorIndex(v);
+    lastIndicatorRef.current = v;
   }, [draggingRuleId, slotForRowEvent]);
 
   const handleRowDrop = useCallback((event: DragEvent<HTMLDivElement>, rowIndex: number) => {
     event.preventDefault();
     event.stopPropagation();
-    const sourceId = draggingRuleId ?? event.dataTransfer.getData("text/plain");
+    const sourceId = draggingRef.current ?? draggingRuleId ?? (event.dataTransfer && event.dataTransfer.getData ? event.dataTransfer.getData("text/plain") : null);
     if (!sourceId) {
       endRuleDrag();
       return;
     }
-    // Use the currently-set visual drop indicator as the source of truth for insertion.
-    // If for any reason it's not set, fall back to pointer-based calculation.
-    const targetSlot = dropIndicatorIndex != null ? dropIndicatorIndex : slotForRowEvent(event, rowIndex);
-    moveRuleToIndex(sourceId, targetSlot);
+    // Use the last-known visual indicator (synchronous ref) as authoritative for fast drops.
+    const targetSlot = lastIndicatorRef.current != null ? lastIndicatorRef.current : slotForRowEvent(event, rowIndex);
+    if (!(previewRef.current.sourceId === sourceId && previewRef.current.target === targetSlot)) {
+      moveRuleToIndex(sourceId, targetSlot);
+    }
     endRuleDrag();
   }, [draggingRuleId, slotForRowEvent, moveRuleToIndex, endRuleDrag, dropIndicatorIndex]);
 
   const handleEndZoneDragOver = useCallback((event: DragEvent<HTMLDivElement>) => {
-    const sourceId = draggingRuleId ?? event.dataTransfer.getData("text/plain");
+    const sourceId = draggingRef.current ?? draggingRuleId ?? (event.dataTransfer && event.dataTransfer.getData ? event.dataTransfer.getData("text/plain") : null);
     if (!sourceId) return;
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
-    setDropIndicatorIndex(rules.length);
+    const v = rules.length;
+    // preview move
+    if (previewRef.current.sourceId !== sourceId || previewRef.current.target !== v) {
+      moveRuleToIndex(sourceId, v);
+      previewRef.current = { sourceId, target: v };
+    }
+    setDropIndicatorIndex(v);
+    lastIndicatorRef.current = v;
   }, [draggingRuleId, rules.length]);
 
   const handleEndZoneDrop = useCallback((event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    const sourceId = draggingRuleId ?? event.dataTransfer.getData("text/plain");
+    const sourceId = draggingRef.current ?? draggingRuleId ?? (event.dataTransfer && event.dataTransfer.getData ? event.dataTransfer.getData("text/plain") : null);
     if (!sourceId) {
       endRuleDrag();
       return;
     }
-    // Prefer the visual drop indicator if present; otherwise fall back to end slot
-    const target = dropIndicatorIndex != null ? dropIndicatorIndex : rules.length;
-    moveRuleToIndex(sourceId, target);
+    const target = lastIndicatorRef.current != null ? lastIndicatorRef.current : rules.length;
+    if (!(previewRef.current.sourceId === sourceId && previewRef.current.target === target)) {
+      moveRuleToIndex(sourceId, target);
+    }
     endRuleDrag();
   }, [draggingRuleId, rules.length, moveRuleToIndex, endRuleDrag]);
 
   const handleTopZoneDragOver = useCallback((event: DragEvent<HTMLDivElement>) => {
-    const sourceId = draggingRuleId ?? event.dataTransfer.getData("text/plain");
+    const sourceId = draggingRef.current ?? draggingRuleId ?? (event.dataTransfer && event.dataTransfer.getData ? event.dataTransfer.getData("text/plain") : null);
     if (!sourceId) return;
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
-    setDropIndicatorIndex(0);
+    const v = 0;
+    if (previewRef.current.sourceId !== sourceId || previewRef.current.target !== v) {
+      moveRuleToIndex(sourceId, v);
+      previewRef.current = { sourceId, target: v };
+    }
+    setDropIndicatorIndex(v);
+    lastIndicatorRef.current = v;
   }, [draggingRuleId]);
 
   const handleTopZoneDrop = useCallback((event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    const sourceId = draggingRuleId ?? event.dataTransfer.getData("text/plain");
+    const sourceId = draggingRef.current ?? draggingRuleId ?? (event.dataTransfer && event.dataTransfer.getData ? event.dataTransfer.getData("text/plain") : null);
     if (!sourceId) {
       endRuleDrag();
       return;
     }
-    // Prefer the visual drop indicator if present; otherwise fall back to top slot
-    const target = dropIndicatorIndex != null ? dropIndicatorIndex : 0;
-    moveRuleToIndex(sourceId, target);
+    const target = lastIndicatorRef.current != null ? lastIndicatorRef.current : 0;
+    if (!(previewRef.current.sourceId === sourceId && previewRef.current.target === target)) {
+      moveRuleToIndex(sourceId, target);
+    }
     endRuleDrag();
   }, [draggingRuleId, moveRuleToIndex, endRuleDrag]);
 
